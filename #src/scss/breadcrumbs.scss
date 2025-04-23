@@ -1,0 +1,24 @@
+.back-btn {
+    color: var(--gray-color-dark);
+    display: inline-flex;
+    align-items: center;
+    svg {
+        fill: var(--primary-color);
+        flex: 0 0 40px;
+        width: 40px;
+        height: 20px;
+        margin-right: 12px;
+    }
+    &:hover {
+        color: var(--black);
+    }
+    @media (max-width: $bp3) {
+        font-size: 18px;
+        svg {
+            flex: 0 0 26px;
+            width: 26px;
+            height: 13px;
+            margin-right: 8px;
+        }
+    }
+}

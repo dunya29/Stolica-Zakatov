@@ -1,0 +1,185 @@
+
+
+<!--scroll-indicator]-->
+<div class="scroll-indicator"></div>
+<!--request-modal-->
+<modal class="custom-scroll modal request-modal" id="request-modal">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Форма заявки для&nbsp;участия в&nbsp;проекте «Соло&nbsp;на&nbsp;закате 2025»</h2>
+        </div>
+        <form class="form" onsubmit="event.preventDefault();formReset(this);openSuccessMod()">
+            <div class="form__items">
+                <div class="item-form error">
+                    <div class="item-form__lbl">ФИО артиста / название коллектива / творческий псевдоним<span>*</span></div>
+                    <input type="text" placeholder="Иванов Иван Иванович">
+                    <span data-error>Заполните поле</span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Количество человек в коллективе</div>
+                    <input type="text" placeholder="5">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Описание артиста / коллектива<span>*</span></div>
+                    <textarea placeholder="Краткая биография, жанр, ключевые достижения, интересные факты"></textarea>
+                    <span data-error></span>
+                </div>
+                <div class="item-form file-form">
+                    <div class="item-form__lbl">Фото артиста / коллектива</div>
+                    <div class="file-form__action">
+                        <label>
+                            <input type="file" multiple accept=".jpg, .png, .gif" data-max-size="20">
+                            <span class="btn stroke-btn">
+                                <svg><use xlink:href="img/svg/sprite.svg#upload"></use></svg>
+                                загрузить
+                            </span>
+                        </label>
+                        <p class="file-form__info">
+                            До 20 файлов, допустимый размер одного файла — 20 МБ.
+                        </p>
+                    </div>
+                    <span data-error></span>
+                    <div class="file-form__items"></div>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Жанр / репертуар<span>*</span></div>
+                    <input type="text" placeholder="Джаз">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Опыт выступлений<span>*</span></div>
+                    <input type="text" placeholder="3 года">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Контактное лицо / номер телефона<span>*</span></div>
+                    <input type="text" placeholder="+ 7 -000-000-0000 / Иванов Иван ">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Ссылка на социальные сети / сайт<span>*</span></div>
+                    <input type="text" placeholder="vk.com">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Ссылка на выступление</div>
+                    <input type="text" placeholder="vk.com">
+                    <span data-error></span>
+                </div>
+            </div>
+            <div class="form__footer">
+                <p>ВАЖНО!<br>
+                    Перед отправкой формы перепроверьте всю информацию и ссылки. После этого нажмите кнопку "Отправить".</p>
+                <label class="item-checkbox">
+                    <input type="checkbox" checked class="required">
+                    <span>Согласие на обработку <a href="#" target="_blank">персональных данных</a></span>
+                    <span data-error></span>
+                </label>
+                <button type="submit" class="btn main-btn main-btn--link"><span>отправить</span></button>
+            </div>
+        </form>
+    </div>
+</modal>
+<!--partners-modal-->
+<modal class="custom-scroll modal partners-modal" id="partners-modal">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Заявка на участие</h2>
+        </div>
+        <form class="form" onsubmit="event.preventDefault();formReset(this);openSuccessMod()">
+            <div class="form__items">
+                <div class="item-form">
+                    <div class="item-form__lbl">Фамилия Имя<span>*</span></div>
+                    <input type="text" placeholder="Иванов Иван Иванович">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Почта<span>*</span></div>
+                    <input type="text" placeholder="mail@sample.ru">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Телефон<span>*</span></div>
+                    <input type="tel" placeholder="+ 7 -000-000-0000">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Название организации или бренда, который вы представляете<span>*</span></div>
+                    <input type="text" placeholder="ООО Золотое яблоко">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Опишите ваш запрос</div>
+                    <textarea placeholder="Опишите ваш запрос"></textarea>
+                </div>
+            </div>
+            <div class="form__footer">
+                <label class="item-checkbox">
+                    <input type="checkbox" checked class="required">
+                    <span>Согласие на обработку <a href="#" target="_blank">персональных данных</a></span>
+                    <span data-error></span>
+                </label>
+                <button type="submit" class="btn main-btn main-btn--link"><span>отправить</span></button>
+            </div>
+        </form>
+    </div>
+</modal>
+<!--share-modal-->
+<modal class="custom-scroll modal share-modal" id="share-modal">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Поделиться</h2>
+        </div>
+        <div class="share">
+            <ul class="share__list">
+                <li>
+                    <a href="#" data-share="vk" aria-label="Поделиться в Вконтакте" target="_blank">
+                        <svg><use xlink:href="img/svg/sprite.svg#vk"></use></svg>
+                    </a>
+                    <span>Vk</span>
+                </li>
+                <li>
+                    <a href="#" data-share="telegram" aria-label="Поделиться в Телеграм" target="_blank">
+                        <svg><use xlink:href="img/svg/sprite.svg#telegram"></use></svg>
+                    </a>
+                    <span>Telegram</span>
+                </li>
+            </ul>
+            <div class="share__lbl">Ссылка</div>
+            <button class="share__link">
+                <span>https://www. stolicazakatov.ru/meropriyatie</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M15 18H16V24H0V10.5C0 9.122 1.121 8 2.5 8H6V9H2.5C1.673 9 1 9.673 1 10.5V23H15V18ZM24 2.5V16H8V2.5C8 1.122 9.121 0 10.5 0H21.5C22.879 0 24 1.122 24 2.5ZM23 2.5C23 1.673 22.327 1 21.5 1H10.5C9.673 1 9 1.673 9 2.5V15H23V2.5Z" />
+                </svg>
+                <span class="share__link-copied">Скопировано</span>
+            </button>
+        </div>
+    </div>
+</modal>
+<!--success-mod-->
+<modal class="custom-scroll modal success-mod" id="success-mod">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Ваша заявка принята</h2>
+        </div>
+        <p>Какой-нибудь текст, в котором указаны дальнейшие действия, куда обращаться может, если что-то непонятно</p>
+        <button class="btn main-btn main-btn--link modal__close"><span>Закрыть</span></button>
+    </div>
+</modal>
+<!--error-mod-->
+<modal class="custom-scroll modal error-mod" id="error-mod">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Ошибка</h2>
+        </div>
+        <p>Ваша заявка не была отправлена. Попробуйте снова</p>
+       <button class="btn main-btn main-btn--link modal__close"><span>Закрыть</span></button>
+    </div>
+</modal>

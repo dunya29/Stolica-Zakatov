@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "PlatformLC";
+    font-weight: 300;
+    font-style: normal;
+    src: local("PlatformLC Light"), local("PlatformLC-Light"), url("../fonts/PlatformLC-Light.woff2") format("woff2"), url("../fonts/PlatformLC-Light.woff") format("woff"), url("../fonts/PlatformLC-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "PlatformLC";
+    font-weight: 400;
+    font-style: normal;
+    src: local("PlatformLC Regular"), local("PlatformLC-Regular"), url("../fonts/PlatformLC-Regular.woff2") format("woff2"), url("../fonts/PlatformLC-Regular.woff") format("woff"), url("../fonts/PlatformLC-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "PlatformLC";
+    font-weight: 500;
+    font-style: normal;
+    src: local("PlatformLC Medium"), local("PlatformLC-Medium"), url("../fonts/PlatformLC-Medium.woff2") format("woff2"), url("../fonts/PlatformLC-Medium.woff") format("woff"), url("../fonts/PlatformLC-Medium.ttf") format("truetype");
+}

@@ -1,0 +1,57 @@
+<!--header-->
+@@if (banner === true && main === true) {
+<header class="header header--banner no-scroll header--main fixed-block">
+    }
+    @@if (banner === true && main === false) {
+    <header class="header header--banner no-scroll fixed-block">
+        }
+        @@if (banner === false && main === true) {
+        <header class="header header--main fixed-block">
+            }
+            @@if (banner === false && main === false) {
+            <header class="header fixed-block">
+                }
+                <div class="container header__container">
+                    <div class="header__inner">
+                        <div class="header__left">
+                            @@include("_page-logo.html")
+                        </div>
+                        <nav class="menu">
+                            <ul>
+                                <li><a class="link js-anchor" href="#directions">Направления</a></li>
+                                <li><a class="link" href="#">Расписание</a></li>
+                                <li><a class="link js-anchor" href="#main-map">Карта</a></li>
+                                <li><a class="link js-anchor" href="#contacts">Контакты</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header__right">
+                            @@include("_social.html")
+                            <div class="icon-menu" aria-label="Открыть меню">
+                                <div class="icon-menu__items">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu">
+                    <div class="mobile-menu__inner">
+                        <div class="mobile-menu__top">
+                            @@include("_page-logo.html")
+                        </div>
+                        <div class="container">
+                            <nav class="menu">
+                                <ul>
+                                    <li style="--item-i: 0"><a class="js-anchor" href="#directions">Направления</a></li>
+                                    <li style="--item-i: 1"><a href="#">Расписание</a></li>
+                                    <li style="--item-i: 3"><a class="js-anchor" href="#main-map">Карта</a></li>
+                                    <li style="--item-i: 4"><a class="js-anchor" href="#contacts">Контакты</a></li>
+                                </ul>
+                            </nav>
+                            @@include("_social.html")
+                        </div>
+                    </div>
+                </div>
+            </header>

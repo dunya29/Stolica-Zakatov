@@ -1,0 +1,260 @@
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    padding: 40px var(--container-offset);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow: auto;
+    transition: all 0.3s 0.1s ease-out;
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transition: all 0.3s ease-out;
+        .modal__content {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s 0.1s ease-out;
+        }
+    }
+    .btn-cross.modal__close {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 60px;
+        top: 40px;
+        z-index: 1;
+        &::before,
+        &::after {
+            height: 4px;
+        }
+    }
+    &__top {
+        padding-right: 40px;
+        margin-bottom: 24px;
+    }
+    &__content {
+        width: 100%;
+        max-width: 900px;
+        padding: 60px 80px;
+        margin: auto;
+        background: var(--white);
+        border-radius: var(--border-radius);
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.3s ease-out;
+    }
+    @media (max-width: $bp1) {
+        .form__footer p,
+        .item-checkbox input + span {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: $bp2) {
+        &__content {
+            max-width: 759px;
+            padding: 40px 60px;
+        }
+    }
+    @media (max-width: $bp4) {
+        .btn-cross.modal__close {
+            right: 20px;
+            top: 20px;
+        }
+        &__content {
+            padding: 20px;
+        }
+    }
+    @media (max-width: $bp5) {
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+        .btn-cross.modal__close {
+            width: 24px;
+            height: 24px;
+            &:before,
+            &:after {
+                height: 2px;
+            }
+        }
+        .form__footer p,
+        .item-checkbox input + span {
+            font-size: 18px;
+        }
+        &__top {
+            padding-right: 30px;
+        }
+        &__content {
+            padding: 20px var(--container-offset);
+        }
+    }
+    @media (max-width: $bp6) {
+        .main-btn--link {
+            width: 100%;
+        }
+    }
+}
+.success-mod,
+.error-mod {
+    p {
+        font-size: 22px;
+        margin-bottom: 40px;
+        &:empty {
+            margin-bottom: 20px;
+        }
+    }
+    @media (max-width: $bp3) {
+        .modal__content {
+            max-width: 600px;
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+}
+.fancy-modal {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: block;
+    background: var(--white);
+    .modal__close.btn-cross {
+        top: 0 !important;
+        right: 0 !important;
+    }
+    .modal__top {
+        padding-right: 60px;
+    }
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        &--prev {
+            left: -40px;
+        }
+        &--next {
+            right: -40px;
+        }
+    }
+    &__content {
+        height: 100%;
+        min-height: 200px;
+        max-width: var(--content-width);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    &__mainswiper {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide,
+        .media-contain,
+        .media-cover {
+            height: 100%;
+        }
+    }
+    @media (max-width: $bp1) {
+        padding-left: 30px;
+        padding-right: 30px;
+        .nav-btn {
+            &--prev {
+                left: -20px;
+            }
+            &--next {
+                right: -20px;
+            }
+        }
+    }
+    @media (max-width: $bp3) {
+        padding-left: 20px;
+        padding-right: 20px;
+        .nav-btn {
+            &--prev {
+                left: -14px;
+            }
+            &--next {
+                right: -14px;
+            }
+        }
+    }
+    @media (max-width: $bp4) {
+        padding: 20px;
+    }
+    @media (max-width: $bp5) {
+        .nav-btns {
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+        .nav-btn {
+            position: static;
+            transform: none;
+        }
+    }
+}
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    max-width: 100%;
+    height: 3px;
+    z-index: 500;
+    background: var(--primary-color);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+.fixed-btn {
+    border-radius: 20px;
+    position: fixed;
+    bottom: 30px;
+    right: calc((100% - var(--content-width)) / 2);
+    z-index: 500;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all .3s linear;
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    &:after {
+        width: 18px;
+        height: 18px;
+        top: 14px;
+        right: 14px;
+    }
+    .stroke-btn {
+        padding: 16px 50px;
+    }
+    @media (min-width: $bp2) and (max-width: 1662px), (min-width: $bp4) and (max-width: 1192px), (min-width: $bp6) and (max-width: 987px), (max-width: 526px) {
+        right: var(--container-offset);
+    }
+    @media (max-width: $bp4) {
+        .h4 {
+            font-size: 18px;
+        }
+    }
+}

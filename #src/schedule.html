@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    @@include('_head.html', {
+    "title": "Расписание"
+    })
+
+    <body class="no-scroll">
+        @@include('_preloader.html')
+        <div class="wrap">
+            @@include('_header.html', {"main": false, "banner": false})
+            <!--main-->
+            <main class="main">
+                <!--page-top-->
+                <div class="page-top">
+                    <div class="container">
+                        <div class="page-top__left">
+                            <a href="#" class="back-btn">
+                                <svg><use xlink:href="img/svg/sprite.svg#btn-prev"></use></svg>
+                                <span>Назад</span>
+                            </a>
+                        </div>
+                        <div class="page-top__content">
+                            <h1>Расписание</h1>
+                        </div>
+                    </div>
+                </div>
+                <!--schedule-->
+                <section class="section schedule">
+                    <div class="container">
+                        <div class="page-row">
+                            <aside class="page-row__aside">
+                                <div class="page-row__sticky">
+                                    <form class="schedule-filter">
+                                        <div class="schedule-filter__sections">
+                                            <div class="schedule-filter__sec">
+                                                <div class="h5 schedule-filter__lbl">Направление<svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg></div>
+                                                <div class="modal">
+                                                    <div class="modal__content">
+                                                        <div class="modal__top">
+                                                            <h5>Направление</h5>
+                                                        </div>
+                                                        <div class="schedule-filter__items">
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="direction" data-id="filter[1]" value="1">
+                                                                <span>Cоло на закате</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="direction" data-id="filter[2]" value="2">
+                                                                <span>Ракушка</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="direction" data-id="filter[3]" value="3">
+                                                                <span>Искра</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="direction" data-id="filter[4]" value="4">
+                                                                <span>Гастро рождественская</span>
+                                                            </label>
+                                                        </div>
+                                                        <button type="button" class="btn stroke-btn stroke-btn--link modal__close">
+                                                            <span>показать</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="schedule-filter__sec">
+                                                <div class="h5 schedule-filter__lbl">Дата<svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg></div>
+                                                <div class="modal">
+                                                    <div class="modal__content">
+                                                        <div class="modal__top">
+                                                            <h5>Дата</h5>
+                                                        </div>
+                                                        <div class="schedule-filter__tabs">
+                                                            <div class="tabs">
+                                                                <button type="button" class="h4" data-schedule-tab="1" aria-selected="false">Июнь</button>
+                                                                <button type="button" class="h4" data-schedule-tab="2" aria-selected="false">Июль</button>
+                                                                <button type="button" class="h4 active" data-schedule-tab="3" aria-selected="true">Август</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="schedule-filter__items" data-schedule-block="1">
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[5]" value="1">
+                                                                <span>4 июня / суббота</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[6]" value="2">
+                                                                <span>5 июня / воскресенье</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[7]" value="3">
+                                                                <span>12 июня / суббота</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[8]" value="4">
+                                                                <span>13 июня / воскресенье</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[9]" value="5">
+                                                                <span btn-cross>30 июня / воскресенье</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="schedule-filter__items" data-schedule-block="2">
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[10]" value="6">
+                                                                <span>4 июля / суббота</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[11]" value="7">
+                                                                <span>5 июля / воскресенье</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[12]" value="8">
+                                                                <span>12 июля / суббота</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[13]" value="9">
+                                                                <span>13 июля / воскресенье</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[14]" value="10">
+                                                                <span>20 июля / суббота</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="schedule-filter__items active" data-schedule-block="3">
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[15]" value="11">
+                                                                <span>4 августа / суббота</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[16]" value="12">
+                                                                <span>5 августа / воскресенье</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[17]" value="13">
+                                                                <span>12 августа / суббота</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[18]" value="14">
+                                                                <span>13 августа / воскресенье</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[19]" value="15">
+                                                                <span>20 августа / суббота</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[20]" value="16">
+                                                                <span>21 августа / воскресенье</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[21]" value="17">
+                                                                <span>29 августа / суббота</span>
+                                                            </label>
+                                                            <label class="text-checkbox">
+                                                                <input type="checkbox" name="date" data-id="filter[22]" value="18">
+                                                                <span>30 августа / воскресенье</span>
+                                                            </label>
+                                                        </div>
+                                                        <button type="button" class="btn stroke-btn stroke-btn--link modal__close">
+                                                            <span>показать</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </aside>
+                            <div class="page-row__content">
+                                <div class="filter-selected">
+                                    <ul class="filter-selected__items"></ul>
+                                </div>
+                                <div class="schedule__items">
+                                    <div class="schedule__header" data-animation="fadeUp">
+                                        <h4>Cоло на закате, 4 августа / суббота</h4>
+                                    </div>
+                                    @@include("_item-ticket.html", {"nmb": 1, "dir": "Соло на закате", "title": "Скрипачка Anna Ly", "loc": "Кремль", "lbls": true, "free":
+                                    true,
+                                    "hasContent": true, "txt": "Певица, сочетающая классическую технику с современной симфонической музыкой.", "tags": true, "activity":
+                                    false})
+                                    @@include("_item-ticket.html", {"nmb": 1, "dir": "Соло на закате", "title": "Певица Nika Blanka", "loc": "Набережная Федоровского", "lbls":
+                                    true, "free": true, "hasContent": true, "txt": "Певица, сочетающая классическую технику с современной симфонической музыкой.", "tags":
+                                    false,
+                                    "activity": false})
+                                    <div class="schedule__header" data-animation="fadeUp">
+                                        <h4>Ракушка, 4 августа / суббота</h4>
+                                    </div>
+                                    @@include("_item-ticket.html", {"nmb": 2, "dir": "Ракушка", "title": "Джазовый оркестр Михаила Петропавловского", "loc":
+                                    "Александровский сад (сцена «Ракушка»)", "lbls": false, "free": false, "hasContent": false, "tags": false, "activity": false})
+                                    <div class="schedule__header" data-animation="fadeUp">
+                                        <h4>Искра, 4 августа / суббота</h4>
+                                    </div>
+                                    @@include("_item-ticket.html", {"nmb": 3, "dir": "Искра", "title": "Активности", "loc": "Сквер Свердлова, ул. Октябрьская, 9А", "lbls":
+                                    false,
+                                    "free": true, "hasContent": true, "txt":
+                                    "Погрузитесь в мир творчества и развлечений! На фестивале вас ждёт уникальный маркет локальных брендов, где можно найти оригинальные вещи, а также кулинарные изыски от SALUT! и возможность создать свой собственный кастомный дизайн. Примите участие в создании граффити, сделайте стильную татуировку, посоревнуйтесь в настольных играх, а вечером окунитесь в атмосферу виниловой музыки и отпразднуйте день рождения фестиваля под зажигательные DJ-сеты.",
+                                    "tags": false, "activity": true})
+                                    <div class="schedule__header" data-animation="fadeUp">
+                                        <h4>Гастро рождественская, 4 августа / суббота</h4>
+                                    </div>
+                                    @@include("_item-ticket.html", {"nmb": 4, "dir": "Гастро рождественская", "title": "Активности", "loc": "ул. Рождественская", "lbls":
+                                    false,
+                                    "free": true, "hasContent": true, "txt":
+                                    "На «Гастрономической Рождественской» вас ждёт насыщенная программа: от просмотра уникальных украшений ручной работы и весёлых арбузных гонок до кулинарных мастер-классов, где можно приготовить арбузный салат и расписать пряники. Вечер завершится угощением арбузными ломтиками, наслаждением любимыми песнями в исполнении Анастасии Копалкиной и танцами под DJ-сет от бара Сияй.",
+                                    "tags": false, "activity": true})
+                                    <div class="schedule__header" data-animation="fadeUp">
+                                        <h4>Cоло на закате, 4 августа / суббота</h4>
+                                    </div>
+                                    @@include("_item-ticket.html", {"nmb": 1, "dir": "Соло на закате", "title": "Скрипачка Anna Ly", "loc": "Кремль", "lbls": true, "free":
+                                    true,
+                                    "hasContent": true, "txt": "Певица, сочетающая классическую технику с современной симфонической музыкой.", "tags": true, "activity":
+                                    false})
+                                    @@include("_item-ticket.html", {"nmb": 1, "dir": "Соло на закате", "title": "Певица Nika Blanka", "loc": "Набережная Федоровского", "lbls":
+                                    true, "free": true, "hasContent": true, "txt": "Певица, сочетающая классическую технику с современной симфонической музыкой.", "tags":
+                                    false,
+                                    "activity": false})
+                                    <div class="schedule__header" data-animation="fadeUp">
+                                        <h4>Ракушка, 4 августа / суббота</h4>
+                                    </div>
+                                    @@include("_item-ticket.html", {"nmb": 2, "dir": "Ракушка", "title": "Джазовый оркестр Михаила Петропавловского", "loc":
+                                    "Александровский сад (сцена «Ракушка»)", "lbls": false, "free": false, "hasContent": false, "tags": false, "activity": false})
+                                    <div class="schedule__header" data-animation="fadeUp">
+                                        <h4>Cоло на закате, 5 августа / воскресенье</h4>
+                                    </div>
+                                    <div class="schedule__empty">
+                                        <p class="h4">В направлении «Cоло на закате» на&nbsp;дату 5&nbsp;августа мероприятий не&nbsp;найдено. Пожалуйста, измените параметры
+                                            поиска</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('_contacts.html')
+            </main>
+            @@include('_footer.html', {"main": false})
+            @@include('_modal.html')
+        </div>
+        @@include('_js.html')
+    </body>
+
+</html>

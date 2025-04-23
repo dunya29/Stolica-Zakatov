@@ -1,0 +1,82 @@
+.notfound-p {
+    h1 {
+        text-transform: uppercase;
+    }
+    .main-btn {
+        margin-top: 32px;
+    }
+    &__inner {
+        min-height: 790px;
+        padding: 48px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 20px;
+        border-radius: 40px;
+        border: 2px solid var(--primary-color);
+        background: url(../img/notfound-bg.png) top right / cover no-repeat;
+    }
+    &__content {
+        max-width: 597px;
+    }
+    &__img {
+        justify-self: center;
+    }
+    @media (max-width: $bp1) {
+        &__inner {
+            padding: 32px;
+            border-radius: 30px;
+        }
+        &__content {
+            max-width: 467px;
+        }
+    }
+    @media (max-width: $bp2) {
+        &__inner {
+            min-height: 559px;
+        }
+        &__img {
+            max-width: 429px;
+        }
+    }
+    @media (max-width: $bp3) {
+        .main-btn {
+            width: 100%;
+            max-width: 239px;
+        }
+        &__content {
+            max-width: 300px;
+        }
+    }
+    @media (max-width: $bp4) {
+        &__inner {
+            min-height: 400px;
+            padding: 20px;
+        }
+        &__img {
+            max-width: 306px;
+        }
+    }
+    @media (max-width: $bp5) {
+        &__content {
+            max-width: 250px;
+        }
+    }
+    @media (max-width: $bp6) {
+        &__inner {
+            min-height: 700px;
+            background-position: center;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 0;
+        }
+        &__img {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 80px;
+        }
+    }
+}

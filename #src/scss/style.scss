@@ -1,0 +1,37 @@
+@import "fonts";
+@import "null";
+@import "vars";
+@import "general";
+@import "swiper";
+@import "preloader";
+@import "header";
+@import "breadcrumbs";
+@import "intro";
+@import "main";
+@import "404";
+@import "about";
+@import "directions";
+@import "projects";
+@import "partners";
+@import "history";
+@import "schedule";
+@import "event";
+@import "modal";
+@import "footer";
+
+.fadeUp {
+    animation: fadeUp 1s forwards;
+}
+[data-animation="fadeUp"] {
+    opacity: 0;
+}
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

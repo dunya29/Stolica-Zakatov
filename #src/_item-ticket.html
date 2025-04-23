@@ -1,0 +1,66 @@
+<!--item-ticket-->
+@@if (activity === true) {
+<article class="item-ticket item-ticket--activity item-ticket--dir-@@nmb" data-animation="fadeUp">
+    }
+    @@if (activity === false) {
+    <article class="item-ticket item-ticket--dir-@@nmb" data-animation="fadeUp">
+        }
+        <div class="item-ticket__direction">
+            <h4>@@dir</h>
+        </div>
+        <div class="item-ticket__inner">
+            <div class="item-ticket__main">
+                <div class="h4 item-ticket__date">4 августа / 20:30</div>
+                <h4 class="item-ticket__title">@@title</h4>
+                @@if (hasContent === true) {
+                <p class="item-ticket__txt">@@txt</p>
+                }
+                <p class="item-ticket__loc">@@loc</p>
+                @@if (tags === true) {
+                <div class="item-ticket__tags">
+                    <span>классика в городе</span>
+                </div>
+                }
+            </div>
+            <div class="item-ticket__meta">
+                <div class="item-ticket__preview">
+                    @@if (lbls === true) {
+                    <div class="item-ticket__lbls">
+                        <span>Sound Summer</span>
+                    </div>
+                    }
+                    <div class="media-cover">
+                        <img src="img/content/ticket-@@nmb.jpg" alt="Джазовый оркестр Михаила Петропавловского">
+                    </div>
+                </div>
+                @@if (activity === false) {
+                <div class="item-ticket__price">
+                    <div class="item-ticket__price-inner">
+                        @@if (free === false) {
+                        <div class="media-contain item-ticket__code">
+                            <img src="img/qr-code.png" alt>
+                        </div>
+                        }
+                        @@if (free === true) {
+                        <div class="h4 item-ticket__free">бесплатно</div>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+            @@if (free === false && activity === false) {
+            <div class="item-ticket__action">
+                <a href="#" target="_blank" class="btn stroke-btn stroke-btn--link">
+                    <span>купить билет</span>
+                </a>
+            </div>
+            }
+            @@if (activity === true) {
+            <div class="item-ticket__action">
+                <a href="#" class="btn stroke-btn stroke-btn--link">
+                    <span>Подробнее</span>
+                </a>
+            </div>
+            }
+        </div>
+    </article>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    @@include('_head.html', {
+    "title": "Страница не найдена"
+    })
+
+    <body>
+        <div class="wrap">
+            @@include('_header.html', {"main": false, "banner": false})
+            <!--main-->
+            <main class="main">
+                <!--notfound-p-->
+                <section class="section-sm notfound-p">
+                    <div class="container">
+                        <div class="notfound-p__inner">
+                            <div class="notfound-p__content">
+                                <h1 class="text-l">ОЙ...<span>Похоже, такой страницы не&nbsp;существует :(</span></h1>
+                                <a href="main.html" class="btn main-btn main-btn--link"><span>На главную</span></a>
+                            </div>
+                            <div class="notfound-p__img">
+                                <img src="img/svg/404.svg" alt="404">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('_contacts.html')
+            </main>
+            @@include('_footer.html', {"main": false})
+            @@include('_modal.html')
+        </div>
+        @@include('_js.html')
+    </body>
+
+</html>

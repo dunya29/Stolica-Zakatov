@@ -1,0 +1,135 @@
+:root {
+    --partnerH: 396px;
+}
+@media (max-width: $bp1) {
+    :root {
+        --partnerH: 330px;
+    }
+}
+@media (max-width: $bp2) {
+    :root {
+        --partnerH: 277px;
+    }
+}
+@media (max-width: $bp3) {
+    :root {
+        --partnerH: 223px;
+    }
+}
+@media (max-width: $bp4) {
+    :root {
+        --partnerH: 173px;
+    }
+}
+@media (max-width: $bp5) {
+    :root {
+        --partnerH: 160px;
+    }
+}
+.item-partner {
+    height: 100%;
+    padding: 100px 60px 40px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--secondary-color);
+    background: var(--white);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    h5 {
+        color: var(--gray-color-dark);
+    }
+    &__logo {
+        height: 100%;
+        .media-contain {
+            height: 100%;
+        }
+    }
+    @media (max-width: $bp1) {
+        padding: 60px 32px 32px;
+        gap: 20px;
+    }
+    @media (min-width: $bp3) and (max-width: $bp1) {
+        h5 {
+            font-size: 24px;
+        }
+    }
+    @media (max-width: $bp4) {
+        padding: 60px 20px 20px;
+        grid-template-rows: 1fr 30px;
+        h5 {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: $bp5) {
+        padding: 50px 16px 16px;
+    }
+}
+.partners {
+    &__cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        align-items: start;
+    }
+    &__col {
+        min-height: calc(var(--partnerH) * 2 + 8px);
+    }
+    &__item {
+        height: calc(var(--partnerH) + 8px);
+        padding-bottom: 8px;
+    }
+    @media (max-width: $bp5) {
+        &__cols {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+.col-partner {
+    padding: 50px;
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    background: url(../img/partners-bg.jpg) center / cover no-repeat;
+    h2 {
+        color: var(--white);
+    }
+    .stroke-btn {
+        border: none;
+    }
+    &__content {
+        p {
+            color: var(--white);
+            margin-bottom: 11px;
+        }
+    }
+    @media (max-width: $bp1) {
+        padding: 24px 30px 30px;
+    }
+    @media (max-width: $bp3) {
+        h2 {
+            letter-spacing: -0.02em;
+            span {
+                margin-top: 10px;
+                letter-spacing: normal;
+            }
+        }
+        .h4 {
+            font-size: 28px;
+        }
+    }
+    @media (max-width: $bp4) {
+        padding: 20px;
+        .stroke-btn {
+            width: 100%;
+        }
+    }
+    @media (max-width: $bp8) {
+        .h4 {
+            font-size: 22px;
+        }
+    }
+}
