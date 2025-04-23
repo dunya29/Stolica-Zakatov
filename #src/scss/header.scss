@@ -111,6 +111,7 @@
     }
     @media (max-width: $bp5) {
         &.show-mobMenu {
+            transform:none!important;
             &.header--banner {
                 &.no-scroll {
                     .icon-menu {

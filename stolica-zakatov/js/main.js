@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
                 clearInterval(interval)
                 setTimeout(() => {
                     enableScroll()
-                }, 1700);
+                }, 1900);
             }
         }, 7);
     }
@@ -613,7 +613,7 @@ if (scrollIndicator) {
 // fixed btn
 const fixedBtn = document.querySelector(".fixed-btn")
 function fixedBtnVisibility() {
-    if (scrollPos() > window.innerHeight && scrollPos() + window.innerHeight < document.body.scrollHeight) {
+    if (scrollPos() > window.innerHeight && scrollPos() + window.innerHeight + 150 < document.body.scrollHeight) {
         fixedBtn.classList.add("show")
     } else {
         fixedBtn.classList.remove("show")

@@ -1746,8 +1746,8 @@ p a:hover {
   transition: transform 0.4s ease, -webkit-transform 0.4s ease;
   background: var(--white);
   z-index: 9999;
-  -webkit-animation: clipDown 0.6s 1.7s ease-in-out both;
-  animation: clipDown 0.6s 1.7s ease-in-out both;
+  -webkit-animation: clipDown 0.6s 1.9s ease-in-out both;
+  animation: clipDown 0.6s 1.9s ease-in-out both;
 }
 
 .preloader__inner {
@@ -1775,8 +1775,8 @@ p a:hover {
   width: 100%;
   height: 5px;
   z-index: 1;
-  -webkit-animation: barHeight 0.5s 1.1s ease-in-out both;
-  animation: barHeight 0.5s 1.1s ease-in-out both;
+  -webkit-animation: barHeight 0.5s 1.3s ease-in-out both;
+  animation: barHeight 0.5s 1.3s ease-in-out both;
 }
 
 .preloader__progress {
@@ -3775,8 +3775,10 @@ p a:hover {
   right: 0 !important;
 }
 
-.fancy-modal .modal__top {
-  padding-right: 60px;
+.fancy-modal .modal__top h2 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .fancy-modal .nav-btn {
@@ -5721,6 +5723,12 @@ p a:hover {
     opacity: 0.5 !important;
   }
 
+  .header.show-mobMenu {
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
+    transform: none !important;
+  }
+
   .header.show-mobMenu.header--banner.no-scroll .icon-menu {
     border-color: var(--primary-color);
   }
@@ -6210,6 +6218,10 @@ p a:hover {
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
+  }
+
+  .fancy-modal .modal__top h2 {
+    font-size: 24px;
   }
 
   .footer .footer-menu {

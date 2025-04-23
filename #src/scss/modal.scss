@@ -136,7 +136,11 @@
         right: 0 !important;
     }
     .modal__top {
-        padding-right: 60px;
+        h2 {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
     }
     .nav-btn {
         position: absolute;
@@ -208,6 +212,11 @@
         .nav-btn {
             position: static;
             transform: none;
+        }
+        .modal__top {
+            h2 {
+                font-size: 24px;
+            }
         }
     }
 }
