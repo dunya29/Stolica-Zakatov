@@ -24,8 +24,8 @@
 		}
 	}
 	&.show {
-		.main-history__images {
-			display: block;
+		.main-history__preview {
+			animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
 		}
 	}
 	&__tabs {
@@ -52,7 +52,6 @@
 	&__images {
 		position: relative;
 		z-index: 1;
-		display: none;
 	}
 	&__preview {
 		display: none;
@@ -63,7 +62,6 @@
 		position: absolute;
 		left: 0;
 		opacity: 0;
-		animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
 		.media-cover {
 			padding-top: 100%;
 		}
@@ -242,7 +240,7 @@
 			width: 100%;
 			max-width: 400px;
 			margin: 0 auto;
-			min-height: 530px;
+			height: 530px;
 		}
 		&__preview {
 			width: 48.5%;
@@ -265,18 +263,18 @@
 		}
 	}
 	@media (max-width: $bp7) {
-		&__content{
+		&__content {
 			.stroke-btn {
 				width: 100%;
 			}
 		}
 		&__images {
-			min-height: 130vw;
+			height: 130vw;
 		}
 	}
 	@media (max-width: $bp8) {
 		&__images {
-			min-height: 450px;
+			height: 480px;
 		}
 	}
 }

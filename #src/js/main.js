@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
             item.style.strokeDasharray = pathLength + "px";
             item.style.strokeDashoffset = pathLength
             setTimeout(() => {
-                item.parentNode.classList.add("strokeAnim")
+                item.parentNode.classList.add("startAnim")
             }, 0);
         })
         let i = 0
@@ -17,10 +17,31 @@ window.addEventListener("load", () => {
             if (i === 101) {
                 clearInterval(interval)
                 setTimeout(() => {
-                    enableScroll()
-                }, 1200);
+                    document.querySelector(".preloader__bar").classList.add("startAnim")
+                    setTimeout(() => {
+                        document.querySelector(".preloader").classList.add("startAnim")
+                        enableScroll()
+                        ScrollTrigger.refresh()
+                    }, 700);
+                }, 500);
             }
         }, 7);
+    }
+    //equalizer
+    const equalizer = document.querySelector(".equalizer")
+    if (equalizer) {
+        gsap.to(equalizer, {
+            ease: "none",
+            scrollTrigger: {
+                trigger: equalizer,
+                pin: true,
+                pinSpacing: false,
+                scrub: 1,
+                start: "top top",
+                invalidateOnRefresh: true,
+                anticipatePin: 1
+            }
+        })
     }
     //partners
     const partners = document.querySelector(".partners")
@@ -28,42 +49,29 @@ window.addEventListener("load", () => {
     const partnersItems = document.querySelectorAll(".partners__item")
     if (partnersSticky && partnersItems.length) {
         function offsetTop() {
-            return (window.innerHeight - partnersSticky.clientHeight) / 2 > 0 ? (window.innerHeight - partnersSticky.clientHeight) / 2 : 0
+            let top
+            if (window.innerWidth > bp.tablet) {
+                top = (window.innerHeight - partnersSticky.clientHeight) / 2 > 0 ? (window.innerHeight - partnersSticky.clientHeight) / 2 : 0
+            } else {
+                top = header.clientHeight + 10
+            }
+            return top
         }
         let slideCount = partnersItems.length
         partnersItems.forEach((item, idx) => {
-            if (idx < partnersItems.length) {
-                gsap.matchMedia().add("(min-width: 767.98px)", () => {
-                    gsap.to(item, {
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: item,
-                            pin: true,
-                            pinSpacing: false,
-                            scrub: true,
-                            start: () => "top top+=" + offsetTop(),
-                            end: () => "+=" + (item.offsetHeight * (slideCount - 2 - idx)),
-                            invalidateOnRefresh: true,
-                            anticipatePin: 1
-                        }
-                    })
-                })
-                gsap.matchMedia().add("(max-width: 767.98px)", () => {
-                    gsap.to(item, {
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: item,
-                            pin: true,
-                            pinSpacing: false,
-                            scrub: true,
-                            start: () => "top top+=" + (header.clientHeight + 10),
-                            end: () => "+=" + (item.offsetHeight * (slideCount - 1 - idx)),
-                            invalidateOnRefresh: true,
-                            anticipatePin: 1
-                        }
-                    })
-                })
-            }
+            gsap.to(item, {
+                ease: "none",
+                scrollTrigger: {
+                    trigger: item,
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                    start: () => "top top+=" + offsetTop(),
+                    end: () => "+=" + (item.offsetHeight * (slideCount - (window.innerWidth > bp.tablet ? 2 : 1) - idx)),
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1
+                }
+            })
         })
         gsap.matchMedia().add("(min-width: 767.98px)", () => {
             gsap.to(partnersSticky, {
@@ -483,13 +491,6 @@ function formReset(form) {
         form.querySelector(".file-form__items").innerHTML = ""
     }
 }
-//mask input
-const inp = document.querySelectorAll('input[type=tel]')
-if (inp) {
-    inp.forEach(item => {
-        Inputmask({ "mask": "+7 999 999-99-99" }).mask(item);
-    })
-}
 //file-form
 let allFileTypes = [
     { "extension": ".png", "mimeType": "image/png" },
@@ -775,7 +776,6 @@ if (headliners) {
     })
 }
 //about
-const equalizer = document.querySelector(".equalizer")
 const about = document.querySelector(".about")
 if (about) {
     let timeOut
@@ -827,20 +827,6 @@ if (about) {
         timeOut = setTimeout(() => {
             swiper3.slideTo(swiper2.activeIndex)
         }, 800);
-    })
-}
-if (equalizer && about) {
-    gsap.to(equalizer, {
-        ease: "none",
-        scrollTrigger: {
-            trigger: equalizer,
-            pin: true,
-            pinSpacing: false,
-            scrub: 1,
-            start: "top top",
-            invalidateOnRefresh: true,
-            anticipatePin: 1
-        }
     })
 }
 //projects

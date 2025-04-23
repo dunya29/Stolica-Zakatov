@@ -1746,8 +1746,11 @@ p a:hover {
   transition: transform 0.4s ease, -webkit-transform 0.4s ease;
   background: var(--white);
   z-index: 9999;
-  -webkit-animation: clipDown 0.6s 1.9s ease-in-out both;
-  animation: clipDown 0.6s 1.9s ease-in-out both;
+}
+
+.preloader.startAnim {
+  -webkit-animation: clipDown 0.6s ease-in-out both;
+  animation: clipDown 0.6s ease-in-out both;
 }
 
 .preloader__inner {
@@ -1773,11 +1776,15 @@ p a:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 0;
   background: var(--secondary-color);
   z-index: 1;
-  -webkit-animation: barHeight 0.5s 1.3s ease-in-out both;
-  animation: barHeight 0.5s 1.3s ease-in-out both;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+.preloader__bar.startAnim {
+  height: 100%;
 }
 
 .preloader__percent {
@@ -1804,38 +1811,18 @@ p a:hover {
   opacity: 0;
 }
 
-.preloader__logo svg.strokeAnim {
+.preloader__logo svg.startAnim {
   fill: var(--primary-color);
   stroke-width: 0;
   -webkit-transition: fill 0.3s 0.8s ease-in-out, stroke-width 0.3s 0.8s ease-in-out;
   transition: fill 0.3s 0.8s ease-in-out, stroke-width 0.3s 0.8s ease-in-out;
 }
 
-.preloader__logo svg.strokeAnim path {
+.preloader__logo svg.startAnim path {
   opacity: 1;
   stroke-dashoffset: 0 !important;
   -webkit-transition: stroke-dashoffset 0.8s ease-in-out;
   transition: stroke-dashoffset 0.8s ease-in-out;
-}
-
-@-webkit-keyframes barHeight {
-  0% {
-    height: 0;
-  }
-
-  100% {
-    height: 100%;
-  }
-}
-
-@keyframes barHeight {
-  0% {
-    height: 0;
-  }
-
-  100% {
-    height: 100%;
-  }
 }
 
 @-webkit-keyframes clipDown {
@@ -3120,8 +3107,9 @@ p a:hover {
   margin-bottom: 0;
 }
 
-.main-history.show .main-history__images {
-  display: block;
+.main-history.show .main-history__preview {
+  -webkit-animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
+  animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
 }
 
 .main-history__tabs {
@@ -3160,7 +3148,6 @@ p a:hover {
 .main-history__images {
   position: relative;
   z-index: 1;
-  display: none;
 }
 
 .main-history__preview {
@@ -3172,8 +3159,6 @@ p a:hover {
   position: absolute;
   left: 0;
   opacity: 0;
-  -webkit-animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
-  animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
 }
 
 .main-history__preview .media-cover {
@@ -6083,7 +6068,7 @@ p a:hover {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    min-height: 530px;
+    height: 530px;
   }
 
   .main-history__preview {
@@ -6378,7 +6363,7 @@ p a:hover {
   }
 
   .main-history__images {
-    min-height: 130vw;
+    height: 130vw;
   }
 
   .event-p__info .stroke-btn {
@@ -6400,7 +6385,7 @@ p a:hover {
   }
 
   .main-history__images {
-    min-height: 450px;
+    height: 480px;
   }
 }
 
