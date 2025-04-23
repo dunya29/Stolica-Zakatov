@@ -1,5 +1,4 @@
 .intro {
-	height: 100dvh;
 	position: relative;
 	.container {
 		height: 100%;
@@ -23,7 +22,8 @@
 		}
 	}
 	&__content {
-		height: 100%;
+		min-height: 100dvh;
+		padding-top: var(--main-offset);
 		padding-bottom: 60px;
 		display: flex;
 		flex-direction: column;
@@ -31,7 +31,9 @@
 		justify-content: flex-end;
 	}
 	@media (min-height: 1600px) {
-		height: 1600px;
+		&__content {
+			min-height: 1600px;
+		}
 	}
 	@media (max-width: $bp4) {
 		.stroke-btn {
@@ -44,6 +46,12 @@
 		}
 		&__content {
 			padding-bottom: 20px;
+		}
+	}
+	@media (max-width: $bp5) {
+		&__content {
+			min-height: calc(100vh - 55px);
+			padding-bottom: 200px;
 		}
 	}
 }

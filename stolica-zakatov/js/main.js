@@ -18,11 +18,89 @@ window.addEventListener("load", () => {
                 clearInterval(interval)
                 setTimeout(() => {
                     enableScroll()
-                }, 1900);
+                }, 1200);
             }
         }, 7);
     }
+    //partners
+    const partners = document.querySelector(".partners")
+    const partnersSticky = document.querySelector(".partners__sticky")
+    const partnersItems = document.querySelectorAll(".partners__item")
+    if (partnersSticky && partnersItems.length) {
+        function offsetTop() {
+            return (window.innerHeight - partnersSticky.clientHeight) / 2 > 0 ? (window.innerHeight - partnersSticky.clientHeight) / 2 : 0
+        }
+        let slideCount = partnersItems.length
+        partnersItems.forEach((item, idx) => {
+            if (idx < partnersItems.length) {
+                gsap.matchMedia().add("(min-width: 767.98px)", () => {
+                    gsap.to(item, {
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: item,
+                            pin: true,
+                            pinSpacing: false,
+                            scrub: true,
+                            start: () => "top top+=" + offsetTop(),
+                            end: () => "+=" + (item.offsetHeight * (slideCount - 2 - idx)),
+                            invalidateOnRefresh: true,
+                            anticipatePin: 1
+                        }
+                    })
+                })
+                gsap.matchMedia().add("(max-width: 767.98px)", () => {
+                    gsap.to(item, {
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: item,
+                            pin: true,
+                            pinSpacing: false,
+                            scrub: true,
+                            start: () => "top top+=" + (header.clientHeight + 10),
+                            end: () => "+=" + (item.offsetHeight * (slideCount - 1 - idx)),
+                            invalidateOnRefresh: true,
+                            anticipatePin: 1
+                        }
+                    })
+                })
+            }
+        })
+        gsap.matchMedia().add("(min-width: 767.98px)", () => {
+            gsap.to(partnersSticky, {
+                ease: "none",
+                scrollTrigger: {
+                    trigger: partnersSticky,
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                    start: () => "top top+=" + offsetTop(),
+                    end: () => "+=" + (partners.offsetHeight / slideCount * (slideCount - 2)),
+                    onEnterBack: () => header.classList.add("hidden"),
+                    onLeaveBack: () => header.classList.remove("hidden"),
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1
+                }
+            })
+        })
 
+    }
+    //history
+    const mainHistory = document.querySelector(".main-history")
+    if (mainHistory) {
+        gsap.to(mainHistory, {
+            ease: "none",
+            scrollTrigger: {
+                trigger: mainHistory,
+                start: "top center",
+                onEnter: () => {
+                    if (!mainHistory.classList.contains('show')) {
+                        mainHistory.classList.add('show')
+                    }
+                },
+                invalidateOnRefresh: true,
+            }
+        })
+    }
 })
 const header = document.querySelector(".header")
 const iconMenu = document.querySelector('.icon-menu');
@@ -823,74 +901,6 @@ if (projects && projects.querySelector('.swiper')) {
         })
     }
 }
-//partners
-const partners = document.querySelector(".partners")
-const partnersSticky = document.querySelector(".partners__sticky")
-const partnersItems = document.querySelectorAll(".partners__item")
-if (partnersSticky && partnersItems.length) {
-    function offsetTop() {
-        let top
-        if (window.innerWidth > bp.tablet) {
-            top = (window.innerHeight - partnersSticky.clientHeight) / 2 > 0 ? (window.innerHeight - partnersSticky.clientHeight) / 2 : 0
-        } else {
-            top = header.clientHeight + 10
-        }
-        return top
-    }
-    let slideCount = partnersItems.length
-    partnersItems.forEach((item, idx) => {
-        if (idx < partnersItems.length) {
-            gsap.to(item, {
-                ease: "none",
-                scrollTrigger: {
-                    trigger: item,
-                    pin: true,
-                    pinSpacing: false,
-                    scrub: true,
-                    start: () => "top top+=" + offsetTop(),
-                    end: () => "+=" + (item.offsetHeight * (slideCount - (window.innerWidth > bp.tablet ? 2 : 1) - idx)),
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1
-                }
-            })
-        }
-    })
-    gsap.matchMedia().add("(min-width: 767.98px)", () => {
-        gsap.to(partnersSticky, {
-            ease: "none",
-            scrollTrigger: {
-                trigger: partnersSticky,
-                pin: true,
-                pinSpacing: false,
-                scrub: true,
-                start: () => "top top+=" + offsetTop(),
-                end: () => "+=" + (partners.offsetHeight / slideCount * (slideCount - 2)),
-                onEnterBack: () => header.classList.add("hidden"),
-                onLeaveBack: () => header.classList.remove("hidden"),
-                invalidateOnRefresh: true,
-                anticipatePin: 1
-            }
-        })
-    })
-
-}
-//history
-const mainHistory = document.querySelector(".main-history")
-if (mainHistory) {
-    gsap.to(mainHistory, {
-        ease: "none",
-        scrollTrigger: {
-            trigger: mainHistory,
-            start: "top center",
-            onEnter: () => {
-                if (!mainHistory.classList.contains('show')) {
-                    mainHistory.classList.add('show')
-                }
-            },
-            invalidateOnRefresh: true,
-        }
-    })
-}
 //schedule
 const schedule = document.querySelector(".schedule")
 const scheduleFilter = document.querySelector(".schedule-filter")
@@ -1173,7 +1183,6 @@ if (jsMatter.length) {
         });
     })
 }
-
 // fadeUp animation
 function animate() {
     if (document.querySelectorAll('[data-animation]').length) {
