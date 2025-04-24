@@ -768,7 +768,7 @@ if (headliners) {
             draggable: true,
         },
         autoplay: {
-            delay: 5000,
+            delay: 3000,
             pauseOnMouseEnter: true,
             disableOnInteraction: false
         },
