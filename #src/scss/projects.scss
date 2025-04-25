@@ -9,12 +9,13 @@
         margin-bottom: 16px;
     }
     &__content {
+        font-family: var(--font-family-secondary);
         margin-top: auto;
         display: grid;
         grid-template-columns: 1fr auto;
         align-items: center;
         p {
-            max-width: 547px;
+            max-width: 600px;
         }
     }
     &__link {
@@ -29,6 +30,11 @@
     }
     @media (max-width: $bp1) {
         padding: 90px 32px 60px;
+        &__content {
+            p {
+                max-width: 500px;
+            }
+        }
     }
     @media (max-width: $bp3) {
         h3 {
@@ -145,7 +151,7 @@
             h3,
             .item-project__content p {
                 opacity: 1;
-                transform: translate(0)!important;
+                transform: translate(0) !important;
                 transition-duration: 1s;
             }
         }
