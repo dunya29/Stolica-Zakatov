@@ -3591,6 +3591,14 @@ p a:hover {
   margin-top: 40px;
 }
 
+.event-p .page-content p {
+  padding-left: 32px;
+}
+
+.event-p__info {
+  margin-right: 20px;
+}
+
 .event-p__info .stroke-btn {
   margin-top: 20px;
 }
@@ -6132,6 +6140,10 @@ p a:hover {
     display: none;
     width: 0;
     height: 0;
+  }
+
+  .event-p__info {
+    margin-right: 0;
   }
 
   .modal {
