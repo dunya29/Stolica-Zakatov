@@ -1184,4 +1184,85 @@ function animate() {
 
 }
 animate()
-window.addEventListener("scroll", animate)
+//map
+const map = document.querySelector(".map")
+const itemMap = document.querySelectorAll(".item-map")
+const mapModal = document.querySelector(".map-modal")
+const mapModalMob = document.querySelector(".map-modal-mobile")
+const mapBtn = document.querySelector(".map__btn")
+if (itemMap.length && mapModal) {
+    itemMap.forEach(item => {
+        item.addEventListener('click', () => {
+            console.log("jj")
+            let mainImg = item.getAttribute("data-zoom")
+            let link = item.getAttribute("data-zoom-link")
+            mapModal.querySelector(".map-modal__img").setAttribute("src", mainImg)
+            mapModal.querySelector(".map-modal__link a").setAttribute("href", link)
+            openModal(mapModal)
+        })
+    })
+}
+if (mapBtn && mapModalMob) {
+    let w, h, currW
+    mapBtn.addEventListener("click", () => {
+        let layer = map.querySelector("[data-map-layer]").getAttribute("src")
+        let layerimg = new Image()
+        layerimg.src = layer
+        layerimg.onload = function () {
+            w = layerimg.width
+            h = layerimg.height
+            currW = w / (h / window.innerHeight)
+            mapModalMob.querySelector(".map-modal-mobile__inner").style.width = currW + "px"
+            mapModalMob.querySelector(".map-modal-mobile__preview-view").style.width = window.innerWidth / currW * 100 + "%"
+        }
+        mapModalMob.querySelector(".map-modal-mobile__inner").innerHTML = map.querySelector(".map__inner").innerHTML
+        openModal(mapModalMob)
+        mapModalMob.addEventListener("click", e => {
+            const itemMap = mapModalMob.querySelectorAll(".item-map")
+            if (itemMap.length && mapModal) {
+                itemMap.forEach(item => {
+                    if (item.contains(e.target)) {
+                        let mainImg = item.getAttribute("data-zoom")
+                        let link = item.getAttribute("data-zoom-link")
+                        mapModal.querySelector(".map-modal__img").setAttribute("src", mainImg)
+                        mapModal.querySelector(".map-modal__link a").setAttribute("href", link)
+                        mapModal.classList.add("open")
+                    }
+                })
+            }
+        })
+    })
+    let startX = 0
+    let translateX = 0;
+    let previousTranslateX = 0
+    mapModalMob.querySelector(".modal__content").addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX
+    })
+    mapModalMob.querySelector(".modal__content").addEventListener("touchmove", e => {
+        translateX = previousTranslateX + e.touches[0].clientX - startX;
+        const maxTranslateX = 0;
+        const minTranslateX = window.innerWidth - currW
+        if (translateX > maxTranslateX) {
+            translateX = maxTranslateX;
+        } else if (translateX < minTranslateX) {
+            translateX = minTranslateX;
+        }
+        mapModalMob.querySelector(".map-modal-mobile__inner").style.transform = `translateX(${translateX}px)`;
+       // mapModalMob.querySelector(".map-modal-mobile__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
+    })
+    mapModalMob.querySelector(".modal__content").addEventListener('touchend', () => {
+        previousTranslateX = translateX;
+    });
+    mapModalMob.querySelector(".modal__content").addEventListener('touchcancel', () => {
+        translateX = previousTranslateX;
+        mapModalMob.querySelector(".map-modal-mobile__inner").style.transform = `translateX(${translateX}px)`;
+     //   mapModalMob.querySelector(".map-modal-mobile__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
+    });
+    window.addEventListener("resize", () => {
+        currW = w / (h / window.innerHeight)
+        mapModalMob.querySelector(".map-modal-mobile__inner").style.width = currW + "px"
+        mapModalMob.querySelector(".map-modal-mobile__preview-view").style.width = window.innerWidth / currW * 100 + "%"
+        mapModalMob.querySelector(".map-modal-mobile__inner").style.transform = `translateX(0)`;
+        mapModalMob.querySelector(".map-modal-mobile__preview-view").transform = `translateX(0)`;
+    })
+}

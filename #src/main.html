@@ -5,8 +5,8 @@
     "title": "Главная"
     })
 
-    <body class="no-scroll">
-        @@include('_preloader.html')
+    <body>
+        <!--  @@include('_preloader.html') -->
         <div class="wrap">
             @@include('_header.html', {"main": true, "banner": true})
             <!--main-->
@@ -357,6 +357,7 @@
                         </div>
                     </div>
                 </section>
+                @@include("_map.html")
                 <!--projects-->
                 <section class="section projects">
                     <div class="container">
@@ -747,7 +748,32 @@
             @@include('_footer.html', {"main": true})
             @@include('_fixed-btn.html')
             @@include('_modal.html')
-
+            <!--map-modal-mobile-->
+            <div class="custom-scroll modal map-modal-mobile" id="map-modal-mobile">
+                <div class="modal__content">
+                     <button type="button" class="btn btn-cross modal__close"></button>
+                    <div class="map-modal-mobile__inner"></div>
+                    <div class="map-modal-mobile__preview">
+                        <img src="img/map/map-preview.jpg" alt="">
+                        <div class="map-modal-mobile__preview-view"></div>
+                    </div>
+                </div>
+            </div>
+            <!--map-modal-->
+            <div class="custom-scroll modal map-modal" id="map-modal">
+                <div class="modal__content">
+                    <button type="button" class="btn btn-cross modal__close"></button>
+                   <!--  <div class="map-modal__top">
+                        <h2>Ракушка</h2>
+                    </div> -->
+                    <div class="map-modal__preview">
+                        <img class="map-modal__img" src alt>
+                    </div>
+                    <div class="map-modal__link">
+                        <a href="">Подробнее</a>
+                    </div>
+                </div>
+            </div>
         </div>
         @@include('_js.html')
     </body>
