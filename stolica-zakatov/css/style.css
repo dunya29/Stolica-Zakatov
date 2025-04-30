@@ -7117,6 +7117,10 @@ p a:hover {
     margin-top: 0;
   }
 
+  .map__btn {
+    max-width: 100%;
+  }
+
   .modal .main-btn--link {
     width: 100%;
   }

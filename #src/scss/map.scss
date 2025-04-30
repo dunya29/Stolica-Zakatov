@@ -110,6 +110,11 @@
             margin: 30px auto 0;
         }
     }
+    @media (max-width: $bp6) {
+        &__btn {
+            max-width: 100%;
+        }
+    }
 }
 .item-map {
     position: absolute;
