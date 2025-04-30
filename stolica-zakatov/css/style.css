@@ -3886,8 +3886,39 @@ p a:hover {
   clip-path: polygon(0 0, 50% 50%, 100% 100%, 0% 100%);
 }
 
-.item-map__zoom {
+.item-map__zoom,
+.item-map__finger {
   display: none;
+}
+
+.item-map__finger svg {
+  fill: #fff;
+  stroke: var(--secondary-color);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.item-map__finger svg .tap-1 {
+  fill: transparent;
+  stroke: var(--secondary-color);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: tap-circle 1.25s ease-out backwards;
+  animation: tap-circle 1.25s ease-out backwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.item-map__finger svg .hand-tap {
+  -webkit-animation: tap 1.25s ease-out backwards;
+  animation: tap 1.25s ease-out backwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes clouds {
@@ -3907,6 +3938,80 @@ p a:hover {
 
   100% {
     background-position: 2000px center;
+  }
+}
+
+@-webkit-keyframes tap {
+  0% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+
+  10% {
+    -webkit-transform: rotateX(12.5deg);
+    transform: rotateX(12.5deg);
+  }
+
+  25% {
+    -webkit-transform: rotateX(25deg);
+    transform: rotateX(25deg);
+  }
+}
+
+@keyframes tap {
+  0% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+
+  10% {
+    -webkit-transform: rotateX(12.5deg);
+    transform: rotateX(12.5deg);
+  }
+
+  25% {
+    -webkit-transform: rotateX(25deg);
+    transform: rotateX(25deg);
+  }
+}
+
+@-webkit-keyframes tap-circle {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  75% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0.6;
+  }
+
+  80% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes tap-circle {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  75% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0.6;
+  }
+
+  80% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.5;
   }
 }
 
@@ -6694,7 +6799,7 @@ p a:hover {
   }
 
   .map .item-map__info,
-  .map .item-map:after {
+  .map .item-map__finger {
     display: none;
   }
 
@@ -6718,19 +6823,7 @@ p a:hover {
     margin: 30px auto 0;
   }
 
-  .item-map:after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 40px;
-    background: url(../img/svg/map-finger.svg) center/contain no-repeat;
-    position: absolute;
-    bottom: 12px;
-    right: 16px;
-    z-index: 1;
-  }
-
-  .item-map:nth-child(2):after {
+  .item-map:nth-child(2) .item-map__finger {
     bottom: -10px;
     right: -10px;
   }
@@ -6740,7 +6833,7 @@ p a:hover {
     left: 30%;
   }
 
-  .item-map:nth-child(3):after {
+  .item-map:nth-child(3) .item-map__finger {
     bottom: 24px;
     right: 24px;
   }
@@ -6753,7 +6846,7 @@ p a:hover {
     left: 75%;
   }
 
-  .item-map:nth-child(4):after {
+  .item-map:nth-child(4) .item-map__finger {
     right: -10px;
   }
 
@@ -6762,7 +6855,7 @@ p a:hover {
     max-width: 206px;
   }
 
-  .item-map:nth-child(6):after {
+  .item-map:nth-child(6) .item-map__finger {
     bottom: -20px;
   }
 
@@ -6770,12 +6863,12 @@ p a:hover {
     left: 37%;
   }
 
-  .item-map:nth-child(7):after {
+  .item-map:nth-child(7) .item-map__finger {
     right: 5px;
     bottom: 5px;
   }
 
-  .item-map:nth-child(8):after {
+  .item-map:nth-child(8) .item-map__finger {
     bottom: 36px;
     right: 30px;
   }
@@ -6800,6 +6893,16 @@ p a:hover {
   .item-map__info {
     visibility: visible;
     opacity: 1;
+  }
+
+  .item-map__finger {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    z-index: 1;
   }
 
   .modal {

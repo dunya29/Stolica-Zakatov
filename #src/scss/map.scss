@@ -89,7 +89,8 @@
         }
     }
     @media (max-width: $bp5) {
-        .item-map__info, .item-map:after {
+        .item-map__info,
+        .item-map__finger {
             display: none;
         }
         .map__clouds {
@@ -219,8 +220,32 @@
             clip-path: polygon(0 0, 50% 50%, 100% 100%, 0% 100%);
         }
     }
-    &__zoom {
+    &__zoom,
+    &__finger {
         display: none;
+    }
+    &__finger {
+        svg {
+            fill: #fff;
+            stroke: var(--secondary-color);
+            stroke-width: 3px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            .tap-1 {
+                fill: transparent;
+                stroke: var(--secondary-color);
+                stroke-width: 3px;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                transform-origin: center;
+                animation: tap-circle 1.25s ease-out backwards;
+                animation-iteration-count: infinite;
+            }
+            .hand-tap {
+                animation: tap 1.25s ease-out backwards;
+                animation-iteration-count: infinite;
+            }
+        }
     }
     @media (min-width: $bp5) {
         &:hover {
@@ -250,21 +275,10 @@
         }
     }
     @media (max-width: $bp5) {
-        &:after {
-            content: "";
-            display: block;
-            width: 40px;
-            height: 40px;
-            background: url(../img/svg/map-finger.svg) center/contain no-repeat;
-            position: absolute;
-            bottom: 12px;
-            right: 16px;
-            z-index: 1;
-        }
         &:nth-child(2) {
-            &:after {
+            .item-map__finger {
                 bottom: -10px;
-                right:-10px;
+                right: -10px;
             }
             .item-map__info {
                 top: 30%;
@@ -272,7 +286,7 @@
             }
         }
         &:nth-child(3) {
-            &:after {
+            .item-map__finger {
                 bottom: 24px;
                 right: 24px;
             }
@@ -284,7 +298,7 @@
             }
         }
         &:nth-child(4) {
-            &:after {
+            .item-map__finger {
                 right: -10px;
             }
             .item-map__info {
@@ -293,7 +307,7 @@
             }
         }
         &:nth-child(6) {
-            &:after {
+            .item-map__finger {
                 bottom: -20px;
             }
             .item-map__info {
@@ -301,13 +315,13 @@
             }
         }
         &:nth-child(7) {
-            &:after {
+            .item-map__finger {
                 right: 5px;
                 bottom: 5px;
             }
         }
         &:nth-child(8) {
-            &:after {
+            .item-map__finger {
                 bottom: 36px;
                 right: 30px;
             }
@@ -327,6 +341,15 @@
             visibility: visible;
             opacity: 1;
         }
+        &__finger {
+            display: block;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: 12px;
+            right: 16px;
+            z-index: 1;
+        }
     }
 }
 
@@ -337,4 +360,29 @@
     100% {
         background-position: 2000px center;
     }
+}
+@keyframes tap {
+	0% {
+		transform: rotateX(0deg);
+	}
+	10% {
+		transform: rotateX(12.5deg);
+	}
+	25% {
+		transform: rotateX(25deg);
+	}
+}
+@keyframes tap-circle {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	75% {
+		transform: scale(1.05);
+		opacity: .6;
+	}
+	80% {
+		transform: scale(1);
+		opacity: .5;
+	}
 }
