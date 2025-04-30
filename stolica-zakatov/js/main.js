@@ -1194,6 +1194,20 @@ const mapModal = document.querySelector(".map-modal")
 const mapModalMob = document.querySelector(".mapMobile-modal")
 const mapBtn = document.querySelector(".map__btn")
 function setMap(item) {
+    if (item.querySelector("[data-src]")) {
+        item.querySelectorAll("[data-src]").forEach(item => {
+            let src = item.getAttribute("data-src")
+            item.setAttribute("src", src)
+            item.removeAttribute("data-src")
+        })
+    }
+    if (item.querySelector("[data-srcset]")) {
+        item.querySelectorAll("[data-srcset]").forEach(item => {
+            let srcset = item.getAttribute("data-srcset")
+            item.setAttribute("srcset", srcset)
+            item.removeAttribute("data-srcset")
+        })
+    } 
     let preview = item.querySelector("[data-zoom]") ? item.querySelector("[data-zoom]").innerHTML : ''
     let link = item.getAttribute("data-link") || ''
     let direction = item.querySelector("[data-direction]") ? item.querySelector("[data-direction]").textContent : ''
@@ -1210,7 +1224,7 @@ function setMap(item) {
     if (mapModal.querySelector(".map-modal__title")) {
         mapModal.querySelector(".map-modal__title").textContent = title
     }
-    if (mapModal.querySelector("[data-src]")) {
+   /*  if (mapModal.querySelector("[data-src]")) {
         mapModal.querySelectorAll("[data-src]").forEach(item => {
             let src = item.getAttribute("data-src")
             item.setAttribute("src", src)
@@ -1223,7 +1237,7 @@ function setMap(item) {
             item.setAttribute("srcset", srcset)
             item.removeAttribute("data-srcset")
         })
-    }
+    }  */
     mapModal.querySelector(".modal__content").style.transformOrigin = `${item.getBoundingClientRect().left}px ${item.getBoundingClientRect().top}px`
 }
 if (map) {

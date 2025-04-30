@@ -2047,10 +2047,6 @@ p a:hover {
   justify-content: flex-end;
 }
 
-.headliners {
-  will-change: transform;
-}
-
 .headliners .swiper-scrollbar {
   width: 100%;
   max-width: 900px;
@@ -4252,7 +4248,7 @@ p a:hover {
 }
 
 .no-webp .map-modal {
-  background: url(../img/map/map.jpg) center/cover no-repeat;
+  background: url(../img/map/map-preview.jpg) center/cover no-repeat;
 }
 
 .map-modal {
@@ -4322,8 +4318,7 @@ p a:hover {
 }
 
 .map-modal__direction,
-.map-modal__title,
-.map-modal__bottom {
+.map-modal__title {
   -webkit-transform: translateY(20px);
   -ms-transform: translateY(20px);
   transform: translateY(20px);
@@ -4418,7 +4413,7 @@ p a:hover {
 }
 
 .no-webp .mapMobile-modal__preview-view {
-  background-image: url(../img/map/map.jpg);
+  background-image: url(../img/map/map-preview.jpg);
 }
 
 .mapMobile-modal__preview-view {
@@ -4598,11 +4593,11 @@ p a:hover {
 }
 
 .map-modal {
-  background: url(../img/map/map.webp) center/cover no-repeat;
+  background: url(../img/map/map-preview.webp) center/cover no-repeat;
 }
 
 .mapMobile-modal__preview-view {
-  background-image: url(../img/map/map.webp);
+  background-image: url(../img/map/map-preview.webp);
 }
 
 .footer__inner {

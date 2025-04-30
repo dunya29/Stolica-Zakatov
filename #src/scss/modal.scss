@@ -291,7 +291,7 @@
 }
 .map-modal {
     padding: 40px var(--container-offset);
-    background: url(../img/map/map.jpg) center /cover no-repeat;
+    background: url(../img/map/map-preview.jpg) center /cover no-repeat;
     &::before {
         content: "";
         width: 100%;
@@ -336,8 +336,7 @@
         transition: all 0s ease-out;
     }
     &__direction,
-    &__title,
-    &__bottom {
+    &__title{
         transform: translateY(20px);
     }
     &__top {
@@ -444,7 +443,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url(../img/map/map.jpg);
+        background-image: url(../img/map/map-preview.jpg);
         background-size: 140px 100%;
         z-index: 1;
         will-change: transform;
