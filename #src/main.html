@@ -5,8 +5,8 @@
     "title": "Главная"
     })
 
-    <body>
-        <!--  @@include('_preloader.html') -->
+    <body class="no-scroll">
+        @@include('_preloader.html')
         <div class="wrap">
             @@include('_header.html', {"main": true, "banner": true})
             <!--main-->
@@ -748,29 +748,30 @@
             @@include('_footer.html', {"main": true})
             @@include('_fixed-btn.html')
             @@include('_modal.html')
-            <!--map-modal-mobile-->
-            <div class="custom-scroll modal map-modal-mobile" id="map-modal-mobile">
+            <!--mapMobile-modal-->
+            <div class="modal mapMobile-modal" id="mapMobile-modal">
                 <div class="modal__content">
-                     <button type="button" class="btn btn-cross modal__close"></button>
-                    <div class="map-modal-mobile__inner"></div>
-                    <div class="map-modal-mobile__preview">
-                        <img src="img/map/map-preview.jpg" alt="">
-                        <div class="map-modal-mobile__preview-view"></div>
+                    <button type="button" class="btn btn-cross modal__close"></button>
+                    <div class="mapMobile-modal__inner"></div>
+                    <div class="mapMobile-modal__preview">
+                        <img src="img/map/map.jpg" alt>
+                        <div class="mapMobile-modal__preview-view"></div>
                     </div>
                 </div>
             </div>
             <!--map-modal-->
-            <div class="custom-scroll modal map-modal" id="map-modal">
+            <div class="modal map-modal" id="map-modal">
                 <div class="modal__content">
                     <button type="button" class="btn btn-cross modal__close"></button>
-                   <!--  <div class="map-modal__top">
-                        <h2>Ракушка</h2>
-                    </div> -->
-                    <div class="map-modal__preview">
-                        <img class="map-modal__img" src alt>
+                    <div class="map-modal__top">
+                        <h2 class="h1 map-modal__direction"></h2>
+                        <h4 class="map-modal__title"></h4>
                     </div>
-                    <div class="map-modal__link">
-                        <a href="">Подробнее</a>
+                    <div class="map-modal__preview"></div>
+                    <div class="map-modal__bottom">
+                        <a href class="btn stroke-btn stroke-btn--secondary stroke-btn--link map-modal__link">
+                            <span>Перейти к расписанию</span>
+                        </a>
                     </div>
                 </div>
             </div>

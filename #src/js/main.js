@@ -694,6 +694,7 @@ const fixedBtn = document.querySelector(".fixed-btn")
 function fixedBtnVisibility() {
     if (scrollPos() > window.innerHeight && scrollPos() + window.innerHeight + 150 < document.body.scrollHeight) {
         fixedBtn.classList.add("show")
+        fixedBtn.style.marginRight = (document.documentElement.clientWidth - window.innerWidth) / 2 + 'px'
     } else {
         fixedBtn.classList.remove("show")
     }
@@ -918,8 +919,9 @@ if (schedule) {
             filterSelected.querySelectorAll("li").forEach(item => {
                 if (item.querySelector(".btn-cross").contains(e.target)) {
                     let dataTarget = item.getAttribute("data-target")
-                    this.uncheckInp(scheduleFilter.querySelector(`label input[data-id='${dataTarget}']`))
-                    item.remove()
+                   // this.uncheckInp(scheduleFilter.querySelector(`label input[data-id='${dataTarget}']`))
+                    scheduleFilter.querySelector(`label input[data-id='${dataTarget}']`).click()
+                   // item.remove()
                 }
             })
         }
@@ -1184,22 +1186,70 @@ function animate() {
 
 }
 animate()
+window.addEventListener("scroll",animate)
 //map
 const map = document.querySelector(".map")
 const itemMap = document.querySelectorAll(".item-map")
 const mapModal = document.querySelector(".map-modal")
-const mapModalMob = document.querySelector(".map-modal-mobile")
+const mapModalMob = document.querySelector(".mapMobile-modal")
 const mapBtn = document.querySelector(".map__btn")
-if (itemMap.length && mapModal) {
-    itemMap.forEach(item => {
-        item.addEventListener('click', () => {
-            console.log("jj")
-            let mainImg = item.getAttribute("data-zoom")
-            let link = item.getAttribute("data-zoom-link")
-            mapModal.querySelector(".map-modal__img").setAttribute("src", mainImg)
-            mapModal.querySelector(".map-modal__link a").setAttribute("href", link)
-            openModal(mapModal)
+function setMap(item) {
+    let preview = item.querySelector("[data-zoom]") ? item.querySelector("[data-zoom]").innerHTML : ''
+    let link = item.getAttribute("data-link") || ''
+    let direction = item.querySelector("[data-direction]") ? item.querySelector("[data-direction]").textContent : ''
+    let title = item.querySelector("[data-title]") ? item.querySelector("[data-title]").textContent : ''
+    if (mapModal.querySelector(".map-modal__preview")) {
+        mapModal.querySelector(".map-modal__preview").innerHTML = preview
+    }
+    if (mapModal.querySelector(".map-modal__link")) {
+        mapModal.querySelector(".map-modal__link").setAttribute("href", link)
+    }
+    if (mapModal.querySelector(".map-modal__direction")) {
+        mapModal.querySelector(".map-modal__direction").textContent = direction
+    }
+    if (mapModal.querySelector(".map-modal__title")) {
+        mapModal.querySelector(".map-modal__title").textContent = title
+    }
+    if (mapModal.querySelector("[data-src]")) {
+        mapModal.querySelectorAll("[data-src]").forEach(item => {
+            let src = item.getAttribute("data-src")
+            item.setAttribute("src", src)
+            item.removeAttribute("data-src")
         })
+    }
+    if (mapModal.querySelector("[data-srcset]")) {
+        mapModal.querySelectorAll("[data-srcset]").forEach(item => {
+            let srcset = item.getAttribute("data-srcset")
+            item.setAttribute("srcset", srcset)
+            item.removeAttribute("data-srcset")
+        })
+    }
+    mapModal.querySelector(".modal__content").style.transformOrigin = `${item.getBoundingClientRect().left}px ${item.getBoundingClientRect().top}px`
+}
+if (map) {
+    map.addEventListener("click", e => {
+        if (map.querySelectorAll(".item-map").length) {
+            map.querySelectorAll(".item-map").forEach(item => {
+                if (item.contains(e.target)) {
+                    setMap(item)
+                    openModal(mapModal)
+                    header.classList.add('unshow')
+                }
+            })
+        }
+
+    })
+}
+if (mapModal && mapModalMob) {
+    mapModalMob.addEventListener("click", e => {
+        if (mapModalMob.querySelectorAll(".item-map").length) {
+            mapModalMob.querySelectorAll(".item-map").forEach(item => {
+                if (item.contains(e.target)) {
+                    setMap(item)
+                    mapModal.classList.add("open")
+                }
+            })
+        }
     })
 }
 if (mapBtn && mapModalMob) {
@@ -1212,25 +1262,11 @@ if (mapBtn && mapModalMob) {
             w = layerimg.width
             h = layerimg.height
             currW = w / (h / window.innerHeight)
-            mapModalMob.querySelector(".map-modal-mobile__inner").style.width = currW + "px"
-            mapModalMob.querySelector(".map-modal-mobile__preview-view").style.width = window.innerWidth / currW * 100 + "%"
+            mapModalMob.querySelector(".mapMobile-modal__inner").style.width = currW + "px"
+            mapModalMob.querySelector(".mapMobile-modal__preview-view").style.width = window.innerWidth / currW * 100 + "%"
         }
-        mapModalMob.querySelector(".map-modal-mobile__inner").innerHTML = map.querySelector(".map__inner").innerHTML
+        mapModalMob.querySelector(".mapMobile-modal__inner").innerHTML = map.querySelector(".map__inner").innerHTML
         openModal(mapModalMob)
-        mapModalMob.addEventListener("click", e => {
-            const itemMap = mapModalMob.querySelectorAll(".item-map")
-            if (itemMap.length && mapModal) {
-                itemMap.forEach(item => {
-                    if (item.contains(e.target)) {
-                        let mainImg = item.getAttribute("data-zoom")
-                        let link = item.getAttribute("data-zoom-link")
-                        mapModal.querySelector(".map-modal__img").setAttribute("src", mainImg)
-                        mapModal.querySelector(".map-modal__link a").setAttribute("href", link)
-                        mapModal.classList.add("open")
-                    }
-                })
-            }
-        })
     })
     let startX = 0
     let translateX = 0;
@@ -1247,22 +1283,31 @@ if (mapBtn && mapModalMob) {
         } else if (translateX < minTranslateX) {
             translateX = minTranslateX;
         }
-        mapModalMob.querySelector(".map-modal-mobile__inner").style.transform = `translateX(${translateX}px)`;
-       // mapModalMob.querySelector(".map-modal-mobile__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
+        mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = `translateX(${translateX}px)`;
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left ${mapModalMob.querySelector(".mapMobile-modal__preview-view").clientWidth * translateX / window.innerWidth}px center`;
     })
     mapModalMob.querySelector(".modal__content").addEventListener('touchend', () => {
         previousTranslateX = translateX;
     });
     mapModalMob.querySelector(".modal__content").addEventListener('touchcancel', () => {
         translateX = previousTranslateX;
-        mapModalMob.querySelector(".map-modal-mobile__inner").style.transform = `translateX(${translateX}px)`;
-     //   mapModalMob.querySelector(".map-modal-mobile__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
+        mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = `translateX(${translateX}px)`;
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left ${mapModalMob.querySelector(".mapMobile-modal__preview-view").clientWidth * translateX / window.innerWidth}px center`;
     });
     window.addEventListener("resize", () => {
         currW = w / (h / window.innerHeight)
-        mapModalMob.querySelector(".map-modal-mobile__inner").style.width = currW + "px"
-        mapModalMob.querySelector(".map-modal-mobile__preview-view").style.width = window.innerWidth / currW * 100 + "%"
-        mapModalMob.querySelector(".map-modal-mobile__inner").style.transform = `translateX(0)`;
-        mapModalMob.querySelector(".map-modal-mobile__preview-view").transform = `translateX(0)`;
+        startX = 0
+        translateX = 0;
+        previousTranslateX = 0
+        mapModalMob.querySelector(".mapMobile-modal__inner").style.width = currW + "px"
+        mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = `translateX(0)`;
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.width = window.innerWidth / currW * 100 + "%"
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(0)`;
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left 0px center`;
+        if (window.innerWidth > bp.tablet && mapModalMob.classList.contains("open")) {
+            closeModal(mapModalMob)
+        }
     })
 }

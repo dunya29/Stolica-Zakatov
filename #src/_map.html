@@ -3,7 +3,7 @@
     <div class="map__inner">
         <div class="map__layers">
             <div class="map__layers-item">
-                <img data-map-layer="" src="img/map/map-layer-2.png" alt>
+                <img data-map-layer src="img/map/map-layer-2.png" alt>
             </div>
         </div>
         <div class="map__clouds">
@@ -13,14 +13,14 @@
         <!--  <img src="img/map/map.png" alt="" style="position: absolute;top: 0;left: 0;">
          -->
         <div class="map__items">
-            @@include("_item-map.html", {"nmb": 1, "txt": "сквер Свердлова"})
-            @@include("_item-map.html", {"nmb": 2, "txt": "Губернаторский сад"})
-            @@include("_item-map.html", {"nmb": 3, "txt": "наб. Федоровского"})
-            @@include("_item-map.html", {"nmb": 4, "txt": "Нижне-Волжская набережная"})
-            @@include("_item-map.html", {"nmb": 5, "txt": "Стрелка"})
-            @@include("_item-map.html", {"nmb": 6, "txt": "Александровский сад, сцена «Ракушка»"})
-            @@include("_item-map.html", {"nmb": 7, "txt": "Катер «Герой»"})
-            @@include("_item-map.html", {"nmb": 8, "txt": "ул. Рождественская"})
+            @@include("_item-map.html", {"nmb": 1, "direction": "Соло на закате", "title": "сквер Свердлова"})
+            @@include("_item-map.html", {"nmb": 2, "direction": "Соло на закате", "title": "Губернаторский сад"})
+            @@include("_item-map.html", {"nmb": 3, "direction": "Соло на закате", "title": "наб. Федоровского"})
+            @@include("_item-map.html", {"nmb": 4, "direction": "Соло на закате", "title": "Нижне-Волжская набережная"})
+            @@include("_item-map.html", {"nmb": 5, "direction": "Соло на закате", "title": "Стрелка"})
+            @@include("_item-map.html", {"nmb": 6, "direction": "«Ракушка»", "title": "Александровский сад, сцена «Ракушка»"})
+            @@include("_item-map.html", {"nmb": 7, "direction": "Соло на закате", "title": "Катер «Герой»"})
+            @@include("_item-map.html", {"nmb": 8, "direction": "Гастро рождественская", "title": "ул. Рождественская"})
         </div>
         <div class="map__ships">
             <div class="map__ships-item">
@@ -31,7 +31,9 @@
             </div>
         </div>
     </div>
-    <button class="btn stroke-btn stroke-btn--link map__btn">
-        <span>открыть карту</span>
-    </button>
+    <div class="container">
+        <button class="btn stroke-btn stroke-btn--link map__btn">
+            <span>открыть карту</span>
+        </button>
+    </div>
 </section>

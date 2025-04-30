@@ -1,5 +1,5 @@
 <!--item-map-->
-<div class="item-map" data-zoom="img/map/map-@@nmb-zoom.png" data-zoom-link="#" data-zoom-lottie>
+<div class="item-map" data-link="#">
     <img src="img/map/map-@@nmb.png" alt>
     <div class="item-map__lottie">
         <img src="img/map/map-@@nmb-lottie.svg" alt>
@@ -8,9 +8,14 @@
         <img src="img/map/map-@@nmb-hover.svg" alt>
     </div>
     <div class="item-map__info">
-        <h5>@@txt</h5>
-        <div class="item-map__info-icon">
-            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
-        </div>
+        <h5 data-direction>@@direction</h5>
+        <h6 data-title>@@title</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom="">
+        <picture>
+            <source data-srcset="img/map/map-@@nmb-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-@@nmb-zoom.png" alt="">
+        </picture>
+        <div class="map-modal__lottie"></div>
     </div>
 </div>
