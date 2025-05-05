@@ -284,6 +284,12 @@ function closeModal(modal) {
     if (modal.querySelector("video")) {
         modal.querySelectorAll("video").forEach(item => item.pause())
     }
+    const viewportMeta = document.querySelector('meta[name="viewport"]');
+    const originalContent = viewportMeta.content;
+    viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    setTimeout(() => {
+        viewportMeta.content = originalContent;
+    }, 100);
     modal.classList.remove("open")
     setTimeout(() => {
         enableScroll()
@@ -1243,18 +1249,6 @@ if (map) {
 
     })
 }
-if (mapModal && mapModalMob) {
-    mapModalMob.addEventListener("click", e => {
-        if (mapModalMob.querySelectorAll(".item-map").length) {
-            mapModalMob.querySelectorAll(".item-map").forEach(item => {
-                if (item.contains(e.target)) {
-                    setMap(item)
-                    mapModal.classList.add("open")
-                }
-            })
-        }
-    })
-}
 if (mapBtn && mapModalMob) {
     let w, h, currW, startX, translateX, previousTranslateX
     mapBtn.addEventListener("click", () => {
@@ -1277,7 +1271,7 @@ if (mapBtn && mapModalMob) {
         mapModalMob.querySelector(".mapMobile-modal__inner").innerHTML = map.querySelector(".map__inner").innerHTML
         setTimeout(() => {
             openModal(mapModalMob)
-        }, 0);      
+        }, 0);
     })
     mapModalMob.querySelector(".modal__content").addEventListener("touchstart", e => {
         startX = e.touches[0].clientX
@@ -1316,6 +1310,18 @@ if (mapBtn && mapModalMob) {
         mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left 0px center`;
         if (window.innerWidth > bp.tablet && mapModalMob.classList.contains("open")) {
             closeModal(mapModalMob)
+        }
+    })
+}
+if (mapModal && mapModalMob) {
+    mapModalMob.addEventListener("click", e => {
+        if (mapModalMob.querySelectorAll(".item-map").length) {
+            mapModalMob.querySelectorAll(".item-map").forEach(item => {
+                if (item.contains(e.target)) {
+                    setMap(item)
+                    mapModal.classList.add("open")
+                }
+            })
         }
     })
 }
