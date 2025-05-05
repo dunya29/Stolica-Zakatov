@@ -1261,6 +1261,9 @@ if (mapBtn && mapModalMob) {
         startX = 0
         translateX = 0;
         previousTranslateX = 0
+        mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = 'translateX(0px)';
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = 'translateX(0px)';
+        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = 'left 0px center';
         let layer = map.querySelector("[data-map-layer]").getAttribute("src")
         let layerimg = new Image()
         layerimg.src = layer
@@ -1272,7 +1275,9 @@ if (mapBtn && mapModalMob) {
             mapModalMob.querySelector(".mapMobile-modal__preview-view").style.width = window.innerWidth / currW * 100 + "%"
         }
         mapModalMob.querySelector(".mapMobile-modal__inner").innerHTML = map.querySelector(".map__inner").innerHTML
-        openModal(mapModalMob)
+        setTimeout(() => {
+            openModal(mapModalMob)
+        }, 0);      
     })
     mapModalMob.querySelector(".modal__content").addEventListener("touchstart", e => {
         startX = e.touches[0].clientX
