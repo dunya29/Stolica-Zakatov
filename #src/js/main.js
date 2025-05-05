@@ -285,10 +285,9 @@ function closeModal(modal) {
         modal.querySelectorAll("video").forEach(item => item.pause())
     }
     const viewportMeta = document.querySelector('meta[name="viewport"]');
-    const originalContent = viewportMeta.content;
     viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
     setTimeout(() => {
-        viewportMeta.content = originalContent;
+        viewportMeta.content = "width=device-width, initial-scale=1";
     }, 100);
     modal.classList.remove("open")
     setTimeout(() => {
@@ -1252,12 +1251,14 @@ if (map) {
 if (mapBtn && mapModalMob) {
     let w, h, currW, startX, translateX, previousTranslateX
     mapBtn.addEventListener("click", () => {
+        mapBtn.classList.add("loading")
         startX = 0
         translateX = 0;
         previousTranslateX = 0
         mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = 'translateX(0px)';
         mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = 'translateX(0px)';
         mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = 'left 0px center';
+        mapModalMob.querySelector(".mapMobile-modal__inner").innerHTML = map.querySelector(".map__inner").innerHTML
         let layer = map.querySelector("[data-map-layer]").getAttribute("src")
         let layerimg = new Image()
         layerimg.src = layer
@@ -1267,11 +1268,9 @@ if (mapBtn && mapModalMob) {
             currW = w / (h / window.innerHeight)
             mapModalMob.querySelector(".mapMobile-modal__inner").style.width = currW + "px"
             mapModalMob.querySelector(".mapMobile-modal__preview-view").style.width = window.innerWidth / currW * 100 + "%"
-        }
-        mapModalMob.querySelector(".mapMobile-modal__inner").innerHTML = map.querySelector(".map__inner").innerHTML
-        setTimeout(() => {
             openModal(mapModalMob)
-        }, 0);
+            mapBtn.classList.remove("loading")
+        }
     })
     mapModalMob.querySelector(".modal__content").addEventListener("touchstart", e => {
         startX = e.touches[0].clientX

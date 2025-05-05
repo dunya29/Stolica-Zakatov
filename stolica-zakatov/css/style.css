@@ -749,6 +749,26 @@ p a:hover {
   pointer-events: none;
 }
 
+.main-btn.loading span,
+.stroke-btn.loading span {
+  opacity: 0;
+}
+
+.main-btn.loading:after,
+.stroke-btn.loading:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  -webkit-mask: url(../img/svg/loading.svg) center/50px 50px no-repeat;
+  mask: url(../img/svg/loading.svg) center/50px 50px no-repeat;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .main-btn--link:after,
 .stroke-btn--link:after {
   content: "";
@@ -777,6 +797,12 @@ p a:hover {
   transition: all 0.3s linear;
 }
 
+.main-btn span,
+.stroke-btn span {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
 .main-btn {
   color: var(--white);
   border: 2px solid transparent;
@@ -785,6 +811,10 @@ p a:hover {
 
 .main-btn svg {
   fill: var(--white);
+}
+
+.main-btn.loading:after {
+  background: var(--white);
 }
 
 .main-btn--link:after {
@@ -813,6 +843,10 @@ p a:hover {
   background: var(--primary-color);
 }
 
+.stroke-btn.loading:after {
+  background: var(--primary-color);
+}
+
 .stroke-btn:hover,
 .stroke-btn:active {
   color: var(--white);
@@ -821,6 +855,11 @@ p a:hover {
 .stroke-btn:hover svg,
 .stroke-btn:active svg {
   fill: var(--white);
+}
+
+.stroke-btn:hover.loading:after,
+.stroke-btn:active.loading:after {
+  background: var(--white);
 }
 
 .stroke-btn--link:after {
@@ -839,6 +878,10 @@ p a:hover {
 
 .stroke-btn--secondary svg {
   fill: var(--secondary-color);
+}
+
+.stroke-btn--secondary.loading:after {
+  background: var(--secondary-color);
 }
 
 .stroke-btn--secondary:before,
@@ -4368,9 +4411,12 @@ p a:hover {
   right: 0;
 }
 
+.no-webp .mapMobile-modal {
+  background: url(../img/map/map-layer-1.png) center/cover no-repeat;
+}
+
 .mapMobile-modal {
   padding: 0;
-  background: rgb(44, 168, 199);
 }
 
 .mapMobile-modal .modal__content {
@@ -4607,6 +4653,10 @@ p a:hover {
 
 .map-modal {
   background: url(../img/map/map-preview.webp) center/cover no-repeat;
+}
+
+.mapMobile-modal {
+  background: url(../img/map/map-layer-1.webp) center/cover no-repeat;
 }
 
 .mapMobile-modal__preview-view {

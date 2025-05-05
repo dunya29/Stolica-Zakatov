@@ -291,7 +291,7 @@
 }
 .map-modal {
     padding: 40px var(--container-offset);
-    background: url(../img/map/map-preview.jpg) center /cover no-repeat;
+    background: url(../img/map/map-preview.jpg) center / cover no-repeat;
     &::before {
         content: "";
         width: 100%;
@@ -301,13 +301,16 @@
         left: 0;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
-        transition: all .3s linear;
-    } 
+        transition: all 0.3s linear;
+    }
     &.open {
         .modal__content {
             transform: scale(1);
-            transform-origin: center!important;
-            transition: transform .3s .1s ease-out, visibility .3s .1s ease-out,  opacity .3s .1s ease-out;
+            transform-origin: center !important;
+            transition:
+                transform 0.3s 0.1s ease-out,
+                visibility 0.3s 0.1s ease-out,
+                opacity 0.3s 0.1s ease-out;
         }
         .btn-cross.modal__close,
         .map-modal__top,
@@ -336,7 +339,7 @@
         transition: all 0s ease-out;
     }
     &__direction,
-    &__title{
+    &__title {
         transform: translateY(20px);
     }
     &__top {
@@ -397,7 +400,7 @@
 }
 .mapMobile-modal {
     padding: 0;
-    background: rgb(44, 168, 199);
+    background: url(../img/map/map-layer-1.png) center/cover no-repeat;
     .modal__content {
         max-width: 100%;
         touch-action: pan-x;
