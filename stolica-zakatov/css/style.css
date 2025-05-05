@@ -4305,6 +4305,7 @@ p a:hover {
 
 .map-modal {
   padding: 40px var(--container-offset);
+  z-index: 10001;
 }
 
 .map-modal::before {
@@ -6897,7 +6898,7 @@ p a:hover {
   }
 
   .item-map:nth-child(3) .item-map__info {
-    left: -60%;
+    left: -50%;
   }
 
   .item-map:nth-child(3) .item-map__info:after {

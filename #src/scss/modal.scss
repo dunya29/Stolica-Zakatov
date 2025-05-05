@@ -292,6 +292,7 @@
 .map-modal {
     padding: 40px var(--container-offset);
     background: url(../img/map/map-preview.jpg) center / cover no-repeat;
+    z-index: 10001;
     &::before {
         content: "";
         width: 100%;

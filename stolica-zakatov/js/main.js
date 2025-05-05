@@ -824,7 +824,7 @@ if (about) {
             draggable: true,
         },
         autoplay: {
-            delay: 5000,
+            delay: 3500,
             pauseOnMouseEnter: true,
             disableOnInteraction: false
         },
@@ -1196,6 +1196,14 @@ function animate() {
 animate()
 window.addEventListener("scroll", animate)
 //map
+function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), delay);
+    };
+}
 const map = document.querySelector(".map")
 const itemMap = document.querySelectorAll(".item-map")
 const mapModal = document.querySelector(".map-modal")
@@ -1234,7 +1242,7 @@ function setMap(item) {
     }
     mapModal.querySelector(".modal__content").style.transformOrigin = `${item.getBoundingClientRect().left}px ${item.getBoundingClientRect().top}px`
 }
-if (map) {
+if (map && mapModal) {
     map.addEventListener("click", e => {
         if (map.querySelectorAll(".item-map").length) {
             map.querySelectorAll(".item-map").forEach(item => {
@@ -1248,7 +1256,7 @@ if (map) {
 
     })
 }
-if (mapBtn && mapModalMob) {
+if (mapBtn && mapModal && mapModalMob) {
     let w, h, currW, startX, translateX, previousTranslateX
     mapBtn.addEventListener("click", () => {
         mapBtn.classList.add("loading")
@@ -1297,22 +1305,6 @@ if (mapBtn && mapModalMob) {
         mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
         mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left ${mapModalMob.querySelector(".mapMobile-modal__preview-view").clientWidth * translateX / window.innerWidth}px center`;
     });
-    window.addEventListener("resize", () => {
-        currW = w / (h / window.innerHeight)
-        startX = 0
-        translateX = 0;
-        previousTranslateX = 0
-        mapModalMob.querySelector(".mapMobile-modal__inner").style.width = currW + "px"
-        mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = `translateX(0)`;
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.width = window.innerWidth / currW * 100 + "%"
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(0)`;
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left 0px center`;
-        if (window.innerWidth > bp.tablet && mapModalMob.classList.contains("open")) {
-            closeModal(mapModalMob)
-        }
-    })
-}
-if (mapModal && mapModalMob) {
     mapModalMob.addEventListener("click", e => {
         if (mapModalMob.querySelectorAll(".item-map").length) {
             mapModalMob.querySelectorAll(".item-map").forEach(item => {
@@ -1322,5 +1314,29 @@ if (mapModal && mapModalMob) {
                 }
             })
         }
+    })
+    function mapResizeHandler() {
+        if (mapModalMob.classList.contains("open")) {
+            currW = w / (h / window.innerHeight)
+            startX = 0
+            translateX = 0;
+            previousTranslateX = 0
+            mapModalMob.querySelector(".mapMobile-modal__inner").style.width = currW + "px"
+            mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = `translateX(0)`;
+            mapModalMob.querySelector(".mapMobile-modal__preview-view").style.width = window.innerWidth / currW * 100 + "%"
+            mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(0)`;
+            mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left 0px center`;
+            if (window.innerWidth > bp.tablet && mapModalMob.classList.contains("open")) {
+                closeModal(mapModalMob)
+            }
+        }
+    }
+    window.addEventListener("resize", debounce(mapResizeHandler, 100));
+    mapModal.querySelectorAll(".modal__close").forEach(item => {
+        item.addEventListener("click", () => {
+            if (window.visualViewport.scale > 1) {
+                mapResizeHandler()
+            }
+        })
     })
 }
