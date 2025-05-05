@@ -20,8 +20,11 @@ window.addEventListener("load", () => {
                     document.querySelector(".preloader__bar").classList.add("startAnim")
                     setTimeout(() => {
                         document.querySelector(".preloader").classList.add("startAnim")
-                        enableScroll()
-                        ScrollTrigger.refresh()
+                        setTimeout(() => {
+                            document.body.classList.add("loaded")
+                            enableScroll()
+                            ScrollTrigger.refresh()
+                        }, 600);
                     }, 700);
                 }, 500);
             }
@@ -919,9 +922,9 @@ if (schedule) {
             filterSelected.querySelectorAll("li").forEach(item => {
                 if (item.querySelector(".btn-cross").contains(e.target)) {
                     let dataTarget = item.getAttribute("data-target")
-                   // this.uncheckInp(scheduleFilter.querySelector(`label input[data-id='${dataTarget}']`))
+                    // this.uncheckInp(scheduleFilter.querySelector(`label input[data-id='${dataTarget}']`))
                     scheduleFilter.querySelector(`label input[data-id='${dataTarget}']`).click()
-                   // item.remove()
+                    // item.remove()
                 }
             })
         }
@@ -1186,7 +1189,7 @@ function animate() {
 
 }
 animate()
-window.addEventListener("scroll",animate)
+window.addEventListener("scroll", animate)
 //map
 const map = document.querySelector(".map")
 const itemMap = document.querySelectorAll(".item-map")
@@ -1207,7 +1210,7 @@ function setMap(item) {
             item.setAttribute("srcset", srcset)
             item.removeAttribute("data-srcset")
         })
-    } 
+    }
     let preview = item.querySelector("[data-zoom]") ? item.querySelector("[data-zoom]").innerHTML : ''
     let link = item.getAttribute("data-link") || ''
     let direction = item.querySelector("[data-direction]") ? item.querySelector("[data-direction]").textContent : ''
@@ -1224,20 +1227,6 @@ function setMap(item) {
     if (mapModal.querySelector(".map-modal__title")) {
         mapModal.querySelector(".map-modal__title").textContent = title
     }
-   /*  if (mapModal.querySelector("[data-src]")) {
-        mapModal.querySelectorAll("[data-src]").forEach(item => {
-            let src = item.getAttribute("data-src")
-            item.setAttribute("src", src)
-            item.removeAttribute("data-src")
-        })
-    }
-    if (mapModal.querySelector("[data-srcset]")) {
-        mapModal.querySelectorAll("[data-srcset]").forEach(item => {
-            let srcset = item.getAttribute("data-srcset")
-            item.setAttribute("srcset", srcset)
-            item.removeAttribute("data-srcset")
-        })
-    }  */
     mapModal.querySelector(".modal__content").style.transformOrigin = `${item.getBoundingClientRect().left}px ${item.getBoundingClientRect().top}px`
 }
 if (map) {
@@ -1267,8 +1256,11 @@ if (mapModal && mapModalMob) {
     })
 }
 if (mapBtn && mapModalMob) {
-    let w, h, currW
+    let w, h, currW, startX, translateX, previousTranslateX
     mapBtn.addEventListener("click", () => {
+        startX = 0
+        translateX = 0;
+        previousTranslateX = 0
         let layer = map.querySelector("[data-map-layer]").getAttribute("src")
         let layerimg = new Image()
         layerimg.src = layer
@@ -1282,9 +1274,6 @@ if (mapBtn && mapModalMob) {
         mapModalMob.querySelector(".mapMobile-modal__inner").innerHTML = map.querySelector(".map__inner").innerHTML
         openModal(mapModalMob)
     })
-    let startX = 0
-    let translateX = 0;
-    let previousTranslateX = 0
     mapModalMob.querySelector(".modal__content").addEventListener("touchstart", e => {
         startX = e.touches[0].clientX
     })

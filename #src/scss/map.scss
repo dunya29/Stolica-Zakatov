@@ -10,7 +10,7 @@
         transform: translate(-50%, -50%); */
     }
     &__inner {
-        background: rgb(44, 168, 199);
+        background: url(../img/map/map-layer-1.png) center/cover no-repeat;
         position: relative;
     }
     &__layers-item img {
@@ -119,6 +119,7 @@
 .item-map {
     position: absolute;
     cursor: pointer;
+    background: transparent;
     img {
         width: 100%;
     }
@@ -367,27 +368,27 @@
     }
 }
 @keyframes tap {
-	0% {
-		transform: rotateX(0deg);
-	}
-	10% {
-		transform: rotateX(12.5deg);
-	}
-	25% {
-		transform: rotateX(25deg);
-	}
+    0% {
+        transform: rotateX(0deg);
+    }
+    10% {
+        transform: rotateX(12.5deg);
+    }
+    25% {
+        transform: rotateX(25deg);
+    }
 }
 @keyframes tap-circle {
-	0% {
-		transform: scale(0);
-		opacity: 0;
-	}
-	75% {
-		transform: scale(1.05);
-		opacity: .6;
-	}
-	80% {
-		transform: scale(1);
-		opacity: .5;
-	}
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    75% {
+        transform: scale(1.05);
+        opacity: 0.6;
+    }
+    80% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
 }
