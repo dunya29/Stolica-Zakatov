@@ -1333,9 +1333,4 @@ if (mapBtn && mapModal && mapModalMob) {
     }
     const mapDebounce = debounce(mapResizeHandler, 100)
     window.addEventListener("resize", mapDebounce);
-    /* mapModal.querySelectorAll(".modal__close").forEach(item => {
-        item.addEventListener("click", () => {
-           mapResizeHandler()
-        })
-    }) */
 }

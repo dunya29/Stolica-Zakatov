@@ -4446,6 +4446,7 @@ p a:hover {
   left: 0;
   right: 0;
   margin: 0;
+  will-change: transform;
 }
 
 .mapMobile-modal__preview {
@@ -4481,6 +4482,7 @@ p a:hover {
   height: 100%;
   background-size: 140px 100%;
   z-index: 1;
+  will-change: transform;
 }
 
 .mapMobile-modal.open + .map-modal {
@@ -7021,6 +7023,11 @@ p a:hover {
 
   .map-modal__direction {
     max-width: 100%;
+  }
+
+  .map-modal__preview {
+    -ms-touch-action: none;
+    touch-action: none;
   }
 
   .footer .footer-menu {
