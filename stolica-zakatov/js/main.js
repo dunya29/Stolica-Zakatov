@@ -1257,7 +1257,7 @@ if (map && mapModal) {
     })
 }
 if (mapBtn && mapModal && mapModalMob) {
-    let w, h, currW, startX, translateX, previousTranslateX
+    let w, h, currW, startX, translateX, previousTranslateX, isMobileModalOpen
     mapBtn.addEventListener("click", () => {
         mapBtn.classList.add("loading")
         startX = 0
@@ -1310,7 +1310,9 @@ if (mapBtn && mapModal && mapModalMob) {
             mapModalMob.querySelectorAll(".item-map").forEach(item => {
                 if (item.contains(e.target)) {
                     setMap(item)
-                    mapModal.classList.add("open")
+                    //mapModal.classList.add("open")
+                    isMobileModalOpen = true
+                    openModal(mapModal)
                 }
             })
         }
@@ -1333,17 +1335,18 @@ if (mapBtn && mapModal && mapModalMob) {
         }
     }
     const mapDebounce = debounce(mapResizeHandler, 100)
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener("resize", () => {
-            if (mapModal.classList.contains("open")) {
-                mapDebounce()
-            }
-        })
-    }
     window.addEventListener("resize", mapDebounce);
-   /*  mapModal.querySelectorAll(".modal__close").forEach(item => {
+    mapModal.querySelectorAll(".modal__close").forEach(item => {
         item.addEventListener("click", () => {
-            mapResizeHandler()
+            if (window.innerWidth < bp.tablet && isMobileModalOpen) {
+                openModal(mapModalMob)
+            }
+            //mapResizeHandler()
         })
-    })  */
+    })
+    mapModalMob.querySelectorAll(".modal__close").forEach(item => {
+        item.addEventListener("click", () => {
+            isMobileModalOpen = false
+        })
+    })
 }
