@@ -1316,6 +1316,7 @@ if (mapBtn && mapModal && mapModalMob) {
         }
     })
     function mapResizeHandler() {
+        console.log("d")
         if (mapModalMob.classList.contains("open")) {
             currW = w / (h / window.innerHeight)
             startX = 0
@@ -1331,12 +1332,18 @@ if (mapBtn && mapModal && mapModalMob) {
             }
         }
     }
-    window.addEventListener("resize", debounce(mapResizeHandler, 100));
-    mapModal.querySelectorAll(".modal__close").forEach(item => {
-        item.addEventListener("click", () => {
-            if (window.visualViewport.scale > 1) {
-                mapResizeHandler()
+    const mapDebounce = debounce(mapResizeHandler, 100)
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", () => {
+            if (mapModal.classList.contains("open")) {
+                mapDebounce()
             }
         })
-    })
+    }
+    window.addEventListener("resize", mapDebounce);
+   /*  mapModal.querySelectorAll(".modal__close").forEach(item => {
+        item.addEventListener("click", () => {
+            mapResizeHandler()
+        })
+    })  */
 }

@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="image/x-icon" rel="shortcut icon" href="img/favicon/favicon.ico">
+    <link type="image/png" sizes="32x32" rel="icon" href="img/favicon/favicon-32x32.png">
+    <link type="image/png" sizes="192x192" rel="icon" href="img/favicon/android-icon-192x192.png">
+    <link type="image/svg+xml" sizes="any" rel="icon" href="img/favicon/favicon.svg">
+    <link sizes="120x120" rel="apple-touch-icon" href="img/favicon/apple-icon-120x120.png">
+    <link sizes="180x180" rel="apple-touch-icon" href="img/favicon/apple-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="fonts/PlatformLC-Regular.woff2" as="font" type="font/woff2" crossorigin> 
+    <link href="css/style.min.css" type="text/css" rel="stylesheet">
+    <title>Главная</title>
+</head>
+
+    <body class="no-scroll">
+        <div class="preloader">
+    <div class="preloader__bar">
+        <div class="preloader__progress"></div>
+    </div>
+    <div class="preloader__inner">
+        <div class="preloader__percent">0%</div>
+        <div class="preloader__logo">
+            <svg viewBox="0 0 177 54" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M64.8449 19.5309C63.0514 21.3525 60.6482 22.3599 58.1539 22.3356C51.8756 22.3356 47.6797 17.6789 47.6797 11.2675C47.6797 4.85608 51.9345 0.169922 58.095 0.169922C60.736 0.169922 63.0262 1.05466 64.64 2.63539L62.9364 4.85608C61.5908 3.63686 59.8718 2.96876 58.095 2.97454C53.5483 2.97454 50.7024 6.45746 50.7024 11.2675C50.7024 16.0775 53.7897 19.525 58.1848 19.525C60.0396 19.5132 61.8215 18.764 63.1722 17.4282L64.8449 19.5309Z" />
+                <path d="M72.7854 3.4052V21.9023H69.8837V3.4052H65.6826V0.605469H76.9865V3.4052H72.7854Z" />
+                <path
+                    d="M101.3 21.9023H100.851V19.1225H101.329C103.305 19.1225 103.843 17.0764 103.995 14.2938L104.636 0.605469H116.76V21.7503H113.813V3.41737H107.288L106.807 14.5071C106.597 19.1839 105.192 21.9023 101.3 21.9023Z" />
+                <path d="M123.012 17.0388L133.116 0.605469H136.019V21.9023H133.116V5.46894L123.012 21.9023H120.109V0.605469H123.012V17.0388Z" />
+                <path d="M151.769 0.605469H154.672V19.0963H156.951V26.2486H154.227V21.9325H139.367V0.605469H142.267V19.0963H151.769V0.605469Z" />
+                <path
+                    d="M170.932 14.8868H163.218L160.664 21.9023H157.789L165.503 0.605469H168.559L176.628 21.9023H173.575L170.932 14.8868ZM164.138 12.299H169.959L167.021 4.45326L164.138 12.299Z" />
+                <path
+                    d="M0.372741 46.9913H3.17265C3.26194 48.9186 4.37672 50.5603 6.81656 50.5603C9.16421 50.5603 10.2732 48.8174 10.2732 46.7653C10.2732 44.5288 9.06915 43.128 6.32974 43.128H4.64173V40.4513H6.41904C8.64859 40.4513 9.79218 39.1456 9.79218 37.031C9.79218 34.9165 8.68316 33.6406 6.66677 33.6406C4.31623 33.6406 3.32244 35.2555 3.29363 37.2452H0.493726C0.401548 34.2919 1.87639 31.0293 6.66677 31.0293C10.6707 31.0293 12.8398 33.361 12.8398 36.8734C12.8398 39.1129 11.6645 40.7903 10.2185 41.5368C12.0851 42.316 13.3497 44.0559 13.3497 46.7594C13.3497 50.6465 10.7312 53.1953 6.81656 53.1953C1.90808 53.2072 0.312249 49.9744 0.372741 46.9913Z" />
+                <path
+                    d="M26.7894 45.7442H18.9014L16.2895 52.7597H13.3496L21.2376 31.4629H24.3545L32.6081 52.7597H29.4884L26.7894 45.7442ZM19.8417 43.1505H25.7881L22.7844 35.3019L19.8417 43.1505Z" />
+                <path
+                    d="M36.7995 40.6658L44.3209 31.4629H47.8294L39.3792 41.6196L48.0988 52.7597H44.5932L36.7995 43.0445V52.7597H33.8643V31.4629H36.7995V40.6658Z" />
+                <path
+                    d="M61.6522 45.7442H53.945L51.3929 52.7597H48.5176L56.2276 31.4629H59.2929L67.3574 52.7597H64.2893L61.6522 45.7442ZM54.8637 43.1505H60.6739L57.739 35.3019L54.8637 43.1505Z" />
+                <path d="M72.7826 34.2656V52.7597H69.8837V34.2656H65.6826V31.4629H76.9865V34.2656H72.7826Z" />
+                <path
+                    d="M109.159 52.7597H103.362V31.4629H108.794C112.731 31.4629 114.923 33.403 114.923 37.0565C114.923 39.0878 114.009 40.7188 112.512 41.5196C114.374 42.3203 115.504 43.9807 115.504 46.5979C115.506 50.484 112.88 52.7597 109.159 52.7597ZM106.322 34.1095V40.5009H108.657C110.732 40.5009 111.867 39.2998 111.867 37.2625C111.867 35.2253 110.799 34.0919 108.657 34.0919L106.322 34.1095ZM106.322 43.0651V50.1131H108.823C111.158 50.1131 112.392 48.6676 112.392 46.5126C112.392 44.4194 111.205 43.0651 108.823 43.0651H106.322Z" />
+                <path
+                    d="M99.5576 52.0495V12.192C99.5802 11.8766 99.5943 11.5582 99.5943 11.2339C99.5943 4.88384 95.2857 0.169922 89.0924 0.169922C83.074 0.169922 78.6808 4.85436 78.6808 11.2634V52.079C78.6808 52.3031 78.6611 52.5301 78.6611 52.76H81.6999C81.6999 47.9547 84.6513 44.4731 89.1037 44.4731C93.5561 44.4731 96.5244 47.9459 96.5357 52.7276H99.5576V52.7128H99.5745C99.5745 52.5006 99.5689 52.2736 99.5576 52.0495ZM89.1178 2.97351C93.542 2.97351 96.5498 6.45514 96.5498 11.2634H96.53V11.8707C96.2902 16.3547 93.4066 19.515 89.1178 19.515C84.75 19.515 81.714 16.0923 81.714 11.2604C81.714 6.42861 84.6682 2.97351 89.1234 2.97351H89.1178ZM81.6943 44.7178V19.3233C82.5407 20.195 83.5348 20.8948 84.6259 21.387V42.6129C83.5358 43.1221 82.5441 43.8355 81.6999 44.7178H81.6943ZM89.0698 41.6636C88.5982 41.6653 88.1271 41.6968 87.659 41.7579V22.2331C88.1468 22.2947 88.6377 22.3263 89.1291 22.3274C89.6177 22.3267 90.1059 22.2942 90.5906 22.2301V41.7638C90.0881 41.697 89.582 41.6636 89.0755 41.6636H89.0698ZM93.5984 42.6246V21.3693C94.6893 20.8674 95.6829 20.161 96.53 19.285V44.703C95.6841 43.8297 94.6925 43.1253 93.6041 42.6246H93.5984Z" />
+            </svg>
+        </div>
+    </div>
+</div>
+        <div class="wrap">
+            <!--header-->
+
+<header class="header header--banner no-scroll header--main fixed-block">
+    
+    
+        
+            
+                <div class="container header__container">
+                    <div class="header__inner">
+                        <div class="header__left">
+                            <a href="#" class="page-logo" aria-label="Логотип Столицы Закатов" aria-label="На главную">
+    <svg viewBox="0 0 177 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M64.8449 19.5309C63.0514 21.3525 60.6482 22.3599 58.1539 22.3356C51.8756 22.3356 47.6797 17.6789 47.6797 11.2675C47.6797 4.85608 51.9345 0.169922 58.095 0.169922C60.736 0.169922 63.0262 1.05466 64.64 2.63539L62.9364 4.85608C61.5908 3.63686 59.8718 2.96876 58.095 2.97454C53.5483 2.97454 50.7024 6.45746 50.7024 11.2675C50.7024 16.0775 53.7897 19.525 58.1848 19.525C60.0396 19.5132 61.8215 18.764 63.1722 17.4282L64.8449 19.5309Z" />
+        <path d="M72.7854 3.4052V21.9023H69.8837V3.4052H65.6826V0.605469H76.9865V3.4052H72.7854Z" />
+        <path
+            d="M101.3 21.9023H100.851V19.1225H101.329C103.305 19.1225 103.843 17.0764 103.995 14.2938L104.636 0.605469H116.76V21.7503H113.813V3.41737H107.288L106.807 14.5071C106.597 19.1839 105.192 21.9023 101.3 21.9023Z" />
+        <path d="M123.012 17.0388L133.116 0.605469H136.019V21.9023H133.116V5.46894L123.012 21.9023H120.109V0.605469H123.012V17.0388Z" />
+        <path d="M151.769 0.605469H154.672V19.0963H156.951V26.2486H154.227V21.9325H139.367V0.605469H142.267V19.0963H151.769V0.605469Z" />
+        <path
+            d="M170.932 14.8868H163.218L160.664 21.9023H157.789L165.503 0.605469H168.559L176.628 21.9023H173.575L170.932 14.8868ZM164.138 12.299H169.959L167.021 4.45326L164.138 12.299Z" />
+        <path
+            d="M0.372741 46.9913H3.17265C3.26194 48.9186 4.37672 50.5603 6.81656 50.5603C9.16421 50.5603 10.2732 48.8174 10.2732 46.7653C10.2732 44.5288 9.06915 43.128 6.32974 43.128H4.64173V40.4513H6.41904C8.64859 40.4513 9.79218 39.1456 9.79218 37.031C9.79218 34.9165 8.68316 33.6406 6.66677 33.6406C4.31623 33.6406 3.32244 35.2555 3.29363 37.2452H0.493726C0.401548 34.2919 1.87639 31.0293 6.66677 31.0293C10.6707 31.0293 12.8398 33.361 12.8398 36.8734C12.8398 39.1129 11.6645 40.7903 10.2185 41.5368C12.0851 42.316 13.3497 44.0559 13.3497 46.7594C13.3497 50.6465 10.7312 53.1953 6.81656 53.1953C1.90808 53.2072 0.312249 49.9744 0.372741 46.9913Z" />
+        <path
+            d="M26.7894 45.7442H18.9014L16.2895 52.7597H13.3496L21.2376 31.4629H24.3545L32.6081 52.7597H29.4884L26.7894 45.7442ZM19.8417 43.1505H25.7881L22.7844 35.3019L19.8417 43.1505Z" />
+        <path
+            d="M36.7995 40.6658L44.3209 31.4629H47.8294L39.3792 41.6196L48.0988 52.7597H44.5932L36.7995 43.0445V52.7597H33.8643V31.4629H36.7995V40.6658Z" />
+        <path
+            d="M61.6522 45.7442H53.945L51.3929 52.7597H48.5176L56.2276 31.4629H59.2929L67.3574 52.7597H64.2893L61.6522 45.7442ZM54.8637 43.1505H60.6739L57.739 35.3019L54.8637 43.1505Z" />
+        <path d="M72.7826 34.2656V52.7597H69.8837V34.2656H65.6826V31.4629H76.9865V34.2656H72.7826Z" />
+        <path
+            d="M109.159 52.7597H103.362V31.4629H108.794C112.731 31.4629 114.923 33.403 114.923 37.0565C114.923 39.0878 114.009 40.7188 112.512 41.5196C114.374 42.3203 115.504 43.9807 115.504 46.5979C115.506 50.484 112.88 52.7597 109.159 52.7597ZM106.322 34.1095V40.5009H108.657C110.732 40.5009 111.867 39.2998 111.867 37.2625C111.867 35.2253 110.799 34.0919 108.657 34.0919L106.322 34.1095ZM106.322 43.0651V50.1131H108.823C111.158 50.1131 112.392 48.6676 112.392 46.5126C112.392 44.4194 111.205 43.0651 108.823 43.0651H106.322Z" />
+        <path
+            d="M99.5576 52.0495V12.192C99.5802 11.8766 99.5943 11.5582 99.5943 11.2339C99.5943 4.88384 95.2857 0.169922 89.0924 0.169922C83.074 0.169922 78.6808 4.85436 78.6808 11.2634V52.079C78.6808 52.3031 78.6611 52.5301 78.6611 52.76H81.6999C81.6999 47.9547 84.6513 44.4731 89.1037 44.4731C93.5561 44.4731 96.5244 47.9459 96.5357 52.7276H99.5576V52.7128H99.5745C99.5745 52.5006 99.5689 52.2736 99.5576 52.0495ZM89.1178 2.97351C93.542 2.97351 96.5498 6.45514 96.5498 11.2634H96.53V11.8707C96.2902 16.3547 93.4066 19.515 89.1178 19.515C84.75 19.515 81.714 16.0923 81.714 11.2604C81.714 6.42861 84.6682 2.97351 89.1234 2.97351H89.1178ZM81.6943 44.7178V19.3233C82.5407 20.195 83.5348 20.8948 84.6259 21.387V42.6129C83.5358 43.1221 82.5441 43.8355 81.6999 44.7178H81.6943ZM89.0698 41.6636C88.5982 41.6653 88.1271 41.6968 87.659 41.7579V22.2331C88.1468 22.2947 88.6377 22.3263 89.1291 22.3274C89.6177 22.3267 90.1059 22.2942 90.5906 22.2301V41.7638C90.0881 41.697 89.582 41.6636 89.0755 41.6636H89.0698ZM93.5984 42.6246V21.3693C94.6893 20.8674 95.6829 20.161 96.53 19.285V44.703C95.6841 43.8297 94.6925 43.1253 93.6041 42.6246H93.5984Z" />
+    </svg>
+</a>
+                        </div>
+                        <nav class="menu">
+                            <ul>
+                                <li><a class="link js-anchor" href="#directions">Направления</a></li>
+                                <li><a class="link" href="#">Расписание</a></li>
+                                <li><a class="link js-anchor" href="#main-map">Карта</a></li>
+                                <li><a class="link js-anchor" href="#contacts">Контакты</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header__right">
+                            <!--social-->
+<div class="social-list">
+    <ul>
+        <li>
+            <a href="#" target="_blank" aria-label="Вконтакте">
+                <svg><use xlink:href="img/svg/sprite.svg#vk"></use></svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank" aria-label="Телеграм">
+                <svg><use xlink:href="img/svg/sprite.svg#telegram"></use></svg>
+            </a>
+        </li>
+    </ul>
+</div>
+                            <div class="icon-menu" aria-label="Открыть меню">
+                                <div class="icon-menu__items">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu">
+                    <div class="mobile-menu__inner">
+                        <div class="mobile-menu__top">
+                            <a href="#" class="page-logo" aria-label="Логотип Столицы Закатов" aria-label="На главную">
+    <svg viewBox="0 0 177 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M64.8449 19.5309C63.0514 21.3525 60.6482 22.3599 58.1539 22.3356C51.8756 22.3356 47.6797 17.6789 47.6797 11.2675C47.6797 4.85608 51.9345 0.169922 58.095 0.169922C60.736 0.169922 63.0262 1.05466 64.64 2.63539L62.9364 4.85608C61.5908 3.63686 59.8718 2.96876 58.095 2.97454C53.5483 2.97454 50.7024 6.45746 50.7024 11.2675C50.7024 16.0775 53.7897 19.525 58.1848 19.525C60.0396 19.5132 61.8215 18.764 63.1722 17.4282L64.8449 19.5309Z" />
+        <path d="M72.7854 3.4052V21.9023H69.8837V3.4052H65.6826V0.605469H76.9865V3.4052H72.7854Z" />
+        <path
+            d="M101.3 21.9023H100.851V19.1225H101.329C103.305 19.1225 103.843 17.0764 103.995 14.2938L104.636 0.605469H116.76V21.7503H113.813V3.41737H107.288L106.807 14.5071C106.597 19.1839 105.192 21.9023 101.3 21.9023Z" />
+        <path d="M123.012 17.0388L133.116 0.605469H136.019V21.9023H133.116V5.46894L123.012 21.9023H120.109V0.605469H123.012V17.0388Z" />
+        <path d="M151.769 0.605469H154.672V19.0963H156.951V26.2486H154.227V21.9325H139.367V0.605469H142.267V19.0963H151.769V0.605469Z" />
+        <path
+            d="M170.932 14.8868H163.218L160.664 21.9023H157.789L165.503 0.605469H168.559L176.628 21.9023H173.575L170.932 14.8868ZM164.138 12.299H169.959L167.021 4.45326L164.138 12.299Z" />
+        <path
+            d="M0.372741 46.9913H3.17265C3.26194 48.9186 4.37672 50.5603 6.81656 50.5603C9.16421 50.5603 10.2732 48.8174 10.2732 46.7653C10.2732 44.5288 9.06915 43.128 6.32974 43.128H4.64173V40.4513H6.41904C8.64859 40.4513 9.79218 39.1456 9.79218 37.031C9.79218 34.9165 8.68316 33.6406 6.66677 33.6406C4.31623 33.6406 3.32244 35.2555 3.29363 37.2452H0.493726C0.401548 34.2919 1.87639 31.0293 6.66677 31.0293C10.6707 31.0293 12.8398 33.361 12.8398 36.8734C12.8398 39.1129 11.6645 40.7903 10.2185 41.5368C12.0851 42.316 13.3497 44.0559 13.3497 46.7594C13.3497 50.6465 10.7312 53.1953 6.81656 53.1953C1.90808 53.2072 0.312249 49.9744 0.372741 46.9913Z" />
+        <path
+            d="M26.7894 45.7442H18.9014L16.2895 52.7597H13.3496L21.2376 31.4629H24.3545L32.6081 52.7597H29.4884L26.7894 45.7442ZM19.8417 43.1505H25.7881L22.7844 35.3019L19.8417 43.1505Z" />
+        <path
+            d="M36.7995 40.6658L44.3209 31.4629H47.8294L39.3792 41.6196L48.0988 52.7597H44.5932L36.7995 43.0445V52.7597H33.8643V31.4629H36.7995V40.6658Z" />
+        <path
+            d="M61.6522 45.7442H53.945L51.3929 52.7597H48.5176L56.2276 31.4629H59.2929L67.3574 52.7597H64.2893L61.6522 45.7442ZM54.8637 43.1505H60.6739L57.739 35.3019L54.8637 43.1505Z" />
+        <path d="M72.7826 34.2656V52.7597H69.8837V34.2656H65.6826V31.4629H76.9865V34.2656H72.7826Z" />
+        <path
+            d="M109.159 52.7597H103.362V31.4629H108.794C112.731 31.4629 114.923 33.403 114.923 37.0565C114.923 39.0878 114.009 40.7188 112.512 41.5196C114.374 42.3203 115.504 43.9807 115.504 46.5979C115.506 50.484 112.88 52.7597 109.159 52.7597ZM106.322 34.1095V40.5009H108.657C110.732 40.5009 111.867 39.2998 111.867 37.2625C111.867 35.2253 110.799 34.0919 108.657 34.0919L106.322 34.1095ZM106.322 43.0651V50.1131H108.823C111.158 50.1131 112.392 48.6676 112.392 46.5126C112.392 44.4194 111.205 43.0651 108.823 43.0651H106.322Z" />
+        <path
+            d="M99.5576 52.0495V12.192C99.5802 11.8766 99.5943 11.5582 99.5943 11.2339C99.5943 4.88384 95.2857 0.169922 89.0924 0.169922C83.074 0.169922 78.6808 4.85436 78.6808 11.2634V52.079C78.6808 52.3031 78.6611 52.5301 78.6611 52.76H81.6999C81.6999 47.9547 84.6513 44.4731 89.1037 44.4731C93.5561 44.4731 96.5244 47.9459 96.5357 52.7276H99.5576V52.7128H99.5745C99.5745 52.5006 99.5689 52.2736 99.5576 52.0495ZM89.1178 2.97351C93.542 2.97351 96.5498 6.45514 96.5498 11.2634H96.53V11.8707C96.2902 16.3547 93.4066 19.515 89.1178 19.515C84.75 19.515 81.714 16.0923 81.714 11.2604C81.714 6.42861 84.6682 2.97351 89.1234 2.97351H89.1178ZM81.6943 44.7178V19.3233C82.5407 20.195 83.5348 20.8948 84.6259 21.387V42.6129C83.5358 43.1221 82.5441 43.8355 81.6999 44.7178H81.6943ZM89.0698 41.6636C88.5982 41.6653 88.1271 41.6968 87.659 41.7579V22.2331C88.1468 22.2947 88.6377 22.3263 89.1291 22.3274C89.6177 22.3267 90.1059 22.2942 90.5906 22.2301V41.7638C90.0881 41.697 89.582 41.6636 89.0755 41.6636H89.0698ZM93.5984 42.6246V21.3693C94.6893 20.8674 95.6829 20.161 96.53 19.285V44.703C95.6841 43.8297 94.6925 43.1253 93.6041 42.6246H93.5984Z" />
+    </svg>
+</a>
+                        </div>
+                        <div class="container">
+                            <nav class="menu">
+                                <ul>
+                                    <li style="--item-i: 0"><a class="js-anchor" href="#directions">Направления</a></li>
+                                    <li style="--item-i: 1"><a href="#">Расписание</a></li>
+                                    <li style="--item-i: 3"><a class="js-anchor" href="#main-map">Карта</a></li>
+                                    <li style="--item-i: 4"><a class="js-anchor" href="#contacts">Контакты</a></li>
+                                </ul>
+                            </nav>
+                            <!--social-->
+<div class="social-list">
+    <ul>
+        <li>
+            <a href="#" target="_blank" aria-label="Вконтакте">
+                <svg><use xlink:href="img/svg/sprite.svg#vk"></use></svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank" aria-label="Телеграм">
+                <svg><use xlink:href="img/svg/sprite.svg#telegram"></use></svg>
+            </a>
+        </li>
+    </ul>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--main-->
+            <main class="main">
+                <!--intro-->
+                <section class="section intro-banner intro">
+                    <div class="media-cover">
+                        <video class="intro__video" poster="img/intro-video-poster.jpg" loop autoplay muted playsinline>
+                            <source src="media/about-video.webm" type="video/webm" media="(min-width: 1050.98px)">
+                            <source src="media/about-video.mp4" type="video/mp4" media="(min-width: 1050.98px)">
+                            <source src="media/about-video-mob.webm" type="video/webm">
+                            <source src="media/about-video-mob.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="container">
+                        <div class="intro__content">
+                            <a href="#" class="btn stroke-btn stroke-btn--link">
+                                <span class="h4">посетить фестиваль</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!--headliners-->
+                <section class="headliners">
+                    <div class="container">
+                        <div class="sec-top">
+                            <h2 class="h1">Хедлайнеры 2025</h2>
+                        </div>
+                        <div class="headliners__swiper">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="item-headliner">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/headliner-2.webp" type="image/webp"><img src="img/content/headliner-2.jpg" alt></picture>
+                                            </div>
+                                            <div class="item-headliner__title">
+                                                <h4>L'ONE + HOR</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="item-headliner">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/headliner-3.webp" type="image/webp"><img src="img/content/headliner-3.jpg" alt></picture>
+                                            </div>
+                                            <div class="item-headliner__title">
+                                                <h4>L'ONE + HOR</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="item-headliner">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/headliner-1.webp" type="image/webp"><img src="img/content/headliner-1.jpg" alt></picture>
+                                            </div>
+                                            <div class="item-headliner__title">
+                                                <h4>L'ONE + HOR</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="item-headliner">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/headliner-4.webp" type="image/webp"><img src="img/content/headliner-4.jpg" alt></picture>
+                                            </div>
+                                            <div class="item-headliner__title">
+                                                <h4>L'ONE + HOR</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="item-headliner">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/headliner-1.webp" type="image/webp"><img src="img/content/headliner-1.jpg" alt></picture>
+                                            </div>
+                                            <div class="item-headliner__title">
+                                                <h4>L'ONE + HOR</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="item-headliner">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/headliner-2.webp" type="image/webp"><img src="img/content/headliner-2.jpg" alt></picture>
+                                            </div>
+                                            <div class="item-headliner__title">
+                                                <h4>L'ONE + HOR</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="item-headliner">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/headliner-3.webp" type="image/webp"><img src="img/content/headliner-3.jpg" alt></picture>
+                                            </div>
+                                            <div class="item-headliner__title">
+                                                <h4>L'ONE + HOR</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                    <div class="equalizer"></div>
+                </section>
+                <!--about-->
+                <section class="section about">
+                    <div class="container">
+                        <div class="sec-top">
+                            <h2 class="h1">«Столица Закатов» — мультижанровый музыкальный фестиваль в&nbsp;Нижнем Новгороде</h2>
+                        </div>
+                        <div class="about-matter">
+                            <h4>В столице закатов интересно каждые выходные! Начните свою удивительную историю на&nbsp;фестивале</h4>
+                            <div class="js-matter">
+                                <span class="h5 js-matter__item" data-target="button-1">Музыка</span>
+                                <span class="h5 js-matter__item" data-target="button-2">Гастрономия</span>
+                                <span class="h5 js-matter__item" data-target="button-3">творчество</span>
+                                <span class="h5 js-matter__item" data-target="button-4">каждые выходные</span>
+                                <span class="h5 js-matter__item" data-target="button-5">танцы</span>
+                                <span class="h5 js-matter__item" data-target="button-6">лето</span>
+                                <span class="h5 js-matter__item" data-target="button-7">праздник</span>
+                                <span class="h5 js-matter__item" data-target="button-8">«Столица Закатов» — это</span>
+                            </div>
+                        </div>
+                        <div class="about__cols">
+                            <div class="about__col">
+                                <div class="swiper about__swiper1">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/about-1.webp" type="image/webp"><img src="img/content/about-1.jpg" alt></picture>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/about-2.webp" type="image/webp"><img src="img/content/about-2.jpg" alt></picture>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about__col">
+                                <div class="swiper about__swiper2">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="item-about">
+                                                <h4>Пойте, танцуйте, ешьте и&nbsp;собирайте впечатления! Оглядитесь вокруг, чтобы&nbsp;поймать тот самый закат</h4>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item-about">
+                                                <h4>Пойте, танцуйте, ешьте и&nbsp;собирайте впечатления! Оглядитесь вокруг, чтобы&nbsp;поймать тот самый закат</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about__col">
+                                <div class="swiper about__swiper3">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/about-2.webp" type="image/webp"><img src="img/content/about-2.jpg" alt></picture>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="media-cover">
+                                                <picture><source srcset="img/content/about-1.webp" type="image/webp"><img src="img/content/about-1.jpg" alt></picture>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--directions-->
+                <section class="section directions" id="directions">
+                    <div class="container">
+                        <div class="directions__inner">
+                            <h2 class="sec-title">[Направления]</h2>
+                            <div class="directions__items">
+                                <!--item-direction-->
+                                <div class="item-direction item-direction--1">
+                                    <div class="item-direction__main">
+                                        <div class="item-direction__header">
+                                            <h3>Гастро рождественская</h3>
+                                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                        </div>
+                                        <div class="item-direction__body">
+                                            <div class="item-direction__content">
+                                                <p>— настоящий рай для тех, кто&nbsp;любит пробовать новое, искать неожиданные сочетания в&nbsp;еде&nbsp;и&nbsp;заново
+                                                    раскрывать традиционные блюда. Каждую субботу улица Рождественская становится пешеходной, а&nbsp;её&nbsp;пространство
+                                                    заполняют столики кафе и&nbsp;фуд-траки.</p>
+                                            </div>
+                                            <div class="js-matter">
+                                                <span class="js-matter__item" data-target="button-1">14 участников</span>
+                                                <span class="js-matter__item" data-target="button-2">4 локации</span>
+                                                <span class="js-matter__item" data-target="button-3">Каждую субботу</span>
+                                                <span class="js-matter__item" data-target="button-4">7 концертов</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-direction__extra">
+                                        <div class="item-direction__tags">
+                                            <span>14 участников</span>
+                                            <span>4 локации</span>
+                                            <span>Каждую субботу</span>
+                                            <span>7 концертов</span>
+                                        </div>
+                                        <div class="item-direction__marquee">
+                                            <button class="item-direction__marquee-btns mod-open-btn" data-modal="partners-modal" aria-label="Открыть форму заявки">
+                                                <div class="item-direction__btn">
+                                                    Хочешь стать участником?
+                                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                </div>
+                                                <div class="item-direction__btn">
+                                                    Хочешь стать участником?
+                                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                </div>
+
+                                                <div class="item-direction__btn">
+                                                    Хочешь стать участником?
+                                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                </div>
+                                                <div class="item-direction__btn">
+                                                    Хочешь стать участником?
+                                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-direction-->
+                                <div class="item-direction item-direction--2">
+                                    <div class="item-direction__main">
+                                        <div class="item-direction__header">
+                                            <h3>Соло<br>на&nbsp;закате</h3>
+                                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                        </div>
+                                        <div class="item-direction__body">
+                                            <div class="item-direction__content">
+                                                <p>— настоящий рай для тех, кто&nbsp;любит пробовать новое, искать неожиданные сочетания в&nbsp;еде&nbsp;и&nbsp;заново
+                                                    раскрывать традиционные блюда. Каждую субботу улица Рождественская становится пешеходной, а&nbsp;её&nbsp;пространство
+                                                    заполняют столики кафе и&nbsp;фуд-траки.</p>
+                                            </div>
+                                            <div class="js-matter">
+                                                <span class="js-matter__item" data-target="button-1">14 участников</span>
+                                                <span class="js-matter__item" data-target="button-2">4 локации</span>
+                                                <span class="js-matter__item" data-target="button-3">Каждую субботу</span>
+                                                <span class="js-matter__item" data-target="button-4">7 концертов</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-direction__extra">
+                                        <div class="item-direction__tags">
+                                            <span>14 участников</span>
+                                            <span>4 локации</span>
+                                            <span>Каждую субботу</span>
+                                            <span>7 концертов</span>
+                                        </div>
+                                        <div class="item-direction__marquee">
+                                            <button class="item-direction__marquee-btns mod-open-btn" data-modal="request-modal" aria-label="Открыть форму заявки">
+                                                <div class="item-direction__btn">
+                                                    Хочешь стать участником?
+                                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                </div>
+                                                <div class="item-direction__btn">
+                                                    Хочешь стать участником?
+                                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                </div>
+
+                                                <div class="item-direction__btn">
+                                                    Хочешь стать участником?
+                                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                </div>
+                                                <div class="item-direction__btn">
+                                                    Хочешь стать участником?
+                                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-direction-->
+                                <div class="item-direction item-direction--3">
+                                    <div class="item-direction__main">
+                                        <div class="item-direction__header">
+                                            <h3>Ракушка</h3>
+                                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                        </div>
+                                        <div class="item-direction__body">
+                                            <div class="item-direction__content">
+                                                <p>— настоящий рай для тех, кто&nbsp;любит пробовать новое, искать неожиданные сочетания в&nbsp;еде&nbsp;и&nbsp;заново
+                                                    раскрывать традиционные блюда. Каждую субботу улица Рождественская становится пешеходной, а&nbsp;её&nbsp;пространство
+                                                    заполняют столики кафе и&nbsp;фуд-траки.</p>
+                                            </div>
+                                            <div class="js-matter">
+                                                <span class="js-matter__item" data-target="button-1">Концертная программа</span>
+                                                <span class="js-matter__item" data-target="button-2">все выходные</span>
+                                                <span class="js-matter__item" data-target="button-3">Симфоническая программа</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-direction__extra">
+                                        <div class="item-direction__tags">
+                                            <span>Концертная программа</span>
+                                            <span>все выходные</span>
+                                            <span>Симфоническая программа</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-direction-->
+                                <div class="item-direction item-direction--4">
+                                    <div class="item-direction__main">
+                                        <div class="item-direction__header">
+                                            <h3>Искра</h3>
+                                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                        </div>
+                                        <div class="item-direction__body">
+                                            <div class="item-direction__content">
+                                                <p>— настоящий рай для тех, кто&nbsp;любит пробовать новое, искать неожиданные сочетания в&nbsp;еде&nbsp;и&nbsp;заново
+                                                    раскрывать традиционные блюда. Каждую субботу улица Рождественская становится пешеходной, а&nbsp;её&nbsp;пространство
+                                                    заполняют столики кафе и&nbsp;фуд-траки.</p>
+                                            </div>
+                                            <div class="js-matter">
+                                                <span class="js-matter__item" data-target="button-1">14 участников</span>
+                                                <span class="js-matter__item" data-target="button-2">4 локации</span>
+                                                <span class="js-matter__item" data-target="button-3">Каждую субботу</span>
+                                                <span class="js-matter__item" data-target="button-4">7 концертов</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-direction__extra">
+                                        <div class="item-direction__tags">
+                                            <span>14 участников</span>
+                                            <span>4 локации</span>
+                                            <span>Каждую субботу</span>
+                                            <span>7 концертов</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--map-->
+<section class="section map">
+    <div class="map__inner">
+        <div class="map__layers">
+            <div class="map__layers-item">
+                <picture><source srcset="img/map/map-layer-2.webp" type="image/webp"><img data-map-layer src="img/map/map-layer-2.png" alt></picture>
+            </div>
+        </div>
+        <div class="map__clouds">
+            <div class="map__clouds-item"></div>
+            <div class="map__clouds-item"></div>
+        </div>
+        <div class="map__items">
+            <!--item-map-->
+<div class="item-map" data-link="#">
+    <picture><source srcset="img/map/map-1.webp" type="image/webp"><img src="img/map/map-1.png" alt loading="lazy"></picture>
+    <div class="item-map__lottie"></div>
+    <div class="item-map__hover">
+        <img src="img/map/map-1-hover.svg" alt>
+    </div>
+    <div class="item-map__info">
+        <h5 data-direction>Соло на закате</h5>
+        <h6 data-title>сквер Свердлова</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom>
+        <picture>
+            <source data-srcset="img/map/map-1-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-1-zoom.png" alt>
+        </picture>
+        <div class="map-modal__lottie"></div>
+    </div>
+    <div class="item-map__finger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"></circle>
+            <path class="hand-tap"
+                d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"></path>
+        </svg>
+    </div>
+</div>
+            <!--item-map-->
+<div class="item-map" data-link="#">
+    <picture><source srcset="img/map/map-2.webp" type="image/webp"><img src="img/map/map-2.png" alt loading="lazy"></picture>
+    <div class="item-map__lottie"></div>
+    <div class="item-map__hover">
+        <img src="img/map/map-2-hover.svg" alt>
+    </div>
+    <div class="item-map__info">
+        <h5 data-direction>Соло на закате</h5>
+        <h6 data-title>Губернаторский сад</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom>
+        <picture>
+            <source data-srcset="img/map/map-2-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-2-zoom.png" alt>
+        </picture>
+        <div class="map-modal__lottie"></div>
+    </div>
+    <div class="item-map__finger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"></circle>
+            <path class="hand-tap"
+                d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"></path>
+        </svg>
+    </div>
+</div>
+            <!--item-map-->
+<div class="item-map" data-link="#">
+    <picture><source srcset="img/map/map-3.webp" type="image/webp"><img src="img/map/map-3.png" alt loading="lazy"></picture>
+    <div class="item-map__lottie"></div>
+    <div class="item-map__hover">
+        <img src="img/map/map-3-hover.svg" alt>
+    </div>
+    <div class="item-map__info">
+        <h5 data-direction>Соло на закате</h5>
+        <h6 data-title>наб. Федоровского</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom>
+        <picture>
+            <source data-srcset="img/map/map-3-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-3-zoom.png" alt>
+        </picture>
+        <div class="map-modal__lottie"></div>
+    </div>
+    <div class="item-map__finger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"></circle>
+            <path class="hand-tap"
+                d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"></path>
+        </svg>
+    </div>
+</div>
+            <!--item-map-->
+<div class="item-map" data-link="#">
+    <picture><source srcset="img/map/map-4.webp" type="image/webp"><img src="img/map/map-4.png" alt loading="lazy"></picture>
+    <div class="item-map__lottie"></div>
+    <div class="item-map__hover">
+        <img src="img/map/map-4-hover.svg" alt>
+    </div>
+    <div class="item-map__info">
+        <h5 data-direction>Соло на закате</h5>
+        <h6 data-title>Нижне-Волжская набережная</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom>
+        <picture>
+            <source data-srcset="img/map/map-4-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-4-zoom.png" alt>
+        </picture>
+        <div class="map-modal__lottie"></div>
+    </div>
+    <div class="item-map__finger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"></circle>
+            <path class="hand-tap"
+                d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"></path>
+        </svg>
+    </div>
+</div>
+            <!--item-map-->
+<div class="item-map" data-link="#">
+    <picture><source srcset="img/map/map-5.webp" type="image/webp"><img src="img/map/map-5.png" alt loading="lazy"></picture>
+    <div class="item-map__lottie"></div>
+    <div class="item-map__hover">
+        <img src="img/map/map-5-hover.svg" alt>
+    </div>
+    <div class="item-map__info">
+        <h5 data-direction>Соло на закате</h5>
+        <h6 data-title>Стрелка</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom>
+        <picture>
+            <source data-srcset="img/map/map-5-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-5-zoom.png" alt>
+        </picture>
+        <div class="map-modal__lottie"></div>
+    </div>
+    <div class="item-map__finger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"></circle>
+            <path class="hand-tap"
+                d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"></path>
+        </svg>
+    </div>
+</div>
+            <!--item-map-->
+<div class="item-map" data-link="#">
+    <picture><source srcset="img/map/map-6.webp" type="image/webp"><img src="img/map/map-6.png" alt loading="lazy"></picture>
+    <div class="item-map__lottie"></div>
+    <div class="item-map__hover">
+        <img src="img/map/map-6-hover.svg" alt>
+    </div>
+    <div class="item-map__info">
+        <h5 data-direction>«Ракушка»</h5>
+        <h6 data-title>Александровский сад, сцена «Ракушка»</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom>
+        <picture>
+            <source data-srcset="img/map/map-6-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-6-zoom.png" alt>
+        </picture>
+        <div class="map-modal__lottie"></div>
+    </div>
+    <div class="item-map__finger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"></circle>
+            <path class="hand-tap"
+                d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"></path>
+        </svg>
+    </div>
+</div>
+            <!--item-map-->
+<div class="item-map" data-link="#">
+    <picture><source srcset="img/map/map-7.webp" type="image/webp"><img src="img/map/map-7.png" alt loading="lazy"></picture>
+    <div class="item-map__lottie"></div>
+    <div class="item-map__hover">
+        <img src="img/map/map-7-hover.svg" alt>
+    </div>
+    <div class="item-map__info">
+        <h5 data-direction>Соло на закате</h5>
+        <h6 data-title>Катер «Герой»</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom>
+        <picture>
+            <source data-srcset="img/map/map-7-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-7-zoom.png" alt>
+        </picture>
+        <div class="map-modal__lottie"></div>
+    </div>
+    <div class="item-map__finger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"></circle>
+            <path class="hand-tap"
+                d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"></path>
+        </svg>
+    </div>
+</div>
+            <!--item-map-->
+<div class="item-map" data-link="#">
+    <picture><source srcset="img/map/map-8.webp" type="image/webp"><img src="img/map/map-8.png" alt loading="lazy"></picture>
+    <div class="item-map__lottie"></div>
+    <div class="item-map__hover">
+        <img src="img/map/map-8-hover.svg" alt>
+    </div>
+    <div class="item-map__info">
+        <h5 data-direction>Гастро рождественская</h5>
+        <h6 data-title>ул. Рождественская</h6>
+    </div>
+    <div class="item-map__zoom" data-zoom>
+        <picture>
+            <source data-srcset="img/map/map-8-zoom.webp" type="image/webp">
+            <img class="map-modal__img" data-src="img/map/map-8-zoom.png" alt>
+        </picture>
+        <div class="map-modal__lottie"></div>
+    </div>
+    <div class="item-map__finger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"></circle>
+            <path class="hand-tap"
+                d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"></path>
+        </svg>
+    </div>
+</div>
+        </div>
+        <div class="map__ships">
+            <div class="map__ships-item">
+                <picture><source srcset="img/map/ships-1.webp" type="image/webp"><img src="img/map/ships-1.png" alt></picture>
+            </div>
+            <div class="map__ships-item">
+                <picture><source srcset="img/map/ships-2.webp" type="image/webp"><img src="img/map/ships-2.png" alt></picture>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="btn stroke-btn map__btn">
+            <span>открыть карту</span>
+        </button>
+    </div>
+</section>
+                <!--projects-->
+                <section class="section projects">
+                    <div class="container">
+                        <div class="projects__inner">
+                            <h2 class="sec-title">[Спецпроекты]</h2>
+                            <div class="projects__cols">
+                                <div class="projects__col">
+                                    <div class="swiper projects__imageswiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="#" target="_blank" class="media-cover" data-swiper-parallax="50%">
+                                                    <picture><source srcset="img/content/project-1.webp" type="image/webp"><img src="img/content/project-1.jpg" alt></picture>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" target="_blank" class="media-cover" data-swiper-parallax="50%">
+                                                    <picture><source srcset="img/content/project-2.webp" type="image/webp"><img src="img/content/project-2.jpg" alt></picture>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="projects__col">
+                                    <div class="swiper projects__contentswiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item-project">
+                                                    <h3 class="h1">Фестиваль Summer&nbsp;Sound</h3>
+                                                    <div class="item-project__content">
+                                                        <p>Summer Sound — это не просто фестиваль, это&nbsp;яркий калейдоскоп эмоций и&nbsp;впечатлений, где&nbsp;каждый
+                                                            найдёт свой идеальный саундтрек для&nbsp;незабываемого лета.</p>
+                                                        <a href="#" target="_blanks" class="item-project__link">
+                                                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="item-project">
+                                                    <h3 class="h1">Фестиваль Summer&nbsp;Sound</h3>
+                                                    <div class="item-project__content">
+                                                        <p>Summer Sound — это не просто фестиваль, это&nbsp;яркий калейдоскоп эмоций и&nbsp;впечатлений, где&nbsp;каждый
+                                                            найдёт свой идеальный саундтрек для&nbsp;незабываемого лета.</p>
+                                                        <a href="#" target="_blank" class="item-project__link">
+                                                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-scrollbar"></div>
+                                </div>
+                                <div class="nav-btns">
+                                    <button class="nav-btn nav-btn--prev">
+                                        <svg><use xlink:href="img/svg/sprite.svg#btn-prev"></use></svg>
+                                    </button>
+                                    <button class="nav-btn nav-btn--next">
+                                        <svg><use xlink:href="img/svg/sprite.svg#btn-next"></use></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--main-history-->
+                <section class="section main-history">
+                    <div class="container">
+                        <!--page-row-->
+                        <div class="page-row switch-block">
+                            <aside class="page-row__aside">
+                                <div class="page-row__sticky">
+                                    <nav class="main-history__tabs">
+                                        <div class="tabs">
+                                            <button data-tab="2021" class="h4 tab-button active" aria-selected="true">2021</button>
+                                            <button data-tab="2022" class="h4 tab-button" aria-selected="false">2022</button>
+                                            <button data-tab="2023" class="h4 tab-button" aria-selected="false">2023</button>
+                                            <button data-tab="2024" class="h4 tab-button" aria-selected="false">2024</button>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </aside>
+                            <div class="page-row__content">
+                                <h2 class="h1">История фестиваля</h2>
+                                <!--main-history__block-->
+                                <div class="main-history__block active" data-block="2021">
+                                    <div class="main-history__block-inner">
+                                        <div class="main-history__content">
+                                            <h3 class="main-history__year">2021</h3>
+                                            <div class="page-content">
+                                                <p>В 2021 году фестиваль стал одним из главных событий празднования 800-летия Нижнего Новгорода. Концерты «Столицы Закатов»
+                                                    впервые
+                                                    проходили на Нижне-Волжской набережной каждую субботу в&nbsp;течение лета. Каждое выступление завершалось красочным
+                                                    фейерверком
+                                                    от&nbsp;лучших пиротехнических команд России.
+                                                </p>
+                                                <p>В 2021 году на фестивале выступило более 30 артистов разных жанров&nbsp;— от&nbsp;локальных героев до&nbsp;звёзд мирового
+                                                    масштаба, среди...
+                                                    <button class="btn show-more-btn" aria-label="Развернуть">
+                                                        <svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                                    </button>
+                                                    <!-- <button class="btn show-more-btn active" aria-label="Свернуть">
+                                                    <svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                                </button> -->
+                                                </p>
+                                            </div>
+                                            <a href="#" target="_blank" class="btn stroke-btn stroke-btn--link stroke-btn--secondary">
+                                                <span>Посмотреть, как прошёл фестиваль</span>
+                                            </a>
+                                        </div>
+                                        <div class="fancy-block main-history__images">
+                                            <figure class="main-history__preview" style="--index: 0" data-fancy="history-gallery-2021" data-src="img/content/history-1.webp"
+                                                data-caption="Подпись для фото 1">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-1.webp" type="image/webp"><img src="img/content/history-1.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 1" data-fancy="history-gallery-2021" data-src="img/content/history-2.webp"
+                                                data-caption="Подпись для фото 2">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-2.webp" type="image/webp"><img src="img/content/history-2.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 2" data-fancy="history-gallery-2021" data-src="img/content/history-3.webp"
+                                                data-caption="Подпись для фото 3">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-3.webp" type="image/webp"><img src="img/content/history-3.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 3" data-fancy="history-gallery-2021" data-src="img/content/history-4.webp"
+                                                data-caption="Подпись для фото 4">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-4.webp" type="image/webp"><img src="img/content/history-4.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 4" data-fancy="history-gallery-2021" data-src="img/content/history-5.webp"
+                                                data-caption="Подпись для фото 5">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-5.webp" type="image/webp"><img src="img/content/history-5.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--main-history__block-->
+                                <div class="main-history__block" data-block="2022">
+                                    <div class="main-history__block-inner">
+                                        <div class="main-history__content">
+                                            <h3 class="main-history__year">2021</h3>
+                                            <div class="page-content">
+                                                <p>С 2022 года фестиваль «Столица Закатов» проходит всё лето&nbsp;— с пятницы по&nbsp;воскресенье. Внутри события теперь
+                                                    несколько
+                                                    направлений и&nbsp;форматов на&nbsp;разных городских площадках, благоустроенных к 800-летию города. Локации фестиваля
+                                                    собираются в&nbsp;единый
+                                                    маршрут, позволяющий по-новому увидеть Нижний Новгород.</p>
+                                                <p>В списке хедлайнеров 2022 года: «Моя Мишель», Zventa Sventana, Меджикул, Сироткин, Тося Чайкина, группа «Обе Две»,...
+                                                    <button class="btn show-more-btn" aria-label="Развернуть">
+                                                        <svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                                    </button>
+                                                    <!-- <button class="btn show-more-btn active" aria-label="Свернуть">
+                                                    <svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                                </button> -->
+                                                </p>
+                                            </div>
+                                            <a href="#" target="_blank" class="btn stroke-btn stroke-btn--link stroke-btn--secondary">
+                                                <span>Посмотреть, как прошёл фестиваль</span>
+                                            </a>
+                                        </div>
+                                        <div class="main-history__images">
+                                            <figure class="main-history__preview" style="--index: 0">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-1.webp" type="image/webp"><img src="img/content/history-1.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 1">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-2.webp" type="image/webp"><img src="img/content/history-2.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 2">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-3.webp" type="image/webp"><img src="img/content/history-3.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 3">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-4.webp" type="image/webp"><img src="img/content/history-4.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 4">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-5.webp" type="image/webp"><img src="img/content/history-5.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--main-history__block-->
+                                <div class="main-history__block" data-block="2023">
+                                    <div class="main-history__block-inner">
+                                        <div class="main-history__content">
+                                            <h3 class="main-history__year">2021</h3>
+                                            <div class="page-content">
+                                                <p>«Столица Закатов» — один из&nbsp;флагманов в&nbsp;событийном каркасе Нижнего Новгорода. Фестиваль стал узнаваемым городским
+                                                    брендом.</p>
+                                                <p>В 2023 году открыты аккаунты «Столицы Закатов» в&nbsp;Телеграме и&nbsp;в&nbsp;социальной сети «ВКонтакте»,
+                                                    где&nbsp;публикуются
+                                                    самые
+                                                    атуальные новости фестиваля.</p>
+                                                <p>Среди хедлайнеров 2023 года: квинтет Сергея Мазаева, группа «Моя Мишель», JP Big Band, «by Индия», Маргулис, Feduk,
+                                                    Аrmir Lee, группа ZOLOTO...
+                                                    <button class="btn show-more-btn" aria-label="Развернуть">
+                                                        <svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                                    </button>
+                                                    <!-- <button class="btn show-more-btn active" aria-label="Свернуть">
+                                                    <svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                                </button> -->
+                                                </p>
+                                            </div>
+                                            <a href="#" target="_blank" class="btn stroke-btn stroke-btn--link stroke-btn--secondary">
+                                                <span>Посмотреть, как прошёл фестиваль</span>
+                                            </a>
+                                        </div>
+                                        <div class="main-history__images">
+                                            <figure class="main-history__preview" style="--index: 0">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-1.webp" type="image/webp"><img src="img/content/history-1.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 1">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-2.webp" type="image/webp"><img src="img/content/history-2.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 2">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-3.webp" type="image/webp"><img src="img/content/history-3.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 3">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-4.webp" type="image/webp"><img src="img/content/history-4.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 4">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-5.webp" type="image/webp"><img src="img/content/history-5.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--main-history__block-->
+                                <div class="main-history__block" data-block="2024">
+                                    <div class="main-history__block-inner">
+                                        <div class="main-history__content">
+                                            <h3 class="main-history__year">2021</h3>
+                                            <div class="page-content">
+                                                <p>«Столица Закатов» охватывает ключевые туристические локации города и&nbsp;становится частью событийной программы
+                                                    в&nbsp;Нижнем Новгороде в&nbsp;статусе «Культурной столицы года».</p>
+                                                <p>В списке хедлайнеров 2024 года: Mary Gu, Сироткин, Эмма Смит, Валерий Сюткин и Light Jazz, «Три дня дождя», The Hatters.</p>
+                                                <p>Впервые фестиваль дал возможность молодым талантливым ребятам представить себя широкой публике на&nbsp;конкурсе «Новые
+                                                    имена». 110
+                                                    человек прислали...
+                                                    <button class="btn show-more-btn" aria-label="Развернуть">
+                                                        <svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                                    </button>
+                                                    <!-- <button class="btn show-more-btn active" aria-label="Свернуть">
+                                                    <svg><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                                </button> -->
+                                                </p>
+                                            </div>
+                                            <a href="#" target="_blank" class="btn stroke-btn stroke-btn--link stroke-btn--secondary">
+                                                <span>Посмотреть, как прошёл фестиваль</span>
+                                            </a>
+                                        </div>
+                                        <div class="main-history__images">
+                                            <figure class="main-history__preview" style="--index: 0">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-1.webp" type="image/webp"><img src="img/content/history-1.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 1">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-2.webp" type="image/webp"><img src="img/content/history-2.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 2">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-3.webp" type="image/webp"><img src="img/content/history-3.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 3">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-4.webp" type="image/webp"><img src="img/content/history-4.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                            <figure class="main-history__preview" style="--index: 4">
+                                                <div class="media-cover">
+                                                    <picture><source srcset="img/content/history-5.webp" type="image/webp"><img src="img/content/history-5.jpg" alt></picture>
+                                                </div>
+                                                <figcaption class="main-history__caption">Подпись для фото</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--partners-->
+                <section class="section partners">
+                    <div class="container">
+                        <div class="partners__cols">
+                            <div class="col-partner partners__col partners__sticky">
+                                <h2 class="text-l">Партнёры<span>фестиваля «столица закатов»</span></h2>
+                                <div class="col-partner__content">
+                                    <p class="h4">Хотите стать партнёром?</p>
+                                    <button class="btn stroke-btn stroke-btn--secondary stroke-btn--link mod-open-btn" data-modal="partners-modal"><span>Связаться с
+                                            нами</span></button>
+                                </div>
+                            </div>
+                            <div class="partners__col">
+                                <div class="partners__items">
+                                    <div class="partners__item">
+                                        <!--item-partner-->
+<div class="item-partner">
+    <div class="item-partner__logo">
+        <div class="media-contain">
+            <img src="img/svg/partners-logo.svg" alt>
+        </div>
+    </div>
+    <h5>Партнёр какого‑то отдельного мероприятия</h5>
+</div>
+                                    </div>
+                                    <div class="partners__item">
+                                        <!--item-partner-->
+<div class="item-partner">
+    <div class="item-partner__logo">
+        <div class="media-contain">
+            <img src="img/svg/partners-logo.svg" alt>
+        </div>
+    </div>
+    <h5>Партнёр какого‑то отдельного мероприятия</h5>
+</div>
+                                    </div>
+                                    <div class="partners__item">
+                                        <!--item-partner-->
+<div class="item-partner">
+    <div class="item-partner__logo">
+        <div class="media-contain">
+            <img src="img/svg/partners-logo.svg" alt>
+        </div>
+    </div>
+    <h5>Партнёр какого‑то отдельного мероприятия</h5>
+</div>
+                                    </div>
+                                    <div class="partners__item">
+                                        <!--item-partner-->
+<div class="item-partner">
+    <div class="item-partner__logo">
+        <div class="media-contain">
+            <img src="img/svg/partners-logo.svg" alt>
+        </div>
+    </div>
+    <h5>Партнёр какого‑то отдельного мероприятия</h5>
+</div>
+                                    </div>
+                                    <div class="partners__item">
+                                        <!--item-partner-->
+<div class="item-partner">
+    <div class="item-partner__logo">
+        <div class="media-contain">
+            <img src="img/svg/partners-logo.svg" alt>
+        </div>
+    </div>
+    <h5>Партнёр какого‑то отдельного мероприятия</h5>
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--main-rules-->
+                <section class="section main-rules">
+                    <div class="container">
+                        <!--page-row-->
+                        <div class="page-row">
+                            <div class="page-row__aside">
+                                <aside class="page-row__sticky">
+                                    <h2 class="sec-title">[Правила посещения фестиваля]</h2>
+                                </aside>
+                            </div>
+                            <div class="page-row__content">
+                                <div class="main-rules__content">
+                                    <h3>Просим вас соблюдать правила поведения на&nbsp;фестивале «Столица Закатов» и&nbsp;с&nbsp;уважением относиться к&nbsp;другим посетителям
+                                        и персоналу.</h3>
+                                    <p class="h4">Внимательно изучите ограничения, действующие на&nbsp;территории фестиваля</p>
+                                    <a href="#" class="btn main-btn main-btn--link"><span>Узнать подробнее</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--main-faq-->
+<section class="section main-faq">
+    <div class="container">
+        <!--page-row-->
+        <div class="page-row">
+            <aside class="page-row__aside">
+                <div class="page-row__sticky">
+                    <h2 class="sec-title">[FAQ часто задаваемые вопросы]</h2>
+                </div>
+            </aside>
+            <div class="page-row__content">
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Что такое «Столица Закатов»?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Почему такое название у&nbsp;фестиваля?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Когда и где пройдёт фестиваль?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Где можно посмотреть анонсы?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Как попасть на концерты?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Концерты бесплатные?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Что делать, если я купил билет, но он не пришёл на почту?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Как отбирали артистов для&nbsp;выступления на «Столице Закатов»?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Можно ли прийти на&nbsp;фестиваль с&nbsp;детьми?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+                <!--item-faq-->
+                <div class="accordion item-faq" data-animation="fadeUp">
+                    <div class="accordion__header">
+                        <h4>Можно ли прийти на&nbsp;фестиваль с&nbsp;животными?</h4>
+                        <div class="accordion__icon">
+                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="page-content">
+                            <p>Он будет проходить в течение всего лета на&nbsp;главных туристических локациях города&nbsp;— с&nbsp;пятницы по&nbsp;воскресенье. События
+                                «Столицы Закатов» охватывают различные точки в&nbsp;городе, как в&nbsp;нижней его части, так&nbsp;и&nbsp;в&nbsp;верхней.</p>
+                            <p>«Столица Закатов. Ракушка»&nbsp;— Александровский сад</p>
+                            <p>«Столица Закатов. Соло на&nbsp;закате» — набережная Федоровского, Нижне-Волжская набережная, территория Стрелки, Кремль</p>
+                            <p>«Столица Закатов. Искра»&nbsp;— сквер Свердлова</p>
+                            <p>«Столица Закатов. Гастрономическая Рождественская»&nbsp;— улица Рождественская от&nbsp;площади Маркина до&nbsp;улицы Широкой</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <!--contacts-->
+<section class="contacts" id="contacts">
+    <div class="container">
+        <div class="contacts__cols">
+            <div class="col-contacts">
+                <h2 class="text-l">Наши<span>соц&nbsp;сети</span></h2>
+                <div class="col-contacts__content">
+                    <p>В мире дизайна существует понятие «текст-рыба», который используется для&nbsp;демонстрации макета страницы до&nbsp;наполнения его реальным
+                        контентом.</p>
+                    <!--social-->
+<div class="social-list">
+    <ul>
+        <li>
+            <a href="#" target="_blank" aria-label="Вконтакте">
+                <svg><use xlink:href="img/svg/sprite.svg#vk"></use></svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank" aria-label="Телеграм">
+                <svg><use xlink:href="img/svg/sprite.svg#telegram"></use></svg>
+            </a>
+        </li>
+    </ul>
+</div>
+                </div>
+            </div>
+            <div class="col-contacts col-contacts--img">
+                <div class="media-contain">
+                    <picture><source srcset="img/contacts-bg.webp" type="image/webp"><img src="img/contacts-bg.png" alt></picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            </main>
+            <!--footer-->
+
+<footer class="footer footer--main">
+    
+    
+        <div class="container">
+            <div class="footer__inner">
+                <nav class="footer-menu">
+                    <ul>
+                        <li><a class="link js-anchor" href="#directions">Направления</a></li>
+                        <li><a class="link" href="#">Расписание</a></li>
+                        <li><a class="link js-anchor" href="#main-map">Карта</a></li>
+                        <li><a class="link js-anchor" href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__logo">
+                    <svg viewBox="0 0 1670 503" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M610.874 183.842C593.881 201.075 571.111 210.606 547.478 210.375C487.992 210.375 448.237 166.32 448.237 105.664C448.237 45.0072 488.551 0.672852 546.92 0.672852C571.943 0.672852 593.642 9.0431 608.932 23.9979L592.791 45.0072C580.042 33.4725 563.754 27.1518 546.92 27.2065C503.841 27.2065 476.877 60.1574 476.877 105.664C476.877 151.17 506.128 183.786 547.771 183.786C565.345 183.674 582.227 176.586 595.025 163.948L610.874 183.842Z" />
+                        <path d="M686.095 31.2794V206.275H658.602V31.2794H618.798V4.79199H725.9V31.2794H686.095Z" />
+                        <path
+                            d="M956.268 206.275H952.009V179.976H956.54C975.259 179.976 980.36 160.619 981.798 134.293L987.875 4.79199H1102.74V204.837H1074.83V31.3946H1013L1008.44 136.312C1006.46 180.557 993.138 206.275 956.268 206.275Z" />
+                        <path d="M1161.99 160.263L1257.73 4.79199H1285.23V206.275H1257.73V50.8038L1161.99 206.275H1134.49V4.79199H1161.99V160.263Z" />
+                        <path d="M1434.46 4.79199H1461.96V179.729H1483.56V247.394H1457.75V206.56H1316.96V4.79199H1344.43V179.729H1434.46V4.79199Z" />
+                        <path
+                            d="M1616.03 139.903H1542.94L1518.74 206.275H1491.5L1564.59 4.79199H1593.55L1670 206.275H1641.06L1616.03 139.903ZM1551.65 115.421H1606.81L1578.97 41.1948L1551.65 115.421Z" />
+                        <path
+                            d="M0.0156049 443.633H26.544C27.3901 461.866 37.9523 477.398 61.0691 477.398C83.3126 477.398 93.8202 460.91 93.8202 441.495C93.8202 420.336 82.4119 407.083 56.4567 407.083H40.4632V381.76H57.3027C78.4272 381.76 89.2624 369.407 89.2624 349.402C89.2624 329.396 78.7547 317.326 59.6499 317.326C37.3792 317.326 27.9632 332.604 27.6903 351.428H1.16191C0.288547 323.488 14.2623 292.621 59.6499 292.621C97.5866 292.621 118.138 314.681 118.138 347.911C118.138 369.098 107.003 384.967 93.3017 392.03C110.987 399.402 122.969 415.862 122.969 441.439C122.969 478.214 98.1598 502.327 61.0691 502.327C14.5626 502.44 -0.557539 471.855 0.0156049 443.633Z" />
+                        <path
+                            d="M250.306 431.835H175.569L150.822 498.206H122.968L197.704 296.724H227.236L305.437 498.206H275.878L250.306 431.835ZM184.478 407.297H240.82L212.36 333.043L184.478 407.297Z" />
+                        <path
+                            d="M345.139 383.79L416.403 296.724H449.645L369.582 392.814L452.198 498.206H418.983L345.139 406.294V498.206H317.329V296.724H345.139V383.79Z" />
+                        <path
+                            d="M580.623 431.835H507.599L483.419 498.206H456.176L529.227 296.724H558.27L634.679 498.206H605.61L580.623 431.835ZM516.304 407.297H571.354L543.547 333.043L516.304 407.297Z" />
+                        <path d="M686.069 323.239V498.206H658.602V323.239H618.798V296.724H725.9V323.239H686.069Z" />
+                        <path
+                            d="M1030.74 498.206H975.824V296.724H1027.29C1064.59 296.724 1085.36 315.078 1085.36 349.643C1085.36 368.861 1076.7 384.291 1062.52 391.867C1080.16 399.443 1090.86 415.151 1090.86 439.912C1090.89 476.677 1066 498.206 1030.74 498.206ZM1003.86 321.763V382.23H1025.99C1045.65 382.23 1056.4 370.866 1056.4 351.592C1056.4 332.319 1046.28 321.596 1025.99 321.596L1003.86 321.763ZM1003.86 406.489V473.167H1027.56C1049.68 473.167 1061.38 459.492 1061.38 439.104C1061.38 419.301 1050.13 406.489 1027.56 406.489H1003.86Z" />
+                        <path
+                            d="M939.757 491.49V114.41C939.971 111.426 940.104 108.414 940.104 105.346C940.104 45.2698 899.282 0.672852 840.602 0.672852C783.579 0.672852 741.955 44.9909 741.955 105.625V491.769C741.955 493.889 741.768 496.037 741.768 498.212H770.56C770.56 452.75 798.523 419.812 840.709 419.812C882.894 419.812 911.018 452.667 911.125 497.905H939.757V497.766H939.917C939.917 495.758 939.864 493.61 939.757 491.49ZM840.842 27.1968C882.761 27.1968 911.259 60.1355 911.259 105.625H911.072V111.37C908.799 153.792 881.478 183.69 840.842 183.69C799.459 183.69 770.693 151.31 770.693 105.597C770.693 59.8844 798.684 27.1968 840.896 27.1968H840.842ZM770.506 422.127V181.878C778.526 190.124 787.945 196.744 798.282 201.401V402.213C787.954 407.03 778.559 413.78 770.56 422.127H770.506ZM840.388 393.232C835.919 393.248 831.455 393.546 827.021 394.125V209.406C831.643 209.989 836.294 210.287 840.949 210.298C845.579 210.291 850.204 209.984 854.797 209.378V394.18C850.036 393.549 845.241 393.232 840.441 393.232H840.388ZM883.295 402.324V201.234C893.631 196.486 903.045 189.803 911.072 181.515V421.987C903.057 413.725 893.661 407.061 883.349 402.324H883.295Z" />
+                    </svg>
+                </div>
+                <!--social-->
+<div class="social-list">
+    <ul>
+        <li>
+            <a href="#" target="_blank" aria-label="Вконтакте">
+                <svg><use xlink:href="img/svg/sprite.svg#vk"></use></svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank" aria-label="Телеграм">
+                <svg><use xlink:href="img/svg/sprite.svg#telegram"></use></svg>
+            </a>
+        </li>
+    </ul>
+</div>
+                <div class="footer__links">
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+                <div class="footer__dev">
+                    <span>Разработка </span>
+                    <a href="https://omniagency.ru/" target="_blank" rel="nofollow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="74" height="21" viewBox="0 0 74 21">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M5.22205 2.02344H7.40184V4.2032H5.22205V2.02344ZM5.22205 6.14215V8.32036H3.04385V12.6799H5.22205V14.6176V16.7972H7.40184V14.6176H18.0595V16.7967H13.9422V18.9764H18.0595V16.7972H20.2393V12.6799H22.4174V8.32036H20.2393H20.2382V6.14215H18.061V4.204H15.8813V6.14215H9.58001V4.204H7.40027V6.14215H5.22205ZM18.0595 10.4985V8.32194H15.8779V10.4985H18.0595ZM9.5808 8.32194V10.4985H7.40184V8.32194H9.5808ZM3.04305 10.4985H0.863281V16.7957H3.04305V10.4985ZM11.5202 18.9764V16.7967H7.40281V18.9764H11.5202ZM20.2393 2.02344H18.0595V4.2032H20.2393V2.02344ZM24.6004 10.4985H22.4206V16.7957H24.6004V10.4985Z"></path>
+                            <path
+                                d="M42.1827 10.7757C42.1827 11.9832 41.9647 13.0267 41.5287 13.9062C41.0927 14.7857 40.4945 15.464 39.7343 15.941C38.974 16.418 38.1057 16.6565 37.1293 16.6565C36.1529 16.6565 35.2846 16.418 34.5243 15.941C33.7641 15.464 33.1659 14.7857 32.7299 13.9062C32.2939 13.0267 32.0759 11.9832 32.0759 10.7757C32.0759 9.56828 32.2939 8.5248 32.7299 7.64529C33.1659 6.76578 33.7641 6.08752 34.5243 5.6105C35.2846 5.13347 36.1529 4.89496 37.1293 4.89496C38.1057 4.89496 38.974 5.13347 39.7343 5.6105C40.4945 6.08752 41.0927 6.76578 41.5287 7.64529C41.9647 8.5248 42.1827 9.56828 42.1827 10.7757ZM40.8411 10.7757C40.8411 9.78443 40.6753 8.94778 40.3436 8.26579C40.0157 7.5838 39.5703 7.06765 39.0076 6.71733C38.4486 6.36702 37.8225 6.19187 37.1293 6.19187C36.4361 6.19187 35.8082 6.36702 35.2454 6.71733C34.6864 7.06765 34.2411 7.5838 33.9094 8.26579C33.5815 8.94778 33.4175 9.78443 33.4175 10.7757C33.4175 11.7671 33.5815 12.6037 33.9094 13.2857C34.2411 13.9677 34.6864 14.4838 35.2454 14.8342C35.8082 15.1845 36.4361 15.3596 37.1293 15.3596C37.8225 15.3596 38.4486 15.1845 39.0076 14.8342C39.5703 14.4838 40.0157 13.9677 40.3436 13.2857C40.6753 12.6037 40.8411 11.7671 40.8411 10.7757ZM44.5138 5.05149H46.1685L50.0592 14.5546H50.1934L54.0841 5.05149H55.7387V16.5H54.4418V7.80181H54.33L50.7524 16.5H49.5002L45.9225 7.80181H45.8107V16.5H44.5138V5.05149ZM67.5967 5.05149V16.5H66.2551L60.0165 7.51113H59.9047V16.5H58.5184V5.05149H59.86L66.1209 14.0627H66.2327V5.05149H67.5967ZM71.7571 5.05149V16.5H70.3708V5.05149H71.7571Z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+            <!--fixed-btn-->
+<div class="fixed-btn fixed-block">
+    <a href="#" class="btn stroke-btn stroke-btn--link">
+        <span class="h4">посетить фестиваль</span>
+    </a>
+</div>
+
+            
+
+<!--scroll-indicator]-->
+<div class="scroll-indicator"></div>
+<!--request-modal-->
+<modal class="custom-scroll modal request-modal" id="request-modal">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Форма заявки для&nbsp;участия в&nbsp;проекте «Соло&nbsp;на&nbsp;закате 2025»</h2>
+        </div>
+        <form class="form" onsubmit="event.preventDefault();formReset(this);openSuccessMod()">
+            <div class="form__items">
+                <div class="item-form error">
+                    <div class="item-form__lbl">ФИО артиста / название коллектива / творческий псевдоним<span>*</span></div>
+                    <input type="text" placeholder="Иванов Иван Иванович">
+                    <span data-error>Заполните поле</span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Количество человек в коллективе</div>
+                    <input type="text" placeholder="5">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Описание артиста / коллектива<span>*</span></div>
+                    <textarea placeholder="Краткая биография, жанр, ключевые достижения, интересные факты"></textarea>
+                    <span data-error></span>
+                </div>
+                <div class="item-form file-form">
+                    <div class="item-form__lbl">Фото артиста / коллектива</div>
+                    <div class="file-form__action">
+                        <label>
+                            <input type="file" multiple accept=".jpg, .png, .gif" data-max-size="20">
+                            <span class="btn stroke-btn">
+                                <svg><use xlink:href="img/svg/sprite.svg#upload"></use></svg>
+                                загрузить
+                            </span>
+                        </label>
+                        <p class="file-form__info">
+                            До 20 файлов, допустимый размер одного файла — 20 МБ.
+                        </p>
+                    </div>
+                    <span data-error></span>
+                    <div class="file-form__items"></div>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Жанр / репертуар<span>*</span></div>
+                    <input type="text" placeholder="Джаз">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Опыт выступлений<span>*</span></div>
+                    <input type="text" placeholder="3 года">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Контактное лицо / номер телефона<span>*</span></div>
+                    <input type="text" placeholder="+ 7 -000-000-0000 / Иванов Иван ">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Ссылка на социальные сети / сайт<span>*</span></div>
+                    <input type="text" placeholder="vk.com">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Ссылка на выступление</div>
+                    <input type="text" placeholder="vk.com">
+                    <span data-error></span>
+                </div>
+            </div>
+            <div class="form__footer">
+                <p>ВАЖНО!<br>
+                    Перед отправкой формы перепроверьте всю информацию и ссылки. После этого нажмите кнопку "Отправить".</p>
+                <label class="item-checkbox">
+                    <input type="checkbox" checked class="required">
+                    <span>Согласие на обработку <a href="#" target="_blank">персональных данных</a></span>
+                    <span data-error></span>
+                </label>
+                <button type="submit" class="btn main-btn main-btn--link"><span>отправить</span></button>
+            </div>
+        </form>
+    </div>
+</modal>
+<!--partners-modal-->
+<modal class="custom-scroll modal partners-modal" id="partners-modal">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Заявка на участие</h2>
+        </div>
+        <form class="form" onsubmit="event.preventDefault();formReset(this);openSuccessMod()">
+            <div class="form__items">
+                <div class="item-form">
+                    <div class="item-form__lbl">Фамилия Имя<span>*</span></div>
+                    <input type="text" placeholder="Иванов Иван Иванович">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Почта<span>*</span></div>
+                    <input type="text" placeholder="mail@sample.ru">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Телефон<span>*</span></div>
+                    <input type="tel" placeholder="+ 7 -000-000-0000">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Название организации или бренда, который вы представляете<span>*</span></div>
+                    <input type="text" placeholder="ООО Золотое яблоко">
+                    <span data-error></span>
+                </div>
+                <div class="item-form">
+                    <div class="item-form__lbl">Опишите ваш запрос</div>
+                    <textarea placeholder="Опишите ваш запрос"></textarea>
+                </div>
+            </div>
+            <div class="form__footer">
+                <label class="item-checkbox">
+                    <input type="checkbox" checked class="required">
+                    <span>Согласие на обработку <a href="#" target="_blank">персональных данных</a></span>
+                    <span data-error></span>
+                </label>
+                <button type="submit" class="btn main-btn main-btn--link"><span>отправить</span></button>
+            </div>
+        </form>
+    </div>
+</modal>
+<!--share-modal-->
+<modal class="custom-scroll modal share-modal" id="share-modal">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Поделиться</h2>
+        </div>
+        <div class="share">
+            <ul class="share__list">
+                <li>
+                    <a href="#" data-share="vk" aria-label="Поделиться в Вконтакте" target="_blank">
+                        <svg><use xlink:href="img/svg/sprite.svg#vk"></use></svg>
+                    </a>
+                    <span>Vk</span>
+                </li>
+                <li>
+                    <a href="#" data-share="telegram" aria-label="Поделиться в Телеграм" target="_blank">
+                        <svg><use xlink:href="img/svg/sprite.svg#telegram"></use></svg>
+                    </a>
+                    <span>Telegram</span>
+                </li>
+            </ul>
+            <div class="share__lbl">Ссылка</div>
+            <button class="share__link">
+                <span>https://www. stolicazakatov.ru/meropriyatie</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M15 18H16V24H0V10.5C0 9.122 1.121 8 2.5 8H6V9H2.5C1.673 9 1 9.673 1 10.5V23H15V18ZM24 2.5V16H8V2.5C8 1.122 9.121 0 10.5 0H21.5C22.879 0 24 1.122 24 2.5ZM23 2.5C23 1.673 22.327 1 21.5 1H10.5C9.673 1 9 1.673 9 2.5V15H23V2.5Z" />
+                </svg>
+                <span class="share__link-copied">Скопировано</span>
+            </button>
+        </div>
+    </div>
+</modal>
+<!--success-mod-->
+<modal class="custom-scroll modal success-mod" id="success-mod">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Ваша заявка принята</h2>
+        </div>
+        <p>Какой-нибудь текст, в котором указаны дальнейшие действия, куда обращаться может, если что-то непонятно</p>
+        <button class="btn main-btn main-btn--link modal__close"><span>Закрыть</span></button>
+    </div>
+</modal>
+<!--error-mod-->
+<modal class="custom-scroll modal error-mod" id="error-mod">
+    <div class="modal__content">
+        <button type="button" class="btn btn-cross modal__close"></button>
+        <div class="modal__top">
+            <h2>Ошибка</h2>
+        </div>
+        <p>Ваша заявка не была отправлена. Попробуйте снова</p>
+       <button class="btn main-btn main-btn--link modal__close"><span>Закрыть</span></button>
+    </div>
+</modal>
+            <!--mapMobile-modal-->
+            <div class="modal mapMobile-modal" id="mapMobile-modal">
+                <div class="modal__content">
+                    <button type="button" class="btn btn-cross modal__close"></button>
+                    <div class="mapMobile-modal__inner"></div>
+                    <div class="mapMobile-modal__preview">
+                        <picture><source srcset="img/map/map-preview.webp" type="image/webp"><img src="img/map/map-preview.jpg" alt></picture>
+                        <div class="mapMobile-modal__preview-view"></div>
+                    </div>
+                </div>
+            </div>
+            <!--map-modal-->
+            <div class="modal map-modal" id="map-modal">
+                <div class="modal__content">
+                    <button type="button" class="btn btn-cross modal__close"></button>
+                    <div class="map-modal__top">
+                        <h2 class="h1 map-modal__direction"></h2>
+                        <h4 class="map-modal__title"></h4>
+                    </div>
+                    <div class="map-modal__preview"></div>
+                    <div class="map-modal__bottom">
+                        <a href class="btn stroke-btn stroke-btn--secondary stroke-btn--link map-modal__link">
+                            <span>Перейти к расписанию</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--scripts-->
+<script src="js/libs/matter.min.js"></script>
+<script src="js/libs/swiper.min.js"></script>
+<script src="js/libs/gsap.min.js"></script>
+<script src="js/libs/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+    </body>
+
+</html>
