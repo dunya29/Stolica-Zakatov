@@ -1310,15 +1310,12 @@ if (mapBtn && mapModal && mapModalMob) {
             mapModalMob.querySelectorAll(".item-map").forEach(item => {
                 if (item.contains(e.target)) {
                     setMap(item)
-                    //mapModal.classList.add("open")
-                    isMobileModalOpen = true
-                    openModal(mapModal)
+                    mapModal.classList.add("open")
                 }
             })
         }
     })
     function mapResizeHandler() {
-        console.log("d")
         if (mapModalMob.classList.contains("open")) {
             currW = w / (h / window.innerHeight)
             startX = 0
@@ -1336,17 +1333,9 @@ if (mapBtn && mapModal && mapModalMob) {
     }
     const mapDebounce = debounce(mapResizeHandler, 100)
     window.addEventListener("resize", mapDebounce);
-    mapModal.querySelectorAll(".modal__close").forEach(item => {
+    /* mapModal.querySelectorAll(".modal__close").forEach(item => {
         item.addEventListener("click", () => {
-            if (window.innerWidth < bp.tablet && isMobileModalOpen) {
-                openModal(mapModalMob)
-            }
-            //mapResizeHandler()
+           mapResizeHandler()
         })
-    })
-    mapModalMob.querySelectorAll(".modal__close").forEach(item => {
-        item.addEventListener("click", () => {
-            isMobileModalOpen = false
-        })
-    })
+    }) */
 }
