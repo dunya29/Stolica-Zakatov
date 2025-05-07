@@ -1,10 +1,10 @@
 .item-about {
-    padding: 40px 32px 70px;
+    padding: 40px 32px 220px;
     h4 {
         text-transform: uppercase;
     }
     @media (max-width: $bp1) {
-        padding: 32px 32px 60px;
+        padding: 32px 32px 174px;
     }
     @media (max-width: $bp3) {
         h4 {
@@ -13,7 +13,7 @@
         }
     }
     @media (max-width: $bp5) {
-        padding: 24px 24px 60px;
+        padding: 24px 24px 124px;
         h4 {
             max-width: 283px;
         }
@@ -35,11 +35,17 @@
     .swiper-slide {
         flex: 0 0 100%;
     }
-    .swiper-scrollbar {
+    .swiper-scrollbar, .nav-btns {
         position: absolute;
         left: calc(100% / 4 + 40px);
         right: calc(100% / 4 * 1.6 + 40px);
+    }
+    .swiper-scrollbar {
         bottom: 50px;
+    }
+    .nav-btns {
+        justify-content: space-between;
+        bottom: 80px;
     }
     &__cols {
         display: grid;
@@ -83,6 +89,9 @@
         .swiper-scrollbar {
             bottom: 40px;
         }
+        .nav-btns {
+            bottom: 70px;
+        }
         &__cols {
             grid-template-columns: 1fr 1.43fr 1.57fr;
         }
@@ -105,7 +114,7 @@
     @media (max-width: $bp4) {
         padding-top: 60px;
         border-radius: 44px 44px 0 0;
-        .swiper-scrollbar {
+        .swiper-scrollbar, .nav-btns {
             left: calc(100% / 3 * 1.26 + 32px);
             right: 32px;
         }
@@ -122,6 +131,9 @@
         }
     }
     @media (max-width: $bp5) {
+        .nav-btns {
+            bottom: 60px;
+        }
         &__swiper1 {
             .media-cover {
                 padding-top: 174%;
@@ -132,7 +144,7 @@
         h2 {
             line-height: 1.1;
         }
-        .swiper-scrollbar {
+        .swiper-scrollbar, .nav-btns {
             left: 20px;
             right: 20px;
         }

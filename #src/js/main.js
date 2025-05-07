@@ -823,6 +823,10 @@ if (about) {
             el: about.querySelector(".swiper-scrollbar"),
             draggable: true,
         },
+        navigation: {
+            prevEl: about.querySelector(".nav-btn--prev"),
+            nextEl: about.querySelector(".nav-btn--next"),
+        },
         autoplay: {
             delay: 3500,
             pauseOnMouseEnter: true,
