@@ -27,7 +27,7 @@
         border-bottom: 1px solid var(--gray-color-light);
         margin-bottom: 16px;
         .tabs {
-            margin-bottom:-1px;
+            margin-bottom: -1px;
             flex-wrap: nowrap;
             overflow: auto;
             button {
@@ -73,7 +73,7 @@
             }
         }
     }
-    @media(min-width: $bp5) {
+    @media (min-width: $bp5) {
         &__tabs {
             .tabs {
                 margin-left: 0;
@@ -237,19 +237,27 @@
         padding: 32px 51px 32px 11px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-end;
         border-radius: 30px 0 0 30px;
         background: url(../img/svg/direction-1-bg-s.svg) center / cover no-repeat;
         h4 {
             color: var(--white);
-            max-height: 330px;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
             overflow: hidden;
             text-overflow: ellipsis;
         }
+    }
+    &__direction-name {
+        width: max-content;
+        max-width: 250px;
+        height: 73px;
+        transform: rotate(-90deg);
+        transform-origin: 36px 36px;
+        display: flex;
+        align-items: center;
     }
     &__inner {
         min-height: 320px;
@@ -402,6 +410,11 @@
         &__direction {
             width: 116px;
         }
+        &__direction-name {
+            max-width: 204px;
+            height: 54px;
+            transform-origin: 27px 27px;
+        }
         &__inner {
             min-height: 268px;
             padding: 26px 10px 26px 26px;
@@ -446,12 +459,6 @@
         }
     }
     @media (min-width: $bp4) {
-        &__direction {
-            h4 {
-                writing-mode: vertical-rl;
-                transform: rotate(180deg);
-            }
-        }
         &__free {
             writing-mode: vertical-rl;
             transform: rotate(180deg);
@@ -472,6 +479,11 @@
             width: 100%;
             border-radius: 30px 30px 0 0;
             margin-bottom: -39px;
+        }
+        &__direction-name {
+            transform: none;
+            max-width: 100%;
+            height: auto;
         }
         &__inner {
             padding: 16px 16px 116px;

@@ -3388,9 +3388,9 @@ p a:hover {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
@@ -3400,12 +3400,31 @@ p a:hover {
 
 .item-ticket__direction h4 {
   color: var(--white);
-  max-height: 330px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.item-ticket__direction-name {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 250px;
+  height: 73px;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transform-origin: 36px 36px;
+  -ms-transform-origin: 36px 36px;
+  transform-origin: 36px 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .item-ticket__inner {
@@ -4848,15 +4867,6 @@ p a:hover {
     display: none;
   }
 
-  .item-ticket__direction h4 {
-    -webkit-writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-
   .item-ticket__free {
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
@@ -5205,6 +5215,14 @@ p a:hover {
 
   .item-ticket__direction {
     width: 116px;
+  }
+
+  .item-ticket__direction-name {
+    max-width: 204px;
+    height: 54px;
+    -webkit-transform-origin: 27px 27px;
+    -ms-transform-origin: 27px 27px;
+    transform-origin: 27px 27px;
   }
 
   .item-ticket__inner {
@@ -6219,6 +6237,14 @@ p a:hover {
     width: 100%;
     border-radius: 30px 30px 0 0;
     margin-bottom: -39px;
+  }
+
+  .item-ticket__direction-name {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    max-width: 100%;
+    height: auto;
   }
 
   .item-ticket__inner {

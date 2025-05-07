@@ -934,6 +934,11 @@ if (schedule) {
             })
         }
     }
+    schedule.querySelectorAll("label input").forEach(item => {
+        if (item.checked) {
+            filterObj.setSelected(item)
+        }
+    })
     scheduleFilter.addEventListener("click", e => {
         if (scheduleFilter.querySelector("[data-schedule-tab]")) {
             scheduleFilter.querySelectorAll("[data-schedule-tab]").forEach(tab => {
