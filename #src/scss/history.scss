@@ -23,6 +23,10 @@
 			margin-bottom: 0;
 		}
 	}
+	.show-more-btn.hidden {
+		visibility: hidden;
+		opacity: 0;
+	}
 	&.show {
 		.main-history__preview {
 			animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
@@ -94,6 +98,14 @@
 		color: var(--secondary-color);
 		text-align: center;
 		margin-top: 18px;
+	}
+	&__full {
+		display: none;
+		overflow: hidden;
+		transition: all 0.5s ease-in-out;
+		&.active {
+			display: block;
+		}
 	}
 	@media (max-width: $bp1) {
 		.page-row {

@@ -5,6 +5,7 @@
   font-weight: 300;
   font-style: normal;
   src: local("PlatformLC Light"), local("PlatformLC-Light"), url("../fonts/PlatformLC-Light.woff2") format("woff2"), url("../fonts/PlatformLC-Light.woff") format("woff"), url("../fonts/PlatformLC-Light.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
   font-weight: 400;
   font-style: normal;
   src: local("PlatformLC Regular"), local("PlatformLC-Regular"), url("../fonts/PlatformLC-Regular.woff2") format("woff2"), url("../fonts/PlatformLC-Regular.woff") format("woff"), url("../fonts/PlatformLC-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -19,6 +21,7 @@
   font-weight: 500;
   font-style: normal;
   src: local("PlatformLC Medium"), local("PlatformLC-Medium"), url("../fonts/PlatformLC-Medium.woff2") format("woff2"), url("../fonts/PlatformLC-Medium.woff") format("woff"), url("../fonts/PlatformLC-Medium.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -26,6 +29,7 @@
   font-weight: 400;
   font-style: normal;
   src: local("Graphik Regular"), local("Graphik-Regular"), url("../fonts/Graphik-Regular.woff2") format("woff2"), url("../fonts/Graphik-Regular.woff") format("woff"), url("../fonts/Graphik-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 html,
@@ -3180,6 +3184,11 @@ p a:hover {
   margin-bottom: 0;
 }
 
+.main-history .show-more-btn.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .main-history.show .main-history__preview {
   -webkit-animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
   animation: fadeIn 0.4s calc(var(--index) * 0.15s) linear forwards;
@@ -3282,6 +3291,17 @@ p a:hover {
   color: var(--secondary-color);
   text-align: center;
   margin-top: 18px;
+}
+
+.main-history__full {
+  display: none;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-history__full.active {
+  display: block;
 }
 
 .schedule-filter [data-schedule-tab].active {

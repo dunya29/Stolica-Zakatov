@@ -111,6 +111,43 @@ window.addEventListener("load", () => {
                 invalidateOnRefresh: true,
             }
         })
+        if (mainHistory.querySelector(".page-content")) {
+            mainHistory.querySelectorAll('.page-content').forEach(item => {
+                const showMoreBtn = item.querySelector(".main-history__intro .show-more-btn")
+                const showLessBtn = item.querySelector(".main-history__full .show-more-btn")
+                const fullContent = item.querySelector(".main-history__full")
+                if (showMoreBtn) {
+                    showMoreBtn.addEventListener("click", () => {
+                        showMoreBtn.classList.add("hidden")
+                        fullContent.classList.add("active")
+                        let height = fullContent.clientHeight
+                        fullContent.style.height = 0
+                        setTimeout(() => {
+                            fullContent.style.height = height + "px"
+                            fullContent.addEventListener('transitionend', function handleTransitionEnd() {
+                                fullContent.style.height = null
+                                fullContent.removeEventListener('transitionend', handleTransitionEnd);
+                            }, { once: true });
+                        }, 0);
+                    })
+                }
+                if (showLessBtn) {
+                    showLessBtn.addEventListener("click", () => {
+                        let height = fullContent.clientHeight
+                        fullContent.style.height = height + "px"
+                        setTimeout(() => {
+                            fullContent.style.height = 0
+                            showMoreBtn.classList.remove("hidden")
+                            fullContent.addEventListener('transitionend', function handleTransitionEnd() {
+                                fullContent.style.height = null
+                                fullContent.classList.remove("active")
+                                fullContent.removeEventListener('transitionend', handleTransitionEnd);
+                            }, { once: true });
+                        }, 0);
+                    })
+                }
+            })
+        }
     }
 })
 const header = document.querySelector(".header")
@@ -249,19 +286,20 @@ if (anchorLinks.length) {
 //fixed header
 let lastScroll = scrollPos();
 window.addEventListener("scroll", () => {
-    if (scrollPos() > 1) {
+    let scrollTop = scrollPos()
+    if (scrollTop > 1) {
         header.classList.remove("no-scroll")
         header.classList.add("scroll")
-        if ((scrollPos() > lastScroll && !header.classList.contains("unshow"))) {
+        if ((scrollTop > lastScroll && !header.classList.contains("unshow"))) {
             header.classList.add("unshow")
-        } else if (scrollPos() < lastScroll && header.classList.contains("unshow")) {
+        } else if (scrollTop < lastScroll && header.classList.contains("unshow")) {
             header.classList.remove("unshow")
         }
     } else {
         header.classList.remove("scroll", "unshow")
         header.classList.add("no-scroll")
     }
-    lastScroll = scrollPos()
+    lastScroll = scrollTop
 })
 //switch active tab/block
 const switchBlock = document.querySelectorAll(".switch-block")
@@ -699,13 +737,17 @@ if (scrollIndicator) {
 }
 // fixed btn
 const fixedBtn = document.querySelector(".fixed-btn")
+let fixedBtnTimeout
 function fixedBtnVisibility() {
-    if (scrollPos() > window.innerHeight && scrollPos() + window.innerHeight + 150 < document.body.scrollHeight) {
-        fixedBtn.classList.add("show")
-        fixedBtn.style.marginRight = (document.documentElement.clientWidth - window.innerWidth) / 2 + 'px'
-    } else {
-        fixedBtn.classList.remove("show")
-    }
+    clearTimeout(fixedBtnTimeout)
+    fixedBtnTimeout = setTimeout(() => {
+        if (scrollPos() > window.innerHeight && scrollPos() + window.innerHeight + 150 < document.body.scrollHeight) {
+            fixedBtn.classList.add("show")
+            fixedBtn.style.marginRight = (document.documentElement.clientWidth - window.innerWidth) / 2 + 'px'
+        } else {
+            fixedBtn.classList.remove("show")
+        }
+    }, 100);
 }
 if (fixedBtn) {
     fixedBtnVisibility()
@@ -1160,17 +1202,19 @@ if (jsMatter.length) {
         let scrollListener;
         let resizeListener;
         function matterAnimInit(item) {
-            let itemTop = item.getBoundingClientRect().top
-            let top = scrollPos() + itemTop
-            let itemPoint = Math.abs(window.innerHeight - item.offsetHeight * 0.5);
-            if (itemTop > 0 && (scrollPos() > top - itemPoint) && !item.classList.contains("animated")) {
-                new MatterClass({
-                    container: item,
-                    elements: item.querySelectorAll(".js-matter__item"),
-                })
-                item.classList.add("animated")
-                window.removeEventListener("scroll", scrollListener);
-                window.removeEventListener("resize", resizeListener)
+            if (item.clientHeight && !item.classList.contains("animated")) {
+                let itemTop = item.getBoundingClientRect().top
+                let top = scrollPos() + itemTop
+                let itemPoint = Math.abs(window.innerHeight - item.offsetHeight * 0.5);
+                if (itemTop > 0 && (scrollPos() > top - itemPoint) && !item.classList.contains("animated")) {
+                    new MatterClass({
+                        container: item,
+                        elements: item.querySelectorAll(".js-matter__item"),
+                    })
+                    item.classList.add("animated")
+                    window.removeEventListener("scroll", scrollListener);
+                    window.removeEventListener("resize", resizeListener)
+                }
             }
         }
         const init = () => matterAnimInit(item);
@@ -1192,12 +1236,16 @@ if (jsMatter.length) {
 function animate() {
     if (document.querySelectorAll('[data-animation]').length) {
         document.querySelectorAll('[data-animation]').forEach(item => {
-            let itemTop = item.getBoundingClientRect().top + scrollPos();
-            let itemPoint = Math.abs(window.innerHeight - item.offsetHeight * 0.1);
-            if (scrollPos() > itemTop - itemPoint) {
-                let animName = item.getAttribute("data-animation")
-                item.classList.add(animName);
+            if (!item.classList.contains("animated")) {
+                let itemTop = item.getBoundingClientRect().top + scrollPos();
+                let itemPoint = Math.abs(window.innerHeight - item.offsetHeight * 0.1);
+                if (scrollPos() > itemTop - itemPoint) {
+                    let animName = item.getAttribute("data-animation")
+                    item.classList.add(animName);
+                    item.classList.add("animated");
+                }
             }
+
         })
     }
 
