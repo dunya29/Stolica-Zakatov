@@ -58,11 +58,14 @@
 		}
 	}
 	&__main {
-		padding: 20px 24px;
+		padding: 20px 0;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		overflow: hidden;
+	}
+	&__header, &__content {
+		padding: 0 24px;
 	}
 	&__header {
 		width: 100%;
@@ -271,7 +274,10 @@
 			}
 		}
 		&__main {
-			padding: 20px;
+			padding: 20px 0;
+		}
+		&__header, &__content {
+			padding: 0 20px;
 		}
 		&__header {
 			svg {
@@ -279,10 +285,6 @@
 				height: 22px;
 				margin: 10px 5px;
 			}
-		}
-		&__body {
-			padding: 0 10px;
-			margin: 0 -10px;
 		}
 		&__content {
 			p {

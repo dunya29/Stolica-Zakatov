@@ -556,10 +556,8 @@ p a:hover {
   margin-top: 20px;
 }
 
-.page-top--policy h1 {
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+.page-top--policy .page-top__content {
+  max-width: 100%;
 }
 
 .page-top__content {
@@ -2737,7 +2735,7 @@ p a:hover {
 }
 
 .item-direction__main {
-  padding: 20px 24px;
+  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2749,6 +2747,11 @@ p a:hover {
   -ms-flex-align: start;
   align-items: flex-start;
   overflow: hidden;
+}
+
+.item-direction__header,
+.item-direction__content {
+  padding: 0 24px;
 }
 
 .item-direction__header {
@@ -5134,18 +5137,18 @@ p a:hover {
   }
 
   .item-direction__main {
-    padding: 20px;
+    padding: 20px 0;
+  }
+
+  .item-direction__header,
+  .item-direction__content {
+    padding: 0 20px;
   }
 
   .item-direction__header svg {
     width: 22px;
     height: 22px;
     margin: 10px 5px;
-  }
-
-  .item-direction__body {
-    padding: 0 10px;
-    margin: 0 -10px;
   }
 
   .item-direction__content p {

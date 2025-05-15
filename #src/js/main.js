@@ -137,10 +137,10 @@ window.addEventListener("load", () => {
                         fullContent.style.height = height + "px"
                         setTimeout(() => {
                             fullContent.style.height = 0
-                            showMoreBtn.classList.remove("hidden")
                             fullContent.addEventListener('transitionend', function handleTransitionEnd() {
                                 fullContent.style.height = null
                                 fullContent.classList.remove("active")
+                                showMoreBtn.classList.remove("hidden")
                                 fullContent.removeEventListener('transitionend', handleTransitionEnd);
                             }, { once: true });
                         }, 0);
