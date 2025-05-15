@@ -2735,7 +2735,7 @@ p a:hover {
 }
 
 .item-direction__main {
-  padding: 20px 0;
+  padding: 20px 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2747,11 +2747,6 @@ p a:hover {
   -ms-flex-align: start;
   align-items: flex-start;
   overflow: hidden;
-}
-
-.item-direction__header,
-.item-direction__content {
-  padding: 0 24px;
 }
 
 .item-direction__header {
@@ -2782,7 +2777,6 @@ p a:hover {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   position: relative;
-  overflow: hidden;
 }
 
 .item-direction__content {
@@ -5132,17 +5126,16 @@ p a:hover {
     height: 350px;
   }
 
+  .item-direction .js-matter {
+    overflow: visible;
+  }
+
   .item-direction .js-matter__item {
     padding: 3px 10px;
   }
 
   .item-direction__main {
-    padding: 20px 0;
-  }
-
-  .item-direction__header,
-  .item-direction__content {
-    padding: 0 20px;
+    padding: 20px;
   }
 
   .item-direction__header svg {
