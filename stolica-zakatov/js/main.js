@@ -30,125 +30,7 @@ window.addEventListener("load", () => {
             }
         }, 7);
     }
-    //equalizer
-    const equalizer = document.querySelector(".equalizer")
-    if (equalizer) {
-        gsap.to(equalizer, {
-            ease: "none",
-            scrollTrigger: {
-                trigger: equalizer,
-                pin: true,
-                pinSpacing: false,
-                scrub: 1,
-                start: "top top",
-                invalidateOnRefresh: true,
-                anticipatePin: 1
-            }
-        })
-    }
-    //partners
-    const partners = document.querySelector(".partners")
-    const partnersSticky = document.querySelector(".partners__sticky")
-    const partnersItems = document.querySelectorAll(".partners__item")
-    if (partnersSticky && partnersItems.length) {
-        function offsetTop() {
-            let top
-            if (window.innerWidth > bp.tablet) {
-                top = (window.innerHeight - partnersSticky.clientHeight) / 2 > 0 ? (window.innerHeight - partnersSticky.clientHeight) / 2 : 0
-            } else {
-                top = header.clientHeight + 10
-            }
-            return top
-        }
-        let slideCount = partnersItems.length
-        partnersItems.forEach((item, idx) => {
-            gsap.to(item, {
-                ease: "none",
-                scrollTrigger: {
-                    trigger: item,
-                    pin: true,
-                    pinSpacing: false,
-                    scrub: true,
-                    start: () => "top top+=" + offsetTop(),
-                    end: () => "+=" + (item.offsetHeight * (slideCount - (window.innerWidth > bp.tablet ? 2 : 1) - idx)),
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1
-                }
-            })
-        })
-        gsap.matchMedia().add("(min-width: 767.98px)", () => {
-            gsap.to(partnersSticky, {
-                ease: "none",
-                scrollTrigger: {
-                    trigger: partnersSticky,
-                    pin: true,
-                    pinSpacing: false,
-                    scrub: true,
-                    start: () => "top top+=" + offsetTop(),
-                    end: () => "+=" + (partners.offsetHeight / slideCount * (slideCount - 2)),
-                    onEnterBack: () => header.classList.add("hidden"),
-                    onLeaveBack: () => header.classList.remove("hidden"),
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1
-                }
-            })
-        })
 
-    }
-    //history
-    const mainHistory = document.querySelector(".main-history")
-    if (mainHistory) {
-        gsap.to(mainHistory, {
-            ease: "none",
-            scrollTrigger: {
-                trigger: mainHistory,
-                start: "top center",
-                onEnter: () => {
-                    if (!mainHistory.classList.contains('show')) {
-                        mainHistory.classList.add('show')
-                    }
-                },
-                invalidateOnRefresh: true,
-            }
-        })
-        if (mainHistory.querySelector(".page-content")) {
-            mainHistory.querySelectorAll('.page-content').forEach(item => {
-                const showMoreBtn = item.querySelector(".main-history__intro .show-more-btn")
-                const showLessBtn = item.querySelector(".main-history__full .show-more-btn")
-                const fullContent = item.querySelector(".main-history__full")
-                if (showMoreBtn) {
-                    showMoreBtn.addEventListener("click", () => {
-                        showMoreBtn.classList.add("hidden")
-                        fullContent.classList.add("active")
-                        let height = fullContent.clientHeight
-                        fullContent.style.height = 0
-                        setTimeout(() => {
-                            fullContent.style.height = height + "px"
-                            fullContent.addEventListener('transitionend', function handleTransitionEnd() {
-                                fullContent.style.height = null
-                                fullContent.removeEventListener('transitionend', handleTransitionEnd);
-                            }, { once: true });
-                        }, 0);
-                    })
-                }
-                if (showLessBtn) {
-                    showLessBtn.addEventListener("click", () => {
-                        let height = fullContent.clientHeight
-                        fullContent.style.height = height + "px"
-                        setTimeout(() => {
-                            fullContent.style.height = 0
-                            fullContent.addEventListener('transitionend', function handleTransitionEnd() {
-                                fullContent.style.height = null
-                                fullContent.classList.remove("active")
-                                showMoreBtn.classList.remove("hidden")
-                                fullContent.removeEventListener('transitionend', handleTransitionEnd);
-                            }, { once: true });
-                        }, 0);
-                    })
-                }
-            })
-        }
-    }
 })
 const header = document.querySelector(".header")
 const iconMenu = document.querySelector('.icon-menu');
@@ -1281,28 +1163,36 @@ function setMap(item) {
             item.removeAttribute("data-srcset")
         })
     }
-    let preview = item.querySelector("[data-zoom]") ? item.querySelector("[data-zoom]").innerHTML : ''
+    const previewEl = mapModal.querySelector(".map-modal__preview");
+    const linkEl = mapModal.querySelector(".map-modal__link");
+    const directionEl = mapModal.querySelector(".map-modal__direction");
+    const titleEl = mapModal.querySelector(".map-modal__title");
+    const itemZoomEl = item.querySelector("[data-zoom]")
+    const itemDirectionEl = item.querySelector("[data-direction]")
+    const itemTitleEl = item.querySelector("[data-title]")
+    let preview = itemZoomEl ? itemZoomEl.innerHTML : ''
+    let direction = itemDirectionEl ? itemDirectionEl.textContent : ''
+    let title = itemTitleEl ? itemTitleEl.textContent : ''
     let link = item.getAttribute("data-link") || ''
-    let direction = item.querySelector("[data-direction]") ? item.querySelector("[data-direction]").textContent : ''
-    let title = item.querySelector("[data-title]") ? item.querySelector("[data-title]").textContent : ''
-    if (mapModal.querySelector(".map-modal__preview")) {
-        mapModal.querySelector(".map-modal__preview").innerHTML = preview
+    if (previewEl) {
+        previewEl.innerHTML = preview;
     }
-    if (mapModal.querySelector(".map-modal__link")) {
-        mapModal.querySelector(".map-modal__link").setAttribute("href", link)
+    if (linkEl) {
+        linkEl.setAttribute("href", link);
     }
-    if (mapModal.querySelector(".map-modal__direction")) {
-        mapModal.querySelector(".map-modal__direction").textContent = direction
+    if (directionEl) {
+        directionEl.textContent = direction;
     }
-    if (mapModal.querySelector(".map-modal__title")) {
-        mapModal.querySelector(".map-modal__title").textContent = title
+    if (titleEl) {
+        titleEl.textContent = title;
     }
     mapModal.querySelector(".modal__content").style.transformOrigin = `${item.getBoundingClientRect().left}px ${item.getBoundingClientRect().top}px`
 }
 if (map && mapModal) {
     map.addEventListener("click", e => {
-        if (map.querySelectorAll(".item-map").length) {
-            map.querySelectorAll(".item-map").forEach(item => {
+        const itemMaps = map.querySelectorAll(".item-map")
+        if (itemMaps.length) {
+            itemMaps.forEach(item => {
                 if (item.contains(e.target)) {
                     setMap(item)
                     openModal(mapModal)
@@ -1314,33 +1204,36 @@ if (map && mapModal) {
     })
 }
 if (mapBtn && mapModal && mapModalMob) {
-    let w, h, currW, startX, translateX, previousTranslateX, isMobileModalOpen
+    const mapMobModalInner = mapModalMob.querySelector(".mapMobile-modal__inner")
+    const mapMobPreview = mapModalMob.querySelector(".mapMobile-modal__preview-view")
+    const mapMobContent = mapModalMob.querySelector(".modal__content")
+    let layer = map.querySelector("[data-map-layer]").getAttribute("src")
+    let w, h, currW, startX, translateX, previousTranslateX
+    mapMobModalInner.innerHTML = map.querySelector(".map__inner").innerHTML
+    let layerimg = new Image()
+    layerimg.src = layer
+    layerimg.onload = function () {
+        w = layerimg.width
+        h = layerimg.height
+    }
     mapBtn.addEventListener("click", () => {
         mapBtn.classList.add("loading")
         startX = 0
         translateX = 0;
         previousTranslateX = 0
-        mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = 'translateX(0px)';
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = 'translateX(0px)';
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = 'left 0px center';
-        mapModalMob.querySelector(".mapMobile-modal__inner").innerHTML = map.querySelector(".map__inner").innerHTML
-        let layer = map.querySelector("[data-map-layer]").getAttribute("src")
-        let layerimg = new Image()
-        layerimg.src = layer
-        layerimg.onload = function () {
-            w = layerimg.width
-            h = layerimg.height
-            currW = w / (h / window.innerHeight)
-            mapModalMob.querySelector(".mapMobile-modal__inner").style.width = currW + "px"
-            mapModalMob.querySelector(".mapMobile-modal__preview-view").style.width = window.innerWidth / currW * 100 + "%"
-            openModal(mapModalMob)
-            mapBtn.classList.remove("loading")
-        }
+        mapMobModalInner.style.transform = 'translateX(0px)';
+        mapMobPreview.style.transform = 'translateX(0px)';
+        mapMobPreview.style.backgroundPosition = 'left 0px center';
+        currW = w / (h / window.innerHeight)
+        mapMobModalInner.style.width = currW + "px"
+        mapMobPreview.style.width = window.innerWidth / currW * 100 + "%"
+        openModal(mapModalMob)
+        mapBtn.classList.remove("loading")
     })
-    mapModalMob.querySelector(".modal__content").addEventListener("touchstart", e => {
+    mapMobContent.addEventListener("touchstart", e => {
         startX = e.touches[0].clientX
     })
-    mapModalMob.querySelector(".modal__content").addEventListener("touchmove", e => {
+    mapMobContent.addEventListener("touchmove", e => {
         translateX = previousTranslateX + e.touches[0].clientX - startX;
         const maxTranslateX = 0;
         const minTranslateX = window.innerWidth - currW
@@ -1349,22 +1242,23 @@ if (mapBtn && mapModal && mapModalMob) {
         } else if (translateX < minTranslateX) {
             translateX = minTranslateX;
         }
-        mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = `translateX(${translateX}px)`;
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left ${mapModalMob.querySelector(".mapMobile-modal__preview-view").clientWidth * translateX / window.innerWidth}px center`;
+        mapMobModalInner.style.transform = `translateX(${translateX}px)`;
+        mapMobPreview.style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
+        mapMobPreview.style.backgroundPosition = `left ${mapMobPreview.clientWidth * translateX / window.innerWidth}px center`;
     })
-    mapModalMob.querySelector(".modal__content").addEventListener('touchend', () => {
+    mapMobContent.addEventListener('touchend', () => {
         previousTranslateX = translateX;
     });
-    mapModalMob.querySelector(".modal__content").addEventListener('touchcancel', () => {
+    mapMobContent.addEventListener('touchcancel', () => {
         translateX = previousTranslateX;
-        mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = `translateX(${translateX}px)`;
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
-        mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left ${mapModalMob.querySelector(".mapMobile-modal__preview-view").clientWidth * translateX / window.innerWidth}px center`;
+        mapMobModalInner.style.transform = `translateX(${translateX}px)`;
+        mapMobPreview.style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
+        mapMobPreview.style.backgroundPosition = `left ${mapMobPreview.clientWidth * translateX / window.innerWidth}px center`;
     });
     mapModalMob.addEventListener("click", e => {
-        if (mapModalMob.querySelectorAll(".item-map").length) {
-            mapModalMob.querySelectorAll(".item-map").forEach(item => {
+        const mapModalItems = mapModalMob.querySelectorAll(".item-map")
+        if (mapModalItems.length) {
+            mapModalItems.forEach(item => {
                 if (item.contains(e.target)) {
                     setMap(item)
                     mapModal.classList.add("open")
@@ -1378,11 +1272,11 @@ if (mapBtn && mapModal && mapModalMob) {
             startX = 0
             translateX = 0;
             previousTranslateX = 0
-            mapModalMob.querySelector(".mapMobile-modal__inner").style.width = currW + "px"
-            mapModalMob.querySelector(".mapMobile-modal__inner").style.transform = `translateX(0)`;
-            mapModalMob.querySelector(".mapMobile-modal__preview-view").style.width = window.innerWidth / currW * 100 + "%"
-            mapModalMob.querySelector(".mapMobile-modal__preview-view").style.transform = `translateX(0)`;
-            mapModalMob.querySelector(".mapMobile-modal__preview-view").style.backgroundPosition = `left 0px center`;
+            mapMobModalInner.style.width = currW + "px"
+            mapMobModalInner.style.transform = `translateX(0)`;
+            mapMobPreview.style.width = window.innerWidth / currW * 100 + "%"
+            mapMobPreview.style.transform = `translateX(0)`;
+            mapMobPreview.style.backgroundPosition = `left 0px center`;
             if (window.innerWidth > bp.tablet && mapModalMob.classList.contains("open")) {
                 closeModal(mapModalMob)
             }
@@ -1391,3 +1285,124 @@ if (mapBtn && mapModal && mapModalMob) {
     const mapDebounce = debounce(mapResizeHandler, 100)
     window.addEventListener("resize", mapDebounce);
 }
+window.addEventListener("DOMContentLoaded", () => {
+    //equalizer
+    const equalizer = document.querySelector(".equalizer")
+    if (equalizer) {
+        gsap.to(equalizer, {
+            ease: "none",
+            scrollTrigger: {
+                trigger: equalizer,
+                pin: true,
+                pinSpacing: false,
+                scrub: 1,
+                start: "top top",
+                invalidateOnRefresh: true,
+                anticipatePin: 1
+            }
+        })
+    }
+    //partners
+    const partners = document.querySelector(".partners")
+    const partnersSticky = document.querySelector(".partners__sticky")
+    const partnersItems = document.querySelectorAll(".partners__item")
+    if (partnersSticky && partnersItems.length) {
+        function offsetTop() {
+            let top
+            if (window.innerWidth > bp.tablet) {
+                top = (window.innerHeight - partnersSticky.clientHeight) / 2 > 0 ? (window.innerHeight - partnersSticky.clientHeight) / 2 : 0
+            } else {
+                top = header.clientHeight + 10
+            }
+            return top
+        }
+        let slideCount = partnersItems.length
+        partnersItems.forEach((item, idx) => {
+            gsap.to(item, {
+                ease: "none",
+                scrollTrigger: {
+                    trigger: item,
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                    start: () => "top top+=" + offsetTop(),
+                    end: () => "+=" + (item.offsetHeight * (slideCount - (window.innerWidth > bp.tablet ? 2 : 1) - idx)),
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1
+                }
+            })
+        })
+        gsap.matchMedia().add("(min-width: 767.98px)", () => {
+            gsap.to(partnersSticky, {
+                ease: "none",
+                scrollTrigger: {
+                    trigger: partnersSticky,
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                    start: () => "top top+=" + offsetTop(),
+                    end: () => "+=" + (partners.offsetHeight / slideCount * (slideCount - 2)),
+                    onEnterBack: () => header.classList.add("hidden"),
+                    onLeaveBack: () => header.classList.remove("hidden"),
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1
+                }
+            })
+        })
+
+    }
+    //history
+    const mainHistory = document.querySelector(".main-history")
+    if (mainHistory) {
+        gsap.to(mainHistory, {
+            ease: "none",
+            scrollTrigger: {
+                trigger: mainHistory,
+                start: "top center",
+                onEnter: () => {
+                    if (!mainHistory.classList.contains('show')) {
+                        mainHistory.classList.add('show')
+                    }
+                },
+                invalidateOnRefresh: true,
+            }
+        })
+        if (mainHistory.querySelector(".page-content")) {
+            mainHistory.querySelectorAll('.page-content').forEach(item => {
+                const showMoreBtn = item.querySelector(".main-history__intro .show-more-btn")
+                const showLessBtn = item.querySelector(".main-history__full .show-more-btn")
+                const fullContent = item.querySelector(".main-history__full")
+                if (showMoreBtn) {
+                    showMoreBtn.addEventListener("click", () => {
+                        showMoreBtn.classList.add("hidden")
+                        fullContent.classList.add("active")
+                        let height = fullContent.clientHeight
+                        fullContent.style.height = 0
+                        setTimeout(() => {
+                            fullContent.style.height = height + "px"
+                            fullContent.addEventListener('transitionend', function handleTransitionEnd() {
+                                fullContent.style.height = null
+                                fullContent.removeEventListener('transitionend', handleTransitionEnd);
+                            }, { once: true });
+                        }, 0);
+                    })
+                }
+                if (showLessBtn) {
+                    showLessBtn.addEventListener("click", () => {
+                        let height = fullContent.clientHeight
+                        fullContent.style.height = height + "px"
+                        setTimeout(() => {
+                            fullContent.style.height = 0
+                            fullContent.addEventListener('transitionend', function handleTransitionEnd() {
+                                fullContent.style.height = null
+                                fullContent.classList.remove("active")
+                                showMoreBtn.classList.remove("hidden")
+                                fullContent.removeEventListener('transitionend', handleTransitionEnd);
+                            }, { once: true });
+                        }, 0);
+                    })
+                }
+            })
+        }
+    }
+})
