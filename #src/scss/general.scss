@@ -333,6 +333,13 @@ p {
 			max-width: 400px;
 		}
 	}
+	@media (max-width: $bp7) {
+        &--policy {
+			h1 {
+				font-size: 26px;
+			}
+		}
+    }
 }
 .page-row {
 	&__aside {

@@ -3390,15 +3390,15 @@ p a:hover {
   overflow: hidden;
 }
 
-.item-ticket--dir-2 .item-ticket__direction {
+.item-ticket--dir-8 .item-ticket__direction {
   background: url(../img/svg/direction-2-bg-s.svg) center/cover no-repeat;
 }
 
-.item-ticket--dir-3 .item-ticket__direction {
+.item-ticket--dir-9 .item-ticket__direction {
   background: url(../img/svg/direction-3-bg-s.svg) center/cover no-repeat;
 }
 
-.item-ticket--dir-4 .item-ticket__direction {
+.item-ticket--dir-10 .item-ticket__direction {
   background: url(../img/svg/direction-4-bg-s.svg) center/cover no-repeat;
 }
 
@@ -3692,7 +3692,7 @@ p a:hover {
   margin-top: 40px;
 }
 
-.event-p .page-content p {
+.event-p .page-content .cssClass3 {
   padding-left: 32px;
 }
 
@@ -6256,7 +6256,9 @@ p a:hover {
     margin-bottom: 10px;
   }
 
-  .item-ticket--activity .item-ticket__inner {
+  .item-ticket--activity .item-ticket__inner,
+  .item-ticket--dir-9 .item-ticket__inner,
+  .item-ticket--dir-10 .item-ticket__inner {
     padding-bottom: 16px;
   }
 
@@ -6734,7 +6736,7 @@ p a:hover {
 
   .intro__content {
     min-height: calc(100vh - 55px);
-    padding-bottom: 200px;
+    padding-bottom: 40px;
   }
 
   .headliners .sec-top {
@@ -7265,6 +7267,10 @@ p a:hover {
 }
 
 @media (max-width: 479.98px) {
+  .page-top--policy h1 {
+    font-size: 26px;
+  }
+
   .main-btn,
   .stroke-btn {
     padding: 16px 24px;

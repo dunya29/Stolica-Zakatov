@@ -30,7 +30,13 @@ window.addEventListener("load", () => {
             }
         }, 7);
     }
-
+    const hash = window.location.hash;
+    if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+            window.scrollTo({ top: targetElement.getBoundingClientRect().top - 10, behavior: 'smooth' })
+        }
+    }
 })
 const header = document.querySelector(".header")
 const iconMenu = document.querySelector('.icon-menu');

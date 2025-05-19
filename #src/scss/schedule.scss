@@ -213,17 +213,17 @@
     position: relative;
     margin-bottom: 16px;
     overflow: hidden;
-    &--dir-2 {
+    &--dir-8 {
         .item-ticket__direction {
             background: url(../img/svg/direction-2-bg-s.svg) center / cover no-repeat;
         }
     }
-    &--dir-3 {
+    &--dir-9 {
         .item-ticket__direction {
             background: url(../img/svg/direction-3-bg-s.svg) center / cover no-repeat;
         }
     }
-    &--dir-4 {
+    &--dir-10 {
         .item-ticket__direction {
             background: url(../img/svg/direction-4-bg-s.svg) center / cover no-repeat;
         }
@@ -467,7 +467,9 @@
     @media (max-width: $bp4) {
         padding: 0;
         margin-bottom: 10px;
-        &--activity {
+        &--activity,
+        &--dir-9,
+        &--dir-10  {
             .item-ticket__inner {
                 padding-bottom: 16px;
             }
