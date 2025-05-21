@@ -683,7 +683,8 @@ if (headliners) {
         watchSlidesProgress: true,
         effect: 'coverflow',
         slideToClickedSlide: true,
-        initialSlide: headliners.querySelectorAll('.swiper-slide').length > 2 ? 2 : 0,
+        loop: true,
+       // initialSlide: headliners.querySelectorAll('.swiper-slide').length > 2 ? 2 : 0,
         coverflowEffect: {
             rotate: 0,
             stretch: 0,
