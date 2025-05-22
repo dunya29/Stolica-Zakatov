@@ -216,6 +216,9 @@ function closeModal(modal) {
         viewportMeta.content = "width=device-width, initial-scale=1";
     }, 100);
     modal.classList.remove("open")
+    if (modal.classList.contains("map-modal") && document.querySelector(".mapMobile-modal.hidden")) {
+        document.querySelector(".mapMobile-modal.hidden").classList.remove("hidden")
+    }
     setTimeout(() => {
         enableScroll()
     }, animSpd);
@@ -1269,6 +1272,9 @@ if (mapBtn && mapModal && mapModalMob) {
                 if (item.contains(e.target)) {
                     setMap(item)
                     mapModal.classList.add("open")
+                    setTimeout(() => {
+                        mapModalMob.classList.add("hidden")
+                    }, 300);                  
                 }
             })
         }
@@ -1289,7 +1295,7 @@ if (mapBtn && mapModal && mapModalMob) {
             }
         }
     }
-    const mapDebounce = debounce(mapResizeHandler, 100)
+    const mapDebounce = debounce(mapResizeHandler, 300)
     window.addEventListener("resize", mapDebounce);
 }
 window.addEventListener("DOMContentLoaded", () => {

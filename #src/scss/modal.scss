@@ -401,7 +401,7 @@
             max-width: 100%;
         }
         &__preview {
-            touch-action: none;
+            //touch-action: none;
         }
     }
     @media (max-width: $bp6) {
@@ -413,6 +413,9 @@
 .mapMobile-modal {
     padding: 0;
     background: url(../img/map/map-layer-1.png) center/cover no-repeat;
+    &.hidden {
+        display: none;
+    }
     .modal__content {
         max-width: 100%;
         touch-action: pan-x;
@@ -467,5 +470,5 @@
     }
 }
 .mapMobile-modal.open + .map-modal {
-    background: none;
+    //background: none;
 }
