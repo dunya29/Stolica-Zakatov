@@ -302,8 +302,8 @@ p {
 		margin-top: 20px;
 	}
 	&--policy {
-		.page-top__content {
-			max-width: 100%;
+		h1 {
+			font-size: 46px;
 		}
 	}
 	&__content {
@@ -311,9 +311,21 @@ p {
 		min-width: 0;
 		max-width: calc(100% / 3 * 2 - 20px);
 	}
+	@media (max-width: $bp1) {
+		&--policy {
+			h1 {
+				font-size: 40px;
+			}
+		}
+	}
 	@media (max-width: $bp3) {
 		.back-btn {
 			margin-top: 8px;
+		}
+		&--policy {
+			h1 {
+				font-size: 32px;
+			}
 		}
 	}
 	@media (max-width: $bp4) {
@@ -334,12 +346,12 @@ p {
 		}
 	}
 	@media (max-width: $bp7) {
-        &--policy {
+		&--policy {
 			h1 {
 				font-size: 26px;
 			}
 		}
-    }
+	}
 }
 .page-row {
 	&__aside {

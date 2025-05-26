@@ -75,6 +75,7 @@
         h4 {
             opacity: 0;
             transform: translateY(40px);
+            will-change: transform;
         }
     }
     &__swiper3 {

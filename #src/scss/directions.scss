@@ -88,13 +88,11 @@
 	}
 	&__content {
 		font-family: var(--font-family-secondary);
-		p {
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 9;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 9;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	&__extra {
 		padding: 20px 0;
@@ -282,9 +280,7 @@
 			}
 		}
 		&__content {
-			p {
-				-webkit-line-clamp: 10;
-			}
+			-webkit-line-clamp: 10;
 		}
 		&__tags {
 			padding: 0 20px;
@@ -316,6 +312,7 @@
 			padding: 16px 20px;
 		}
 		&__header {
+			flex: 0 0 63px;
 			height: 63px;
 			overflow: hidden;
 			margin-bottom: 12px;
@@ -326,9 +323,7 @@
 			}
 		}
 		&__content {
-			p {
-				-webkit-line-clamp: 8;
-			}
+			-webkit-line-clamp: 8;
 		}
 		&__extra {
 			flex: 1 1 auto;

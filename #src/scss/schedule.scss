@@ -24,8 +24,10 @@
         margin-bottom: 20px;
     }
     &__tabs {
+        width: max-content;
+        max-width: calc(100% - 32px);
         border-bottom: 1px solid var(--gray-color-light);
-        margin-bottom: 16px;
+        margin: 0 16px 16px;
         .tabs {
             margin-bottom: -1px;
             flex-wrap: nowrap;
@@ -35,6 +37,12 @@
                 margin: 0 16px;
                 &:after {
                     background: var(--gray-color-light);
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
                 }
                 &.active {
                     color: var(--black);
@@ -610,6 +618,14 @@
                 display: none;
                 width: 0;
                 height: 0;
+            }
+            li {
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }

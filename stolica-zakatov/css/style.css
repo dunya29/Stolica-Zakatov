@@ -556,8 +556,8 @@ p a:hover {
   margin-top: 20px;
 }
 
-.page-top--policy .page-top__content {
-  max-width: 100%;
+.page-top--policy h1 {
+  font-size: 46px;
 }
 
 .page-top__content {
@@ -2405,22 +2405,22 @@ p a:hover {
 
 @-webkit-keyframes equalizer-anim1 {
   0% {
-    background-size: 110% auto;
-    background-position: left top;
+    /* background-size: 110% auto;
+    background-position: left top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(0.6);
     transform: translate3d(0, 0, 0) scaleY(0.6);
   }
 
   50% {
-    background-size: 100% auto;
-    background-position: center top;
+    /* background-size: 100% auto;
+    background-position: center top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(1);
     transform: translate3d(0, 0, 0) scaleY(1);
   }
 
   100% {
-    background-size: 110% auto;
-    background-position: left top;
+    /* 	background-size: 110% auto;
+    	background-position: left top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(0.6);
     transform: translate3d(0, 0, 0) scaleY(0.6);
   }
@@ -2428,22 +2428,22 @@ p a:hover {
 
 @keyframes equalizer-anim1 {
   0% {
-    background-size: 110% auto;
-    background-position: left top;
+    /* background-size: 110% auto;
+    background-position: left top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(0.6);
     transform: translate3d(0, 0, 0) scaleY(0.6);
   }
 
   50% {
-    background-size: 100% auto;
-    background-position: center top;
+    /* background-size: 100% auto;
+    background-position: center top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(1);
     transform: translate3d(0, 0, 0) scaleY(1);
   }
 
   100% {
-    background-size: 110% auto;
-    background-position: left top;
+    /* 	background-size: 110% auto;
+    	background-position: left top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(0.6);
     transform: translate3d(0, 0, 0) scaleY(0.6);
   }
@@ -2451,22 +2451,22 @@ p a:hover {
 
 @-webkit-keyframes equalizer-anim2 {
   0% {
-    background-size: 100% auto;
-    background-position: center top;
+    /* background-size: 100% auto;
+    background-position: center top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(1);
     transform: translate3d(0, 0, 0) scaleY(1);
   }
 
   50% {
-    background-size: 110% auto;
-    background-position: right top;
+    /* background-size: 110% auto;
+    background-position: right top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(0.6);
     transform: translate3d(0, 0, 0) scaleY(0.6);
   }
 
   100% {
-    background-size: 100% auto;
-    background-position: center top;
+    /* background-size: 100% auto;
+    background-position: center top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(1);
     transform: translate3d(0, 0, 0) scaleY(1);
   }
@@ -2474,22 +2474,22 @@ p a:hover {
 
 @keyframes equalizer-anim2 {
   0% {
-    background-size: 100% auto;
-    background-position: center top;
+    /* background-size: 100% auto;
+    background-position: center top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(1);
     transform: translate3d(0, 0, 0) scaleY(1);
   }
 
   50% {
-    background-size: 110% auto;
-    background-position: right top;
+    /* background-size: 110% auto;
+    background-position: right top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(0.6);
     transform: translate3d(0, 0, 0) scaleY(0.6);
   }
 
   100% {
-    background-size: 100% auto;
-    background-position: center top;
+    /* background-size: 100% auto;
+    background-position: center top; */
     -webkit-transform: translate3d(0, 0, 0) scaleY(1);
     transform: translate3d(0, 0, 0) scaleY(1);
   }
@@ -2652,6 +2652,7 @@ p a:hover {
   -webkit-transform: translateY(40px);
   -ms-transform: translateY(40px);
   transform: translateY(40px);
+  will-change: transform;
 }
 
 .about__swiper3 .media-cover {
@@ -2781,9 +2782,6 @@ p a:hover {
 
 .item-direction__content {
   font-family: var(--font-family-secondary);
-}
-
-.item-direction__content p {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 9;
@@ -3331,8 +3329,12 @@ p a:hover {
 }
 
 .schedule-filter__tabs {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: calc(100% - 32px);
   border-bottom: 1px solid var(--gray-color-light);
-  margin-bottom: 16px;
+  margin: 0 16px 16px;
 }
 
 .schedule-filter__tabs .tabs {
@@ -3349,6 +3351,14 @@ p a:hover {
 
 .schedule-filter__tabs .tabs button:after {
   background: var(--gray-color-light);
+}
+
+.schedule-filter__tabs .tabs button:first-child {
+  margin-left: 0;
+}
+
+.schedule-filter__tabs .tabs button:last-child {
+  margin-right: 0;
 }
 
 .schedule-filter__tabs .tabs button.active {
@@ -3964,11 +3974,24 @@ p a:hover {
   margin-top: 4px;
 }
 
+.item-map__info::before {
+  content: "";
+  width: 28px;
+  height: 4px;
+  background: var(--white);
+  position: absolute;
+  bottom: -2px;
+  left: 20%;
+  -webkit-transform: translate(-2px);
+  -ms-transform: translate(-2px);
+  transform: translate(-2px);
+}
+
 .item-map__info:after {
   content: "";
   width: 24px;
   height: 24px;
-  border-radius: 4px;
+  border-radius: 0 0 0 4px;
   border: 2px solid var(--secondary-color);
   background: var(--white);
   -webkit-transform: rotate(-45deg);
@@ -3977,8 +4000,8 @@ p a:hover {
   position: absolute;
   bottom: -12px;
   left: 20%;
-  -webkit-clip-path: polygon(0 0, 50% 50%, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 50% 50%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 50% 50%, 100% 100%, 0 100%);
 }
 
 .item-map__zoom,
@@ -4278,6 +4301,21 @@ p a:hover {
 .fancy-modal__mainswiper .media-contain,
 .fancy-modal__mainswiper .media-cover {
   height: 100%;
+}
+
+.fancy-modal__mainswiper .media-contain:before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: var(--primary-color);
+  -webkit-mask: url(../img/svg/loading.svg) center/150px 150px no-repeat;
+  mask: url(../img/svg/loading.svg) center/150px 150px no-repeat;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .scroll-indicator {
@@ -5002,6 +5040,10 @@ p a:hover {
     font-size: 24px;
   }
 
+  .page-top--policy h1 {
+    font-size: 40px;
+  }
+
   .page-content ul li:before {
     top: 10px;
   }
@@ -5153,7 +5195,7 @@ p a:hover {
     margin: 10px 5px;
   }
 
-  .item-direction__content p {
+  .item-direction__content {
     -webkit-line-clamp: 10;
   }
 
@@ -5567,6 +5609,10 @@ p a:hover {
     margin-top: 8px;
   }
 
+  .page-top--policy h1 {
+    font-size: 32px;
+  }
+
   .page-content p,
   .page-content li {
     line-height: 1.2;
@@ -5811,6 +5857,13 @@ p a:hover {
     padding: 8px 12px;
   }
 
+  .item-map__info::before {
+    width: 20px;
+    -webkit-transform: translate(-1px);
+    -ms-transform: translate(-1px);
+    transform: translate(-1px);
+  }
+
   .item-map__info:after {
     width: 18px;
     height: 18px;
@@ -6028,6 +6081,9 @@ p a:hover {
   }
 
   .item-direction__header {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 63px;
+    flex: 0 0 63px;
     height: 63px;
     overflow: hidden;
     margin-bottom: 12px;
@@ -6040,7 +6096,7 @@ p a:hover {
     align-self: start;
   }
 
-  .item-direction__content p {
+  .item-direction__content {
     -webkit-line-clamp: 8;
   }
 
@@ -6928,6 +6984,14 @@ p a:hover {
     height: 0;
   }
 
+  .filter-selected__items li:first-child {
+    margin-left: 0;
+  }
+
+  .filter-selected__items li:last-child {
+    margin-right: 0;
+  }
+
   .event-p__info {
     margin-right: 0;
   }
@@ -6976,6 +7040,7 @@ p a:hover {
     left: -50%;
   }
 
+  .item-map:nth-child(3) .item-map__info:before,
   .item-map:nth-child(3) .item-map__info:after {
     left: 75%;
   }
@@ -7015,6 +7080,11 @@ p a:hover {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+  }
+
+  .item-map:nth-child(8) .item-map__info:before {
+    top: 0;
+    bottom: auto;
   }
 
   .item-map:nth-child(8) .item-map__info:after {
@@ -7090,12 +7160,30 @@ p a:hover {
     font-size: 24px;
   }
 
+  .fancy-modal__mainswiper .media-contain:before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    -webkit-mask-size: 100px 100px;
+    mask-size: 100px 100px;
+  }
+
+  .map-modal {
+    -ms-touch-action: none !important;
+    touch-action: none !important;
+  }
+
   .map-modal .btn-cross.modal__close {
     top: 10px !important;
   }
 
   .map-modal__direction {
     max-width: 100%;
+  }
+
+  .map-modal__preview {
+    -ms-touch-action: none !important;
+    touch-action: none !important;
   }
 
   .footer .footer-menu {

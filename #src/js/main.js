@@ -1,5 +1,6 @@
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector(".preloader")) {
+        const preloaderPercent = document.querySelector(".preloader__percent")
         document.body.classList.remove("no-scroll")
         disableScroll()
         document.querySelectorAll(".preloader__logo path").forEach(item => {
@@ -12,9 +13,10 @@ window.addEventListener("load", () => {
         })
         let i = 0
         let interval = setInterval(() => {
-            document.querySelector(".preloader__percent").textContent = i + '%'
-            i++
-            if (i === 101) {
+            preloaderPercent.textContent = i + '%'
+            i = i + Math.ceil(Math.random() * 2)
+            if (i >= 101) {
+                preloaderPercent.textContent = 100 + '%'
                 clearInterval(interval)
                 setTimeout(() => {
                     document.querySelector(".preloader__bar").classList.add("startAnim")
@@ -24,18 +26,14 @@ window.addEventListener("load", () => {
                             document.body.classList.add("loaded")
                             enableScroll()
                             ScrollTrigger.refresh()
+                            scrollToBlock()
                         }, 600);
                     }, 700);
                 }, 500);
             }
         }, 7);
-    }
-    const hash = window.location.hash;
-    if (hash) {
-        const targetElement = document.querySelector(hash);
-        if (targetElement) {
-            window.scrollTo({ top: targetElement.getBoundingClientRect().top - 10, behavior: 'smooth' })
-        }
+    } else {
+        scrollToBlock()
     }
 })
 const header = document.querySelector(".header")
@@ -54,11 +52,21 @@ let bp = {
 }
 //get path to sprite id
 function sprite(id) {
-    return '<svg><use xlink:href="img/svg/sprite.svg#' + id + '"></use></svg>'
+    return '<svg><use xlink:href="html/img/svg/sprite.svg#' + id + '"></use></svg>'
 }
 //scroll pos
 function scrollPos() {
     return window.pageYOffset || document.documentElement.scrollTop
+}
+//scrollToBlock
+function scrollToBlock() {
+    const hash = window.location.hash;
+    if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement ) {
+            window.scrollTo({ top: scrollPos() + targetElement.getBoundingClientRect().top - 10, behavior: "smooth", })
+        }
+    }
 }
 //enable scroll
 function enableScroll() {
@@ -210,15 +218,7 @@ function closeModal(modal) {
     if (modal.querySelector("video")) {
         modal.querySelectorAll("video").forEach(item => item.pause())
     }
-    const viewportMeta = document.querySelector('meta[name="viewport"]');
-    viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-    setTimeout(() => {
-        viewportMeta.content = "width=device-width, initial-scale=1";
-    }, 100);
     modal.classList.remove("open")
-    if (modal.classList.contains("map-modal") && document.querySelector(".mapMobile-modal.hidden")) {
-        document.querySelector(".mapMobile-modal.hidden").classList.remove("hidden")
-    }
     setTimeout(() => {
         enableScroll()
     }, animSpd);
@@ -280,7 +280,7 @@ function initfancyModal(fancyItem) {
                                 <div class="swiper-wrapper">
                                     ${mediaSrc.map((el, i) => `<div class="swiper-slide">
                                         <div class="${objectFit}">
-                                            ${el.type === 'video' ? `<video ${i === initialSl ? `src='${el.src}'` : `data-src='${el.src}'`} ${el.poster ? `poster='${el.poster}'` : ''} loop autoplay playsinline mute controls></video>` : `<img src=${el.src} alt="">`}                                                
+                                            ${el.type === 'video' ? `<video ${i === initialSl ? `src='${el.src}'` : `data-src='${el.src}'`} ${el.poster ? `poster='${el.poster}'` : ''} loop autoplay playsinline mute controls></video>` : `<img src=${el.src} alt="" >`}                                                
                                         </div>
                                     </div>`).join("")}
                                 </div>
@@ -687,7 +687,7 @@ if (headliners) {
         effect: 'coverflow',
         slideToClickedSlide: true,
         loop: true,
-       // initialSlide: headliners.querySelectorAll('.swiper-slide').length > 2 ? 2 : 0,
+        // initialSlide: headliners.querySelectorAll('.swiper-slide').length > 2 ? 2 : 0,
         coverflowEffect: {
             rotate: 0,
             stretch: 0,
@@ -730,18 +730,6 @@ if (about) {
             crossFade: true
         },
         watchSlidesProgress: true,
-        allowTouchMove: false,
-        speed: 1000,
-    })
-    let swiper3 = new Swiper(about.querySelector(".about__swiper3"), {
-        observer: true,
-        observeParents: true,
-        effect: "fade",
-        fadeEffect: {
-            crossFade: true
-        },
-        watchSlidesProgress: true,
-        allowTouchMove: false,
         speed: 1000,
     })
     let swiper2 = new Swiper(about.querySelector(".about__swiper2"), {
@@ -752,7 +740,6 @@ if (about) {
             crossFade: true
         },
         watchSlidesProgress: true,
-        allowTouchMove: false,
         scrollbar: {
             el: about.querySelector(".swiper-scrollbar"),
             draggable: true,
@@ -768,9 +755,21 @@ if (about) {
         },
         speed: 1000,
     })
+    let swiper3 = new Swiper(about.querySelector(".about__swiper3"), {
+        observer: true,
+        observeParents: true,
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true
+        },
+        watchSlidesProgress: true,
+        allowTouchMove: false,
+        speed: 1000,
+    })
+    swiper1.controller.control = swiper2;
+    swiper2.controller.control = swiper1;
     swiper2.on("slideChange", () => {
         clearTimeout(timeOut)
-        swiper1.slideTo(swiper2.activeIndex)
         timeOut = setTimeout(() => {
             swiper3.slideTo(swiper2.activeIndex)
         }, 800);
@@ -807,12 +806,10 @@ if (projects && projects.querySelector('.swiper')) {
         fadeEffect: {
             crossFade: true
         },
-        allowTouchMove: false,
         speed: 1000
     })
-    imageswiper.on("slideChange", () => {
-        contentswiper.slideTo(imageswiper.activeIndex)
-    })
+    imageswiper.controller.control = contentswiper
+    contentswiper.controller.control = imageswiper
     if (projectCols && projects.querySelector(".nav-btn")) {
         projectCols.addEventListener("mousemove", e => {
             let projectColsLeft = projectCols.getBoundingClientRect().left
@@ -1154,8 +1151,11 @@ function debounce(func, delay) {
     };
 }
 const map = document.querySelector(".map")
-const itemMap = document.querySelectorAll(".item-map")
 const mapModal = document.querySelector(".map-modal")
+const mapPreviewEl = document.querySelector(".map-modal__preview");
+const mapLinkEl = document.querySelector(".map-modal__link");
+const mapDirectionEl = document.querySelector(".map-modal__direction");
+const mapTitleEl = document.querySelector(".map-modal__title");
 const mapModalMob = document.querySelector(".mapMobile-modal")
 const mapBtn = document.querySelector(".map__btn")
 function setMap(item) {
@@ -1173,10 +1173,6 @@ function setMap(item) {
             item.removeAttribute("data-srcset")
         })
     }
-    const previewEl = mapModal.querySelector(".map-modal__preview");
-    const linkEl = mapModal.querySelector(".map-modal__link");
-    const directionEl = mapModal.querySelector(".map-modal__direction");
-    const titleEl = mapModal.querySelector(".map-modal__title");
     const itemZoomEl = item.querySelector("[data-zoom]")
     const itemDirectionEl = item.querySelector("[data-direction]")
     const itemTitleEl = item.querySelector("[data-title]")
@@ -1184,40 +1180,53 @@ function setMap(item) {
     let direction = itemDirectionEl ? itemDirectionEl.textContent : ''
     let title = itemTitleEl ? itemTitleEl.textContent : ''
     let link = item.getAttribute("data-link") || ''
-    if (previewEl) {
-        previewEl.innerHTML = preview;
+    if (mapPreviewEl) {
+        mapPreviewEl.innerHTML = preview;
     }
-    if (linkEl) {
-        linkEl.setAttribute("href", link);
+    if (mapLinkEl) {
+        mapLinkEl.setAttribute("href", link);
     }
-    if (directionEl) {
-        directionEl.textContent = direction;
+    if (mapDirectionEl) {
+        mapDirectionEl.textContent = direction;
     }
-    if (titleEl) {
-        titleEl.textContent = title;
+    if (mapTitleEl) {
+        mapTitleEl.textContent = title;
     }
     mapModal.querySelector(".modal__content").style.transformOrigin = `${item.getBoundingClientRect().left}px ${item.getBoundingClientRect().top}px`
+    setMapZoom()
 }
 if (map && mapModal) {
-    map.addEventListener("click", e => {
-        const itemMaps = map.querySelectorAll(".item-map")
-        if (itemMaps.length) {
-            itemMaps.forEach(item => {
-                if (item.contains(e.target)) {
-                    setMap(item)
-                    openModal(mapModal)
-                    header.classList.add('unshow')
-                }
+    const itemMaps = map.querySelectorAll(".item-map")
+    if (itemMaps.length) {
+        itemMaps.forEach(item => {
+            item.addEventListener("click", () => {
+                setMap(item)
+                openModal(mapModal)
+                header.classList.add('unshow')
             })
-        }
-
-    })
+        })
+    }
+}
+function setMapZoom() {
+    if (mapPreviewEl) {
+        panzoom(mapPreviewEl, {
+            maxZoom: 4,
+            minZoom: 1,
+            bounds: true,
+            boundsPadding: 1,
+            onTouch: function (e) {
+                if (!mapPreviewEl.contains(e.target)) {
+                    return false
+                }
+            }
+        })
+    }
 }
 if (mapBtn && mapModal && mapModalMob) {
     const mapMobModalInner = mapModalMob.querySelector(".mapMobile-modal__inner")
     const mapMobPreview = mapModalMob.querySelector(".mapMobile-modal__preview-view")
     const mapMobContent = mapModalMob.querySelector(".modal__content")
-    let layer = map.querySelector("[data-map-layer]").getAttribute("src")
+    let layer = map.querySelector("[data-map-layer]").getAttribute("data-map-layer")
     let w, h, currW, startX, translateX, previousTranslateX
     mapMobModalInner.innerHTML = map.querySelector(".map__inner").innerHTML
     let layerimg = new Image()
@@ -1265,20 +1274,15 @@ if (mapBtn && mapModal && mapModalMob) {
         mapMobPreview.style.transform = `translateX(${-translateX / window.innerWidth * 100}%)`;
         mapMobPreview.style.backgroundPosition = `left ${mapMobPreview.clientWidth * translateX / window.innerWidth}px center`;
     });
-    mapModalMob.addEventListener("click", e => {
-        const mapModalItems = mapModalMob.querySelectorAll(".item-map")
-        if (mapModalItems.length) {
-            mapModalItems.forEach(item => {
-                if (item.contains(e.target)) {
-                    setMap(item)
-                    mapModal.classList.add("open")
-                    setTimeout(() => {
-                        mapModalMob.classList.add("hidden")
-                    }, 300);                  
-                }
+    const mapModalItems = mapModalMob.querySelectorAll(".item-map")
+    if (mapModalItems.length) {
+        mapModalItems.forEach(item => {
+            item.addEventListener("click", e => {
+                setMap(item)
+                mapModal.classList.add("open")
             })
-        }
-    })
+        })
+    }
     function mapResizeHandler() {
         if (mapModalMob.classList.contains("open")) {
             currW = w / (h / window.innerHeight)
@@ -1298,7 +1302,7 @@ if (mapBtn && mapModal && mapModalMob) {
     const mapDebounce = debounce(mapResizeHandler, 300)
     window.addEventListener("resize", mapDebounce);
 }
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     //equalizer
     const equalizer = document.querySelector(".equalizer")
     if (equalizer) {

@@ -356,35 +356,35 @@
 }
 @keyframes equalizer-anim1 {
 	0% {
-		background-size: 110% auto;
-		background-position: left top;
+		/* background-size: 110% auto;
+		background-position: left top; */
 		transform: translate3d(0, 0, 0) scaleY(0.6);
 	}
 	50% {
-		background-size: 100% auto;
-		background-position: center top;
+		/* background-size: 100% auto;
+		background-position: center top; */
 		transform: translate3d(0, 0, 0) scaleY(1);
 	}
 	100% {
-		background-size: 110% auto;
-		background-position: left top;
+	/* 	background-size: 110% auto;
+		background-position: left top; */
 		transform: translate3d(0, 0, 0) scaleY(0.6);
 	}
 }
 @keyframes equalizer-anim2 {
 	0% {
-		background-size: 100% auto;
-		background-position: center top;
+		/* background-size: 100% auto;
+		background-position: center top; */
 		transform: translate3d(0, 0, 0) scaleY(1);
 	}
 	50% {
-		background-size: 110% auto;
-		background-position: right top;
+		/* background-size: 110% auto;
+		background-position: right top; */
 		transform: translate3d(0, 0, 0) scaleY(0.6);
 	}
 	100% {
-		background-size: 100% auto;
-		background-position: center top;
+		/* background-size: 100% auto;
+		background-position: center top; */
 		transform: translate3d(0, 0, 0) scaleY(1);
 	}
 }

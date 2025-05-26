@@ -183,6 +183,19 @@
         .media-cover {
             height: 100%;
         }
+        .media-contain {
+            &:before {
+                content: "";
+                width: 150px;
+                height: 150px;
+                background: var(--primary-color);
+                mask: url(../img/svg/loading.svg) center /150px 150px no-repeat;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
     @media (max-width: $bp1) {
         padding-left: 30px;
@@ -223,6 +236,16 @@
         .modal__top {
             h2 {
                 font-size: 24px;
+            }
+        }
+        &__mainswiper {
+            .media-contain {
+                &:before {
+                    content: "";
+                    width: 100px;
+                    height: 100px;
+                    mask-size: 100px 100px;
+                }
             }
         }
     }
@@ -394,6 +417,7 @@
         }
     }
     @media (max-width: $bp5) {
+        touch-action: none !important;
         .btn-cross.modal__close {
             top: 10px !important;
         }
@@ -401,7 +425,7 @@
             max-width: 100%;
         }
         &__preview {
-            //touch-action: none;
+            touch-action: none!important
         }
     }
     @media (max-width: $bp6) {

@@ -95,8 +95,8 @@
                         <nav class="menu">
                             <ul>
                                 <li><a class="link js-anchor" href="main.html#directions">Направления</a></li>
-                                <li><a class="link" href="#">Расписание</a></li>
-                                <li><a class="link js-anchor" href="#main-map">Карта</a></li>
+                                <li><a class="link" href="schedule.html">Расписание</a></li>
+                                <li><a class="link js-anchor" href="main.html/#main-map">Карта</a></li>
                                 <li><a class="link js-anchor" href="#contacts">Контакты</a></li>
                             </ul>
                         </nav>
@@ -159,9 +159,9 @@
                         <div class="container">
                             <nav class="menu">
                                 <ul>
-                                    <li style="--item-i: 0"><a class="js-anchor" href="#directions">Направления</a></li>
-                                    <li style="--item-i: 1"><a href="#">Расписание</a></li>
-                                    <li style="--item-i: 3"><a class="js-anchor" href="#main-map">Карта</a></li>
+                                    <li style="--item-i: 0"><a class="js-anchor" href="main.html#directions">Направления</a></li>
+                                    <li style="--item-i: 1"><a href="schedule.html">Расписание</a></li>
+                                    <li style="--item-i: 3"><a class="js-anchor" href="main.html#main-map">Карта</a></li>
                                     <li style="--item-i: 4"><a class="js-anchor" href="#contacts">Контакты</a></li>
                                 </ul>
                             </nav>
@@ -544,8 +544,8 @@
 <section class="section map" id="main-map">
     <div class="map__inner">
         <div class="map__layers">
-            <div class="map__layers-item">
-                <picture><source srcset="img/map/map-layer-2.webp" type="image/webp"><img data-map-layer src="img/map/map-layer-2.png" alt></picture>
+            <div class="map__layers-item" data-map-layer="img/map/map-layer-2.webp">
+                <picture><source srcset="img/map/map-layer-2.webp" type="image/webp"><img src="img/map/map-layer-2.png" alt></picture>
             </div>
         </div>
         <div class="map__clouds">
@@ -567,7 +567,7 @@
     <div class="item-map__zoom" data-zoom>
         <picture>
             <source data-srcset="img/map/map-1-zoom.webp" type="image/webp">
-            <img class="map-modal__img" data-src="img/map/map-1-zoom.png" alt>
+            <img data-src="img/map/map-1-zoom.png" alt>
         </picture>
         <div class="map-modal__lottie">
             <img data-src="img/map/map-1-anim.svg" alt>
@@ -595,7 +595,7 @@
     <div class="item-map__zoom" data-zoom>
         <picture>
             <source data-srcset="img/map/map-2-zoom.webp" type="image/webp">
-            <img class="map-modal__img" data-src="img/map/map-2-zoom.png" alt>
+            <img data-src="img/map/map-2-zoom.png" alt>
         </picture>
         <div class="map-modal__lottie">
             <img data-src="img/map/map-2-anim.svg" alt>
@@ -623,7 +623,7 @@
     <div class="item-map__zoom" data-zoom>
         <picture>
             <source data-srcset="img/map/map-3-zoom.webp" type="image/webp">
-            <img class="map-modal__img" data-src="img/map/map-3-zoom.png" alt>
+            <img data-src="img/map/map-3-zoom.png" alt>
         </picture>
         <div class="map-modal__lottie">
             <img data-src="img/map/map-3-anim.svg" alt>
@@ -651,7 +651,7 @@
     <div class="item-map__zoom" data-zoom>
         <picture>
             <source data-srcset="img/map/map-4-zoom.webp" type="image/webp">
-            <img class="map-modal__img" data-src="img/map/map-4-zoom.png" alt>
+            <img data-src="img/map/map-4-zoom.png" alt>
         </picture>
         <div class="map-modal__lottie">
             <img data-src="img/map/map-4-anim.svg" alt>
@@ -679,7 +679,7 @@
     <div class="item-map__zoom" data-zoom>
         <picture>
             <source data-srcset="img/map/map-5-zoom.webp" type="image/webp">
-            <img class="map-modal__img" data-src="img/map/map-5-zoom.png" alt>
+            <img data-src="img/map/map-5-zoom.png" alt>
         </picture>
         <div class="map-modal__lottie">
             <img data-src="img/map/map-5-anim.svg" alt>
@@ -707,7 +707,7 @@
     <div class="item-map__zoom" data-zoom>
         <picture>
             <source data-srcset="img/map/map-6-zoom.webp" type="image/webp">
-            <img class="map-modal__img" data-src="img/map/map-6-zoom.png" alt>
+            <img data-src="img/map/map-6-zoom.png" alt>
         </picture>
         <div class="map-modal__lottie">
             <img data-src="img/map/map-6-anim.svg" alt>
@@ -735,7 +735,7 @@
     <div class="item-map__zoom" data-zoom>
         <picture>
             <source data-srcset="img/map/map-7-zoom.webp" type="image/webp">
-            <img class="map-modal__img" data-src="img/map/map-7-zoom.png" alt>
+            <img data-src="img/map/map-7-zoom.png" alt>
         </picture>
         <div class="map-modal__lottie">
             <img data-src="img/map/map-7-anim.svg" alt>
@@ -763,7 +763,7 @@
     <div class="item-map__zoom" data-zoom>
         <picture>
             <source data-srcset="img/map/map-8-zoom.webp" type="image/webp">
-            <img class="map-modal__img" data-src="img/map/map-8-zoom.png" alt>
+            <img data-src="img/map/map-8-zoom.png" alt>
         </picture>
         <div class="map-modal__lottie">
             <img data-src="img/map/map-8-anim.svg" alt>
@@ -1760,6 +1760,7 @@
 <script src="js/libs/swiper.min.js"></script>
 <script src="js/libs/gsap.min.js"></script>
 <script src="js/libs/ScrollTrigger.min.js"></script>
+<script src="js/libs/panzoom.min.js"></script>
 <script src="js/main.js"></script>
     </body>
 
