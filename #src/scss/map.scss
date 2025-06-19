@@ -123,7 +123,7 @@
     img {
         width: 100%;
     }
-    &:nth-child(1) {
+    &--1 {
         width: 17.65%;
         top: 60.9%;
         left: 55.8%;
@@ -131,22 +131,22 @@
             top: 20%;
         }
     }
-    &:nth-child(2) {
+    &--2 {
         width: 10.36%;
         top: 42.2%;
         left: 59.6%;
     }
-    &:nth-child(3) {
+    &--3 {
         width: 15.36%;
         top: 61.2%;
         left: 22.1%;
     }
-    &:nth-child(4) {
+    &--4 {
         width: 17.86%;
         top: 34.9%;
         left: 34.1%;
     }
-    &:nth-child(5) {
+    &--5 {
         width: 23.02%;
         top: 15%;
         left: 4.5%;
@@ -155,23 +155,28 @@
             left: 50%;
         }
     }
-    &:nth-child(6) {
+    &--6 {
         width: 22.08%;
         top: 42.1%;
         right: 3.6%;
     }
-    &:nth-child(7) {
+    &--7 {
         width: 16.04%;
         top: 26.9%;
         right: 17%;
     }
-    &:nth-child(8) {
+    &--8 {
         width: 24.53%;
         top: 41.1%;
         left: 30.5%;
         .item-map__info {
             top: 25%;
         }
+    }
+    &--9 {
+        width: 10.41%;
+        top: 45.3%;
+        left: 53.8%;
     }
     &__lottie,
     &__hover {
@@ -295,7 +300,7 @@
         }
     }
     @media (max-width: $bp5) {
-        &:nth-child(2) {
+        &--2 {
             .item-map__finger {
                 bottom: -10px;
                 right: -10px;
@@ -305,7 +310,7 @@
                 left: 30%;
             }
         }
-        &:nth-child(3) {
+        &--3 {
             .item-map__finger {
                 bottom: 24px;
                 right: 24px;
@@ -317,7 +322,7 @@
                 }
             }
         }
-        &:nth-child(4) {
+        &--4 {
             .item-map__finger {
                 right: -10px;
             }
@@ -326,7 +331,7 @@
                 max-width: 206px;
             }
         }
-        &:nth-child(6) {
+        &--6 {
             .item-map__finger {
                 bottom: -20px;
             }
@@ -334,13 +339,13 @@
                 left: 37%;
             }
         }
-        &:nth-child(7) {
+        &--7 {
             .item-map__finger {
                 right: 5px;
                 bottom: 5px;
             }
         }
-        &:nth-child(8) {
+        &--8 {
             .item-map__finger {
                 bottom: 36px;
                 right: 30px;
@@ -359,6 +364,12 @@
                     bottom: 100%;
                     transform: translateY(50%) rotate(135deg);
                 }
+            }
+        }
+        &--9 {
+            .item-map__finger {
+                right: -5px;
+                bottom: -5px;
             }
         }
         &__info {

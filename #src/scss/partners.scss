@@ -59,14 +59,14 @@
         }
     }
     @media (max-width: $bp4) {
-        padding: 60px 20px 20px;
+        padding: 20px;
         grid-template-rows: 1fr 30px;
         h5 {
             font-size: 16px;
         }
     }
     @media (max-width: $bp5) {
-        padding: 50px 16px 16px;
+        padding: 16px;
     }
 }
 .partners {
