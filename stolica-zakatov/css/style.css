@@ -3840,6 +3840,10 @@ p a:hover {
   transform: translateX(-50%);
 }
 
+.lineup-past__blocks .swiper {
+  padding: 0 30px;
+}
+
 .lineup-past__blocks .swiper-slide {
   --rotate: 0deg;
   --swing: 2deg;

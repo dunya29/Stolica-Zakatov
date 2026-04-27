@@ -60,6 +60,9 @@
             top: 0;
             transform: translateX(-50%);
         }
+        .swiper {
+            padding: 0 30px;
+        }
         .swiper-slide {
             --rotate: 0deg;
             --swing: 2deg;
