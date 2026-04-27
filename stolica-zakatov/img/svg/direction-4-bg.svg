@@ -1,30 +1,37 @@
 <svg width="430" height="380" viewBox="0 0 430 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1978_7489)">
+<g clip-path="url(#clip0_2640_16341)">
 <rect width="430" height="380" fill="white"/>
-<g clip-path="url(#clip1_1978_7489)">
-<rect width="709" height="399" transform="translate(-26)" fill="url(#paint0_linear_1978_7489)"/>
-<path d="M444.082 1038.98C752.796 1038.98 1003.06 788.714 1003.06 480C1003.06 171.286 752.796 -78.9766 444.082 -78.9766C135.368 -78.9766 -114.895 171.286 -114.895 480C-114.895 788.714 135.368 1038.98 444.082 1038.98Z" fill="url(#paint1_radial_1978_7489)"/>
-<path d="M-5 399L444 399L444 124L-5 124L-5 399Z" fill="url(#paint2_linear_1978_7489)"/>
+<g clip-path="url(#clip1_2640_16341)">
+<rect width="709" height="399" transform="translate(-26)" fill="url(#paint0_linear_2640_16341)"/>
+<g filter="url(#filter0_f_2640_16341)">
+<path d="M413.5 -136L422.563 210.073L503.63 -126.56L440.292 213.829L589.82 -98.6516L456.85 221.175L668.305 -53.4953L471.514 231.792L735.653 6.93558L483.642 245.215L788.922 80L492.704 260.858L825.783 162.505L498.305 278.036L844.625 250.844L500.2 296L844.625 341.156L498.305 313.964L825.783 429.495L492.704 331.142L788.922 512L483.642 346.785L735.653 585.064L471.514 360.208L668.305 645.495L456.85 370.825L589.82 690.652L440.292 378.171L503.63 718.56L422.563 381.927L413.5 728L404.437 381.927L323.37 718.56L386.708 378.171L237.18 690.652L370.15 370.825L158.695 645.495L355.486 360.208L91.3467 585.064L343.358 346.785L38.078 512L334.296 331.142L1.21701 429.495L328.695 313.964L-17.6252 341.156L326.8 296L-17.6252 250.844L328.695 278.036L1.21701 162.505L334.296 260.858L38.078 80L343.358 245.215L91.3467 6.93558L355.486 231.792L158.695 -53.4953L370.15 221.175L237.18 -98.6516L386.708 213.829L323.37 -126.56L404.437 210.073L413.5 -136Z" fill="url(#paint1_radial_2640_16341)"/>
+</g>
+<path d="M-5 399L444 399L444 124L-5 124L-5 399Z" fill="url(#paint2_linear_2640_16341)"/>
 </g>
 </g>
 <defs>
-<linearGradient id="paint0_linear_1978_7489" x1="354.482" y1="0" x2="354.482" y2="399" gradientUnits="userSpaceOnUse">
+<filter id="filter0_f_2640_16341" x="-29.6252" y="-148" width="886.25" height="888" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_2640_16341"/>
+</filter>
+<linearGradient id="paint0_linear_2640_16341" x1="354.482" y1="0" x2="354.482" y2="399" gradientUnits="userSpaceOnUse">
 <stop offset="0.07" stop-color="#FF2673"/>
 <stop offset="0.92" stop-color="#FCBF20"/>
 </linearGradient>
-<radialGradient id="paint1_radial_1978_7489" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(444.082 480) scale(558.977)">
-<stop stop-color="#FF2673"/>
-<stop offset="0.68" stop-color="#FBBF24"/>
-<stop offset="1" stop-color="#FF2673" stop-opacity="0"/>
+<radialGradient id="paint1_radial_2640_16341" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(391 223) rotate(21.4496) scale(499.066 497.339)">
+<stop stop-color="#FFB81A"/>
+<stop offset="0.576923" stop-color="#FFB81A"/>
+<stop offset="1" stop-color="#FF2673"/>
 </radialGradient>
-<linearGradient id="paint2_linear_1978_7489" x1="219.499" y1="139.41" x2="218.879" y2="650.5" gradientUnits="userSpaceOnUse">
-<stop offset="0.158554" stop-color="#FF2774" stop-opacity="0"/>
-<stop offset="0.97" stop-color="#FF2774"/>
+<linearGradient id="paint2_linear_2640_16341" x1="219.499" y1="139.41" x2="238.431" y2="434.004" gradientUnits="userSpaceOnUse">
+<stop offset="0.211394" stop-color="#FF2673" stop-opacity="0"/>
+<stop offset="0.982104" stop-color="#FF2673"/>
 </linearGradient>
-<clipPath id="clip0_1978_7489">
+<clipPath id="clip0_2640_16341">
 <rect width="430" height="380" fill="white"/>
 </clipPath>
-<clipPath id="clip1_1978_7489">
+<clipPath id="clip1_2640_16341">
 <rect width="709" height="399" fill="white" transform="translate(-26)"/>
 </clipPath>
 </defs>

@@ -6,7 +6,7 @@
     })
 
     <body class="no-scroll">
-        @@include('_preloader.html')
+        <!--  @@include('_preloader.html') -->
         <div class="wrap">
             @@include('_header.html', {"main": true, "banner": true})
             <!--main-->
@@ -366,71 +366,6 @@
                     </div>
                 </section>
                 @@include("_map.html")
-                <!--projects-->
-                <section class="section projects">
-                    <div class="container">
-                        <div class="projects__inner">
-                            <h2 class="sec-title">[Спецпроекты]</h2>
-                            <div class="projects__cols">
-                                <div class="projects__col">
-                                    <div class="swiper projects__imageswiper">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <a href="#" target="_blank" class="media-cover" data-swiper-parallax="50%">
-                                                    <img src="img/content/project-1.jpg" alt>
-                                                </a>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <a href="#" target="_blank" class="media-cover" data-swiper-parallax="50%">
-                                                    <img src="img/content/project-2.jpg" alt>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="projects__col">
-                                    <div class="swiper projects__contentswiper">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <div class="item-project">
-                                                    <h3 class="h1">Фестиваль Summer&nbsp;Sound</h3>
-                                                    <div class="item-project__content">
-                                                        <p>Summer Sound — это не просто фестиваль, это&nbsp;яркий калейдоскоп эмоций и&nbsp;впечатлений, где&nbsp;каждый
-                                                            найдёт свой идеальный саундтрек для&nbsp;незабываемого лета.</p>
-                                                        <a href="#" target="_blanks" class="item-project__link">
-                                                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <div class="item-project">
-                                                    <h3 class="h1">Фестиваль Summer&nbsp;Sound</h3>
-                                                    <div class="item-project__content">
-                                                        <p>Summer Sound — это не просто фестиваль, это&nbsp;яркий калейдоскоп эмоций и&nbsp;впечатлений, где&nbsp;каждый
-                                                            найдёт свой идеальный саундтрек для&nbsp;незабываемого лета.</p>
-                                                        <a href="#" target="_blank" class="item-project__link">
-                                                            <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-scrollbar"></div>
-                                </div>
-                                <div class="nav-btns">
-                                    <button class="nav-btn nav-btn--prev">
-                                        <svg><use xlink:href="img/svg/sprite.svg#btn-prev"></use></svg>
-                                    </button>
-                                    <button class="nav-btn nav-btn--next">
-                                        <svg><use xlink:href="img/svg/sprite.svg#btn-next"></use></svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 <!--main-history-->
                 <section class="section main-history">
                     <div class="container">
@@ -694,6 +629,150 @@
                                                 <figcaption class="main-history__caption">Подпись для фото</figcaption>
                                             </figure>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--lineup-past-->
+                <section class="section lineup-past">
+                    <div class="container">
+                        <h2 class="mb-20 sec-title">[Хедлайнеры прошлых лет]</h2>
+                        <div class="switch-block">
+                            <div class="mb-60 swiper lineup-past__timeline">
+                                <div class="swiper-wrapper">
+                                    <div class="h2 swiper-slide" data-tab="2021">2021</div>
+                                    <div class="h2 swiper-slide" data-tab="2022">2022</div>
+                                    <div class="h2 swiper-slide" data-tab="2023">2023</div>
+                                    <div class="h2 swiper-slide" data-tab="2024">2024</div>
+                                    <div class="h2 swiper-slide active" data-tab="2025">2025</div>
+                                </div>
+                            </div>
+                            <div class="lineup-past__blocks">
+                                <div class="lineup-past__block" data-block="2021">
+                                    <div class="swiper">
+                                        <div class="mb-60 swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":8, "name": "zivert"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":7, "name": "HammAli & Navai"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":5, "name": "Ёлка"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":6, "name": "Клава Кока"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":9, "name": "Элджей"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":1, "name": "l`one + hor"})
+                                            </div>
+                                        </div>
+                                        <div class="swiper-scrollbar"></div>
+                                    </div>
+                                </div>
+                                <div class="lineup-past__block" data-block="2022">
+                                    <div class="swiper">
+                                        <div class="mb-60 swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":5, "name": "Ёлка"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":8, "name": "zivert"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":1, "name": "l`one + hor"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":7, "name": "HammAli & Navai"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":9, "name": "Элджей"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":6, "name": "Клава Кока"})
+                                            </div>
+                                        </div>
+                                        <div class="swiper-scrollbar"></div>
+                                    </div>
+                                </div>
+                                <div class="lineup-past__block" data-block="2023">
+                                    <div class="swiper">
+                                        <div class="mb-60 swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":9, "name": "Элджей"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":8, "name": "zivert"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":7, "name": "HammAli & Navai"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":5, "name": "Ёлка"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":6, "name": "Клава Кока"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":1, "name": "l`one + hor"})
+                                            </div>
+                                        </div>
+                                        <div class="swiper-scrollbar"></div>
+                                    </div>
+                                </div>
+                                <div class="lineup-past__block" data-block="2024">
+                                    <div class="swiper">
+                                        <div class="mb-60 swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":9, "name": "Элджей"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":8, "name": "zivert"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":5, "name": "Ёлка"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":7, "name": "HammAli & Navai"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":6, "name": "Клава Кока"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":1, "name": "l`one + hor"})
+                                            </div>
+                                        </div>
+                                        <div class="swiper-scrollbar"></div>
+                                    </div>
+                                </div>
+                                <div class="lineup-past__block active" data-block="2025">
+                                    <div class="swiper">
+                                        <div class="mb-60 swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":1, "name": "l`one + hor"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":8, "name": "zivert"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":5, "name": "Ёлка"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":6, "name": "Клава Кока"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":7, "name": "HammAli & Navai"})
+                                            </div>
+                                            <div class="swiper-slide">
+                                                @@include("_item-lineup.html", {"nmb":9, "name": "Элджей"})
+                                            </div>
+                                        </div>
+                                        <div class="swiper-scrollbar"></div>
                                     </div>
                                 </div>
                             </div>

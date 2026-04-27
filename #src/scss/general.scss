@@ -1397,3 +1397,18 @@ p {
 		transition: opacity 0.3s linear;
 	}
 }
+.mb-60,
+.mb-20 {
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+.mb-60 {
+	margin-bottom: 60px;
+	@media (max-width: $bp3) {
+		margin-bottom: 40px;
+	}
+}
+.mb-20 {
+	margin-bottom: 20px;
+}

@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, 7);
     } else {
+        document.body.classList.remove("no-scroll")
         scrollToBlock()
     }
 })
@@ -63,7 +64,7 @@ function scrollToBlock() {
     const hash = window.location.hash;
     if (hash) {
         const targetElement = document.querySelector(hash);
-        if (targetElement ) {
+        if (targetElement) {
             window.scrollTo({ top: scrollPos() + targetElement.getBoundingClientRect().top - 10, behavior: "smooth", })
         }
     }
@@ -280,7 +281,7 @@ function initfancyModal(fancyItem) {
                                 <div class="swiper-wrapper">
                                     ${mediaSrc.map((el, i) => `<div class="swiper-slide">
                                         <div class="${objectFit}">
-                                            ${el.type === 'video' ? `<video ${i === initialSl ? `src='${el.src}'` : `data-src='${el.src}'`} ${el.poster ? `poster='${el.poster}'` : ''} loop autoplay playsinline mute controls></video>` : `<img src=${el.src} alt="" >`}                                                
+                                            ${el.type === 'video' ? `<video ${i === initialSl ? `src='${el.src}'` : `data-src='${el.src}'`} ${el.poster ? `poster='${el.poster}'` : ''} loop autoplay playsinline mute controls></video>` : `<img src=${el.src} alt="" >`}
                                         </div>
                                     </div>`).join("")}
                                 </div>
@@ -295,7 +296,7 @@ function initfancyModal(fancyItem) {
                                 <div class="swiper-wrapper">
                                     ${mediaSrc.map(el => `<div class="swiper-slide">
                                         <div class="${objectFit} ${el.type === 'video' ? 'video' : ''}">
-                                            ${el.type === 'video' ? `<img ${el.poster ? `src='${el.poster}'` : ''}>` : `<img src=${el.src} alt="">`}                                                
+                                            ${el.type === 'video' ? `<img ${el.poster ? `src='${el.poster}'` : ''}>` : `<img src=${el.src} alt="">`}
                                         </div>
                                     </div>`).join("")}
                                 </div>
@@ -1425,4 +1426,72 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 if (window.location.href.includes("omniagency")) {
     header.style.background = "red"
+}
+//lineup-past
+const lineupPastSwipers = document.querySelectorAll('.lineup-past__blocks .swiper')
+lineupPastSwipers.forEach(item => {
+    let lastTranslate = 0;
+    let currentSwing = 2;
+    let lastTime = Date.now();
+    let decayRAF = null;
+    let swiper = new Swiper(item, {
+        slidesPerView: "auto",
+        grabCursor: true,
+        observer: true,
+        observeParents: true,
+        watchSlidesProgress: true,
+        speed: 1000,
+        scrollbar: {
+            el: item.querySelector(".swiper-scrollbar"),
+            draggable: true,
+        },
+        on: {
+            setTranslate(swiper) {
+                if (!swiper.translate) return;
+                if (decayRAF) {
+                    cancelAnimationFrame(decayRAF);
+                    decayRAF = null;
+                }
+                let now = Date.now();
+                let dt = Math.max(16, now - lastTime);
+                let velocity = Math.abs(swiper.translate - lastTranslate) / dt;
+                let target = Math.min(12, 2 + velocity * 100);
+                currentSwing += (target - currentSwing) * 0.15;
+                swiper.slides.forEach(slide => {
+                    slide.style.setProperty('--swing', `${currentSwing}deg`);
+                });
+                lastTranslate = swiper.translate;
+                lastTime = now;
+            },
+            transitionEnd(swiper) {
+                swiper.slides.forEach(slide => {
+                    let swing = parseFloat(
+                        getComputedStyle(slide).getPropertyValue('--swing')
+                    );
+                    function decay() {
+                        swing += (2 - swing) * 0.01;
+                        slide.style.setProperty('--swing', swing + 'deg');
+                        if (Math.abs(swing - 2) > 0.1) {
+                            decayRAF = requestAnimationFrame(decay);
+                        } else {
+                            slide.style.setProperty('--swing', '2deg');
+                            decayRAF = null;
+                        }
+                    }
+                    decay();
+                });
+            }
+        }
+    })
+})
+const lineupPastTimeline = document.querySelector('.lineup-past__timeline')
+if (lineupPastTimeline) {
+    const slidesCount = lineupPastTimeline.querySelectorAll(".swiper-slide").length;
+    new Swiper(lineupPastTimeline, {
+        slidesPerView: "auto",
+        observer: true,
+        observeParents: true,
+        watchSlidesProgress: true,
+        initialSlide: slidesCount - 1
+    });
 }
